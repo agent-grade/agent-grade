@@ -1,0 +1,16 @@
+{
+  "id": "fondy",
+  "name": "Fondy",
+  "kind": "gateway",
+  "markets": {
+    "UA": {
+      "takes": false,
+      "why": "The National Bank of Ukraine cancelled its operator's registration in payment systems.",
+      "evidence": {
+        "source": "https://bank.gov.ua/ua/news/all/natsionalniy-bank-skasuvav-reyestratsiyu-uchasti-tov-fk-elayens-u-platijnih-sistemah",
+        "quote": "діє під брендом (торговельною маркою) “Fondy” … Національний банк скасував реєстрацію участі ТОВ “ФК “ЕЛАЄНС” у платіжних системах",
+        "english": "TOV FK Elayens operates under the Fondy brand … the National Bank cancelled its registration in payment systems."
+      }
+    }
+  }
+}

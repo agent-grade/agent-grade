@@ -1,0 +1,33 @@
+{
+  "cost_usd": 0.00094509,
+  "effort": "low",
+  "excerpts": [
+    "Базовий тариф при обороті до 5 млн грн на місяць 1.5%",
+    "при оплаті іноземними картками комісія встановлюється індивідуально",
+    "Якщо ж клієнт розраховується іноземною карткою, комісія за інтернет-еквайринг відрізняється від базового тарифу і встановлюється індивідуально."
+  ],
+  "excerpts_found_on_page": true,
+  "fits_one_sentence": false,
+  "method_sha256": "a4485e5e5984047beb83213366fd52392bb3c60fe3122792c96c827e4bc97313",
+  "model": "claude-haiku-5-5",
+  "rubric": "r6-price-1",
+  "sentence": null,
+  "status": "ok",
+  "usage": {
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 0,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 929,
+    "inference_geo": "global",
+    "input_tokens": 5383,
+    "output_tokens": 795,
+    "output_tokens_details": {
+      "thinking_tokens": 552
+    },
+    "service_tier": "standard",
+    "speed": "standard"
+  },
+  "why_not": "The page states a 1.5% base rate for Ukrainian cards at up to 5 million UAH monthly turnover, but the commission for foreign cards is set individually, so the owner would have to ask for the actual number. Fees for a shop above 5 million UAH are also individual."
+}

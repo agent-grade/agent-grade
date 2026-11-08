@@ -1,0 +1,228 @@
+{
+  "country": "ME",
+  "checked": "2026-11-07",
+  "summary": "Every sale in Montenegro is fiscalised in real time with the Tax Administration, card payments included: a consumer's card payment counts as a cash-type payment and gets a CASH receipt with method CARD, signed with the seller's certificate and carrying an IKOF, a JIKR and a QR code. A web shop registers its premises as an internet shop and needs fiscal software from a registered producer; a seller outside VAT can issue non-cash invoices free on the Tax Administration's portal, but not card receipts. VAT registration starts above EUR 30,000 of sales in 12 months.",
+  "claims": [
+    {
+      "topic": "scope: cash and non-cash both fiscalised",
+      "statement": "The Fiscalisation Law covers both cash and non-cash (bezgotovinsko) payments. Every receipt, whatever the payment method, is reported in real time and gets a JIKR. The law was published in Sl. list CG 46/19, then amended by 73/19 and 8/21, and has applied since 1 January 2021. No later amendment was found.",
+      "source": "https://mia.gov.me/wp-content/uploads/3.-zakon-o-fiskalizaciji-u-prometu-proizvoda-i-usluga.pdf",
+      "quote": "Ovim zakonom uređuje se postupak fiskalizacije gotovinskog i bezgotovinskog plaćanja u prometu proizvoda i usluga",
+      "english": "This law regulates the fiscalisation of cash and non-cash payments in the sale of goods and services.",
+      "official": true,
+      "note": "This is the consolidated law text (46/19, 73/19, 8/21) in a 'Katalog propisa 2021' compilation by Pravni ekspert doo, hosted on a gov.me subdomain. It is not the Službeni list PDF itself. Its PDF text layer splits some words (\"pla ćanja\"), so a search of the extracted text can miss a quote that is on the page."
+    },
+    {
+      "topic": "card payment counts as 'cash' under the law",
+      "statement": "The law defines 'gotovinsko plaćanje' as payment by cash or payment card at the moment the receipt is issued. Everything else, including bank transfer, is 'bezgotovinsko'. So a consumer card payment is fiscalised as a cash-type receipt, not as a non-cash invoice.",
+      "source": "https://mia.gov.me/wp-content/uploads/3.-zakon-o-fiskalizaciji-u-prometu-proizvoda-i-usluga.pdf",
+      "quote": "gotovinsko plaćanje je plaćanje ... u trenutku izdavanja fiskalnog računa novčanim sredstvima, odnosno platnom karticom",
+      "english": "Art. 3(4): cash payment means payment, at the moment the fiscal receipt is issued, in money or by payment card.",
+      "official": true
+    },
+    {
+      "topic": "receipt type depends on whose card it is",
+      "statement": "The Tax Administration's technical specification v5 has two card codes. CARD (a bank card issued to a natural person) is allowed only on CASH receipts. BUSINESSCARD (a card issued to a business) goes on NONCASH receipts, as do ACCOUNT (transfer), ADVANCE, OTHER and others. A web-shop card payment by a consumer would therefore be a CASH receipt with method CARD. That last step is a reading of the two texts: no official text names web-shop card payments explicitly.",
+      "source": "https://www.gov.me/dokumenta/4bd97f4d-a271-4a42-9458-f91363d3310f",
+      "quote": "CARD — Kreditna i debitna kartica banke izdata fizičkom licu — CASH; BUSINESSCARD — ... izdata poreskom obvezniku — NONCASH",
+      "english": "Payment-method table: CARD is a bank credit or debit card issued to a natural person (cash receipt); BUSINESSCARD is one issued to a taxpayer (non-cash receipt).",
+      "official": true,
+      "note": "Tehnička specifikacija v5 – final, published on gov.me on 11.04.2023 (DOCX). The quote joins two table rows."
+    },
+    {
+      "topic": "web shop named in the law",
+      "statement": "The law's only explicit mention of e-commerce is in the business-premises registration: the premises type must state the mode of business, with 'internet trgovina' given as an example. A web shop is therefore registered as a poslovni prostor of that type.",
+      "source": "https://mia.gov.me/wp-content/uploads/3.-zakon-o-fiskalizaciji-u-prometu-proizvoda-i-usluga.pdf",
+      "quote": "Podatak iz stava 2 tačka 4 ovog člana sadrži obavještenje o načinu poslovanja (internet trgovina, pokretni poslovni prostor)",
+      "english": "Art. 14(3): the premises-type field states the mode of business (internet trade, mobile premises).",
+      "official": true
+    },
+    {
+      "topic": "payment on delivery / payment not yet known",
+      "statement": "The official functional spec says that when the payment method is unknown at the moment of issue, the receipt must be fiscalised with method ORDER. The tech spec adds that an ORDER receipt is later settled by a SUMMARY receipt. No official rule was found that addresses cash on delivery (pouzeće) through a courier directly. It is unclear whether the seller issues an ORDER receipt at dispatch, or a CASH receipt once the courier remits the money.",
+      "source": "https://www.gov.me/dokumenta/afcf5133-403e-483a-9e6d-af46337dea9d",
+      "quote": "Ukoliko u momentu izdavanja računa nije poznat način plaćanja, izdavalac računa je dužan da ... fiskalizuje račun s načinom plaćanja ORDER.",
+      "english": "If the payment method is not known when the receipt is issued, the issuer must fiscalise it with payment method ORDER.",
+      "official": true,
+      "note": "Funkcionalna specifikacija v5 (Poreska uprava, gov.me)."
+    },
+    {
+      "topic": "paper vs electronic delivery to the customer",
+      "statement": "The functional spec says cash-type receipts must be printed and handed to the customer, while non-cash receipts may be paper or electronic with the customer's consent. A web shop taking consumer cards issues CASH receipts, so it seems to need a printed receipt, for example in the parcel. Whether an emailed receipt is acceptable for online card sales is not confirmed (see open questions).",
+      "source": "https://www.gov.me/dokumenta/afcf5133-403e-483a-9e6d-af46337dea9d",
+      "quote": "gotovinski računi se moraju odštampati na papiru i uručiti klijentu, dok se bezgotovinski računi mogu izdati u papirnoj ili elektronskoj formi",
+      "english": "Cash receipts must be printed on paper and handed to the client; non-cash receipts may be issued on paper or electronically.",
+      "official": true
+    },
+    {
+      "topic": "non-cash invoices",
+      "statement": "Every non-cash invoice (bank transfer, business card, advance) must also be fiscalised and carry an IKOF, a JIKR and a QR code.",
+      "source": "https://www.gov.me/dokumenta/afcf5133-403e-483a-9e6d-af46337dea9d",
+      "quote": "Svi bezgotovinski računi moraju se fiskalizovati. ... Svaki bezgotovinski račun mora imati IKOF i JIKR.",
+      "english": "All non-cash invoices must be fiscalised; each must have an IKOF and a JIKR.",
+      "official": true
+    },
+    {
+      "topic": "certificate",
+      "statement": "The seller needs a certificate for an electronic signature or seal from a registered trust-service provider (Registrovani CA). It is used to sign every receipt message, and its PIB must match the PIB on the receipt.",
+      "source": "https://mia.gov.me/wp-content/uploads/3.-zakon-o-fiskalizaciji-u-prometu-proizvoda-i-usluga.pdf",
+      "quote": "Obveznik fiskalizacije dužan je da za potrebe sprovođenja postupka fiskalizacije koristi certifikat za elektronski potpis",
+      "english": "Art. 10(2): the obligor must use an electronic-signature certificate for fiscalisation.",
+      "official": true
+    },
+    {
+      "topic": "permanent internet and real-time sending",
+      "statement": "Each receipt is signed and sent to the Tax Administration in real time. If the internet connection drops, the seller may issue receipts with an IKOF only and must send them within 2 days (Art. 17). For a blocking error, the functional spec sets a 48-hour re-send window.",
+      "source": "https://mia.gov.me/wp-content/uploads/3.-zakon-o-fiskalizaciji-u-prometu-proizvoda-i-usluga.pdf",
+      "quote": "obezbijedi stalnu internet vezu za on-line razmjenu fiskalnih računa sa Upravom u realnom vremenu",
+      "english": "Art. 10(4): the obligor must keep a permanent internet connection for real-time online exchange of fiscal receipts.",
+      "official": true
+    },
+    {
+      "topic": "business premises registration",
+      "statement": "Every business premises, including a web shop, must be registered electronically 24 hours before fiscalising starts. The registration includes geolocation, address, type, activity, hours and cash/non-cash mode. Changes must be reported 5 days before they happen. The Administration then issues a premises code, which is part of the IKOF.",
+      "source": "https://mia.gov.me/wp-content/uploads/3.-zakon-o-fiskalizaciji-u-prometu-proizvoda-i-usluga.pdf",
+      "quote": "dostavi podatke o svim poslovnim prostorima u kojima obavlja djelatnost, 24 sata prije početka korišćenja fiskalnog servisa",
+      "english": "Art. 14(1): submit data on all business premises 24 hours before starting to use the fiscal service.",
+      "official": true
+    },
+    {
+      "topic": "ENU registration",
+      "statement": "Every ENU (electronic billing device) must be registered at least one hour before use. Registration names the PIB, the premises code, the ENU's serial number, the software code and the software-maintainer code. The system returns a 10-character ENU code. The law calls an ENU a hardware device, but the spec lets any device running registered software issue receipts, including cloud apps for non-cash invoices. No cash deposit needs to be reported for an ENU at premises registered for non-cash invoices only.",
+      "source": "https://www.gov.me/dokumenta/afcf5133-403e-483a-9e6d-af46337dea9d",
+      "quote": "Registraciju ENU je potrebno napraviti minimalno jedan sat prije početka fiskalizacije gotovinskih i bezgotovinskih računa na tom ENU.",
+      "english": "The ENU must be registered at least one hour before fiscalising cash and non-cash receipts on it.",
+      "official": true
+    },
+    {
+      "topic": "cash deposit (cash-type premises)",
+      "statement": "For an ENU issuing cash-type receipts, the seller must report the day's cash float (INITIAL) at the start of each working day, even if it is 0. This would apply to a web shop's CASH/CARD ENU. A zero deposit is likely in practice, but that is unconfirmed.",
+      "source": "https://mia.gov.me/wp-content/uploads/3.-zakon-o-fiskalizaciji-u-prometu-proizvoda-i-usluga.pdf",
+      "quote": "dužan je da obavijesti Upravu na početku radnog dana ... o gotovinskom depozitu za svaki elektronski naplatni uređaj",
+      "english": "Art. 12(2): report the cash deposit for each ENU at the start of each working day.",
+      "official": true
+    },
+    {
+      "topic": "operator code",
+      "statement": "Each receipt carries an operator code. The seller assigns it, links it to the issuing person's JMBG, and registers it with the Tax Administration. For non-cash invoices the operator is the person authorised to create them.",
+      "source": "https://mia.gov.me/wp-content/uploads/3.-zakon-o-fiskalizaciji-u-prometu-proizvoda-i-usluga.pdf",
+      "quote": "Obveznik fiskalizacije dužan je da Upravi dostavi prijavu oznake operatora i jedinstveni matični broj operatora",
+      "english": "Art. 8(2): the obligor must register the operator code and the operator's JMBG with the Administration.",
+      "official": true
+    },
+    {
+      "topic": "software producer and maintainer",
+      "statement": "The software producer or maintainer must register with the Tax Administration before selling or servicing the software, and gets an ID code that is built into the software. The seller must declare its producer and maintainer before first use (Art. 16).",
+      "source": "https://mia.gov.me/wp-content/uploads/3.-zakon-o-fiskalizaciji-u-prometu-proizvoda-i-usluga.pdf",
+      "quote": "Proizvođač, odnosno održavalac programskog rješenja dužan je, da prije stavljanja u promet programskog rješenja ... Upravi dostavi podatke",
+      "english": "Art. 15(1): the software producer or maintainer must submit its data to the Administration before marketing the software.",
+      "official": true
+    },
+    {
+      "topic": "what the customer gets",
+      "statement": "The receipt shows the VAT-law fields plus: receipt number, time, operator code, IKOF (generated by the seller), JIKR (returned by the Tax Administration), payment method, and the buyer's PIB on B2B invoices. A QR code is printed on every receipt, and the customer can check it within 90 days (Art. 21).",
+      "source": "https://mia.gov.me/wp-content/uploads/3.-zakon-o-fiskalizaciji-u-prometu-proizvoda-i-usluga.pdf",
+      "quote": "Jedinstveni identifikacioni kod računa i identifikacioni kod obveznika fiskalizacije, sa podacima iz člana 7 ovog zakona, ispisuju se na računu",
+      "english": "Art. 12: the JIKR and IKOF, with the Art. 7 data, are printed on the receipt.",
+      "official": true
+    },
+    {
+      "topic": "QR code",
+      "statement": "A QR code must appear on all cash and non-cash receipts, including those not yet fiscalised.",
+      "source": "https://www.gov.me/dokumenta/afcf5133-403e-483a-9e6d-af46337dea9d",
+      "quote": "QR kod će se štampati na papiru za sve gotovinske i bezgotovinske račune.",
+      "english": "The QR code is printed on all cash and non-cash receipts.",
+      "official": true
+    },
+    {
+      "topic": "free option for small non-VAT sellers (non-cash only)",
+      "statement": "A seller outside the VAT system can create and fiscalise non-cash invoices directly on the Tax Administration's self-service portal (SEP), with no ENU, on any device. This covers bank-transfer invoices only, not consumer card or cash sales.",
+      "source": "https://www.gov.me/dokumenta/afcf5133-403e-483a-9e6d-af46337dea9d",
+      "quote": "U slučajevima kada obveznik fiskalizacije nije u sistemu PDV-a, on može da kreira i fiskalizuje svoje bezgotovinske račune koristeći SEP",
+      "english": "A non-VAT obligor may create and fiscalise its non-cash invoices on the SEP portal.",
+      "official": true,
+      "note": "Production SEP: https://sep.tax.gov.me/self-care ; test: https://efitest.tax.gov.me/self-care"
+    },
+    {
+      "topic": "penalties",
+      "statement": "Not issuing receipts through the fiscal service is fined EUR 8,000–40,000 for a legal entity (plus EUR 1,300–4,000 for the responsible person) and EUR 2,000–12,000 for a preduzetnik. The seller may also be banned from trading for up to 90 days (Art. 24).",
+      "source": "https://mia.gov.me/wp-content/uploads/3.-zakon-o-fiskalizaciji-u-prometu-proizvoda-i-usluga.pdf",
+      "quote": "Novčanom kaznom u iznosu od 8.000 eura do 40.000 eura kazniće se pravno lice, ako: 1) ne izdaje fiskalne račune",
+      "english": "Art. 26: a legal entity is fined EUR 8,000–40,000 if it does not issue fiscal receipts.",
+      "official": true
+    },
+    {
+      "topic": "VAT registration threshold",
+      "statement": "A business must register for VAT once its turnover exceeds EUR 30,000 in the last 12 months or a shorter period. It must apply by the 20th of the following month, or the tax authority registers it ex officio. This is the text of Art. 55 as rewritten by the VAT amendment in Sl. list CG 12/26 (in force 06.02.2026).",
+      "source": "https://wapi.gov.me/download/80b15e7e-da28-49b7-9ca6-de1849b9ab61?version=1.0",
+      "quote": "Lice koje u posljednjih 12 mjeseci ili u kraćem periodu izvrši promet proizvoda, odnosno usluga, iznad iznosa od 30.000 eura",
+      "english": "A person whose supplies exceed EUR 30,000 in the last 12 months (or less) must register for VAT.",
+      "official": true,
+      "note": "Gov.me-hosted 'Katalog propisa 2025' copy (Pravni ekspert) of the gazette text, not the sluzbenilist.me PDF. The standard VAT rate of 21% is confirmed in the functional spec."
+    },
+    {
+      "topic": "2026 VAT amendment",
+      "statement": "The Feb 2026 VAT amendment (Sl. list CG 12/26) does several things. VAT numbers become the PIB with an 'ME' prefix, and existing numbers are replaced ex officio. New place-of-supply rules cover electronic, telecom and broadcast services to non-taxable persons, and foreign suppliers in those cases must set up a permanent unit or appoint a representative. Sales of building land become VAT supplies from 1 April 2026. A shop's software must print the new ME-prefixed VAT number.",
+      "source": "https://wapi.gov.me/download/80b15e7e-da28-49b7-9ca6-de1849b9ab61?version=1.0",
+      "quote": "PDV registracioni broj je poreski identifikacioni broj (PIB) kojem se dodaje predznak \"ME\".",
+      "english": "The VAT registration number is the PIB with the prefix 'ME' added.",
+      "official": true
+    },
+    {
+      "topic": "specs and e-invoicing",
+      "statement": "The current technical specification is v5 final, published on gov.me 11.04.2023. A national B2B e-invoice system (separate from fiscalisation) is only planned, targeting operation by the end of 2028. That date comes from a non-official source.",
+      "source": "https://unija.com/cg/e-faktura-u-poreskoj-upravi-crne-gore/",
+      "quote": "operativna do kraja 2028. godine",
+      "english": "The e-invoice system is planned to be operational by the end of 2028.",
+      "official": false,
+      "note": "Accounting firm (Unija ETL) article dated 22.07.2026, citing a draft public-finance reform programme. The official draft could not be opened."
+    }
+  ],
+  "services": [
+    {
+      "name": "FiskalMN (Perpetua Opes d.o.o.)",
+      "source": "https://docs.fiskalmn.me/",
+      "what": "Cloud fiscalisation software with a REST API (api.fiskalmn.me) for e-commerce, booking and ERP partners. Receipts can be sent by email, Viber or WhatsApp. This is the closest fit for a web shop.",
+      "source_says": "Vendor docs: 'Partneri (e-commerce, booking, ERP) mogu fiskalizovati račune preko REST API-ja.' The home page says 'usklađen sa Poreskom upravom', which means aligned with the Tax Administration, not certified.",
+      "official_list": false
+    },
+    {
+      "name": "e-Invoices Online (e-Invoices Online d.o.o., dddinvoices)",
+      "source": "https://e-invoices.online/sr-Latn-ME",
+      "what": "Online invoicing and fiscalisation with API/ERP integration. Plans from EUR 5.99/month (10 invoices) to EUR 23.99/month (5,000 invoices), excluding VAT.",
+      "source_says": "Vendor page claims 'Povezivanje sa poreskom upravom'. No web-shop plugin is named, and no registration number is given.",
+      "official_list": false
+    },
+    {
+      "name": "eFiskal (Digital Solutions Montenegro)",
+      "source": "https://efiskal.me/",
+      "what": "Fiscalisation platform with its own e-commerce or online-store module and stock/order tracking.",
+      "source_says": "Vendor page says it connects automatically to the Tax Administration when a receipt is issued. No API or WooCommerce plugin is named.",
+      "official_list": false
+    },
+    {
+      "name": "Fiscall (Rubik, Nikšić)",
+      "source": "https://fiscall.me/elektronska-fiskalizacija/",
+      "what": "ENU software for Android and a web app for PC.",
+      "source_says": "Vendor page claims 'akreditovani ENU softver', 'registrovan kod Poreske uprave', but gives no ID and no web-shop integration.",
+      "official_list": false
+    },
+    {
+      "name": "Crnogorski Telekom (AdeoPOS / Pantheon, plus certificates)",
+      "source": "https://telekom.me/o-kompaniji/media-centar/efiskalizacija-u-5-koraka-kratki-vodic-telekoma-kroz-proces-elektronske-fiskalizacije",
+      "what": "Sells fiscal apps and ENU devices through partners (VG eFiskal, Data Lab.MN). Also issues fiscalisation signature certificates, and says it is one of three issuers in Montenegro. Article dated 06.05.2021.",
+      "source_says": "Vendor article.",
+      "official_list": false
+    }
+  ],
+  "open_questions": [
+    "No published official list was found of registered fiscal-software producers. The law (Art. 15) and the spec ('Registar proizvođača softvera EFI sistema') say such a register exists, but it appears to be internal, used to validate codes on SEP. Vendors' 'registered/accredited' claims are unverified.",
+    "Card payment in a web shop: the law (card = cash payment) and the tech spec (CARD → CASH receipt) point to a CASH receipt with method CARD. No official FAQ or opinion addresses e-commerce card payments in words. A Montenegrin text on this, if one exists, should be on the Tax Administration's quarterly FAQs (https://www.gov.me/poreskauprava/porezi), which could not be read in full.",
+    "Receipt delivery for online card sales: the functional spec says cash-type receipts must be printed and handed over. It is unconfirmed whether an emailed or electronic CASH receipt is allowed for web-shop orders, or whether a printed receipt must go in the parcel.",
+    "Cash on delivery (pouzeće): no official rule was found on whether the seller fiscalises at dispatch (ORDER, then SUMMARY) or when the courier remits the money, or whether the courier issues anything for the goods. A non-official Q&A says express couriers are themselves fiscalisation obligors, but that concerns their own service. Universal postal services are exempt (Art. 5).",
+    "Fiscalisation law amendments after 8/21: none found for 2022–2026, but sluzbenilist.me was not searched directly, because its pages would not load. The rulebooks are listed on the gov.me e-fiscalisation page, and their texts were not read.",
+    "The consolidated law text used here is a private compilation (Pravni ekspert) hosted on mia.gov.me, not the gazette PDF. The VAT 12/26 text is a gov.me-hosted copy from the same publisher.",
+    "Which trust-service providers currently issue fiscalisation certificates: Telekom says it is one of three. A new trust-services law reportedly passed on 26 June 2026, but it has not been read or verified.",
+    "Pošta Crne Gore is said to be a certificate authority for Tax Administration e-filing; no source was found confirming it as a fiscalisation certificate issuer."
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "id": "plata-by-mono",
+  "name": "plata by mono (monobank internet acquiring)",
+  "kind": "bank-acquirer",
+  "markets": {
+    "UA": {
+      "takes": true,
+      "why": "monobank's internet acquiring, which a sole trader connects in the business cabinet and a company through support.",
+      "evidence": {
+        "source": "https://monobank.ua/knowledge-base/acquiring/signup",
+        "quote": "Хочу приймати оплати картками — як підключити? Для ФОП Зайдіть у бізнес-кабінет",
+        "english": "I want to accept card payments: how do I connect? For a sole trader: go to the business cabinet."
+      },
+      "sole_trader": {
+        "answer": "yes",
+        "source": "https://monobank.ua/knowledge-base/acquiring/signup",
+        "quote": "Для ФОП Зайдіть у бізнес-кабінет",
+        "english": "For a sole trader: go to the business cabinet."
+      },
+      "company": {
+        "answer": "yes",
+        "source": "https://monobank.ua/knowledge-base/acquiring/signup",
+        "quote": "Для юрособи Просто напишіть у підтримку — там з усім допоможуть",
+        "english": "For a legal entity: just write to support, who help with everything."
+      }
+    }
+  },
+  "search": "monobank",
+  "probe": {
+    "method": "POST",
+    "url": "https://api.monobank.ua/api/merchant/invoice/create",
+    "format": "json",
+    "fields": [
+      "X-Token",
+      "amount"
+    ],
+    "source": "https://api.monobank.ua/docs/acquiring.html",
+    "quote": "\"/api/merchant/invoice/create\":{\"post\":{\"summary\":\"Створення рахунку\""
+  },
+  "urls": {
+    "docs": {
+      "url": "https://monobank.ua/api-docs/acquiring",
+      "status": "ok",
+      "checked": "2026-11-07"
+    },
+    "api_reference": {
+      "url": "https://api.monobank.ua/docs/acquiring.html",
+      "status": "ok",
+      "checked": "2026-11-07"
+    },
+    "status": {
+      "url": null,
+      "status": "not found",
+      "checked": "2026-11-07"
+    },
+    "pricing": {
+      "url": "https://monobank.ua/plata-by-mono",
+      "status": "ok",
+      "checked": "2026-11-07"
+    },
+    "signup": {
+      "url": "https://web.monobank.ua/",
+      "status": "ok",
+      "checked": "2026-11-07",
+      "note": "The business cabinet; acquiring needs a monobank sole-trader or company account first."
+    },
+    "llms_txt": {
+      "url": "https://monobank.ua/llms.txt",
+      "status": "ok",
+      "checked": "2026-11-07"
+    }
+  }
+}

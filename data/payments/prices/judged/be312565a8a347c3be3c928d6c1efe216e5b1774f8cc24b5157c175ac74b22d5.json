@@ -1,0 +1,32 @@
+{
+  "cost_usd": 0.0038860899999999996,
+  "effort": "low",
+  "excerpts": [
+    "C17.1. Naknada za obavljanje platnog prometa po poslovima prihvatanja Platnih kartica Ovlašćenje za odstupanje od naknade direktor filijale Nadležni član Upravnog odbora Akceptant 3,00% od iznosa transakcije do 0,7 p. p. preko 0,7 p. p.",
+    "* Tarife označene asteriksom nijesu obavezne i ugovaraju se u odnosu na projekciju profitabilnosti klijenta i nivo rizika."
+  ],
+  "excerpts_found_on_page": true,
+  "fits_one_sentence": false,
+  "method_sha256": "a4485e5e5984047beb83213366fd52392bb3c60fe3122792c96c827e4bc97313",
+  "model": "claude-haiku-5-5",
+  "rubric": "r6-price-1",
+  "sentence": null,
+  "status": "ok",
+  "usage": {
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 0,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 929,
+    "inference_geo": "global",
+    "input_tokens": 36608,
+    "output_tokens": 432,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "service_tier": "standard",
+    "speed": "standard"
+  },
+  "why_not": "This is a bank fee tariff (Hipotekarna banka, Montenegro) listing many per-transaction rates for accounts, cards, loans and guarantees, not a payment-provider price for card acceptance. Card acquiring fees appear only as ranges and as 'individual' tariffs that are negotiated ('ugovaraju se u odnosu na projekciju profitabilnosti klijenta i nivo rizika', 'Ovlašćenje za odstupanje od naknade'), with a 3.00% merchant rate that depends on approval levels and a 'do 0,7 p. p.' split, so no single flat price for a small shop's card payments can be stated."
+}

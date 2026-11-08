@@ -1,0 +1,59 @@
+{
+  "id": "hipotekarna-banka",
+  "name": "Hipotekarna banka e-Commerce",
+  "kind": "bank-acquirer",
+  "markets": {
+    "ME": {
+      "takes": true,
+      "why": "A Montenegrin bank's own card acceptance for a merchant's web shop, for its account holders with a domain registered in Montenegro.",
+      "evidence": {
+        "source": "https://hipotekarnabanka.com/digitalna-banka/e-commerce/",
+        "quote": "otvoren račun u Hipotekarnoj banci … domen registrovan u Crnoj Gori",
+        "english": "An account at Hipotekarna banka … a domain registered in Montenegro."
+      },
+      "sole_trader": {
+        "answer": "not found"
+      },
+      "company": {
+        "answer": "not found"
+      }
+    }
+  },
+  "search": "hipotekarna",
+  "urls": {
+    "docs": {
+      "url": null,
+      "status": "not found",
+      "checked": "2026-11-07",
+      "note": "The product page offers a test server and integration support, with no public docs."
+    },
+    "api_reference": {
+      "url": null,
+      "status": "not found",
+      "checked": "2026-11-07"
+    },
+    "status": {
+      "url": null,
+      "status": "not found",
+      "checked": "2026-11-07"
+    },
+    "pricing": {
+      "url": "https://hipotekarnabanka.com/wp-content/uploads/2026/10/tarife_naknade_oktobar_sajt.pdf",
+      "status": "ok",
+      "checked": "2026-11-07",
+      "note": "Fee tariff PDF, section C19 E-COMMERCE."
+    },
+    "signup": {
+      "url": "https://hipotekarnabanka.com/digitalna-banka/e-commerce/",
+      "status": "ok",
+      "checked": "2026-11-07",
+      "note": "No online application: the page asks for a signed application form and gives an e-mail contact."
+    },
+    "llms_txt": {
+      "url": "https://hipotekarnabanka.com/llms.txt",
+      "status": "ok",
+      "checked": "2026-11-07",
+      "note": "An SEO-plugin page index, not task docs."
+    }
+  }
+}

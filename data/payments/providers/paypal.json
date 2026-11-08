@@ -1,0 +1,16 @@
+{
+  "id": "paypal",
+  "name": "PayPal",
+  "kind": "wallet",
+  "markets": {
+    "UA": {
+      "takes": false,
+      "why": "PayPal's Ukrainian fees and services apply to personal accounts, until 2026-12-31.",
+      "evidence": {
+        "source": "https://www.paypalobjects.com/marketing/web/shared/clac/en/paypal-fees/Ukraine-paypal-fees-31-Dec-2026.pdf",
+        "quote": "All fees and services described on this page apply to Ukrainian personal accounts up to and including December 31, 2026",
+        "english": "The fees and services on PayPal's Ukraine page apply to personal accounts, until 2026-12-31."
+      }
+    }
+  }
+}

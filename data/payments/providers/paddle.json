@@ -1,0 +1,102 @@
+{
+  "id": "paddle",
+  "name": "Paddle",
+  "kind": "merchant-of-record",
+  "markets": {
+    "ME": {
+      "takes": true,
+      "why": "A merchant of record that works with software businesses; Montenegro is not on its unsupported list.",
+      "evidence": {
+        "source": "https://www.paddle.com/help/start/account-verification/which-countries-are-supported-by-paddle",
+        "quote": "Paddle works with software businesses anywhere in the world with the exception of the unsupported countries listed below.",
+        "english": "Montenegro is not on the unsupported list."
+      },
+      "sole_trader": {
+        "answer": "not found"
+      },
+      "company": {
+        "answer": "not found"
+      }
+    },
+    "UA": {
+      "takes": true,
+      "why": "A merchant of record that works with software businesses; its unsupported list names regions of Ukraine, not the country.",
+      "evidence": {
+        "source": "https://www.paddle.com/help/start/account-verification/which-countries-are-supported-by-paddle",
+        "quote": "Luhansk (Region of Ukraine)",
+        "english": "Occupied regions of Ukraine are on the unsupported list, not the country."
+      },
+      "sole_trader": {
+        "answer": "not found"
+      },
+      "company": {
+        "answer": "not found"
+      }
+    }
+  },
+  "search": "paddle",
+  "probe": {
+    "method": "POST",
+    "url": "https://sandbox-api.paddle.com/transactions",
+    "format": "json",
+    "fields": [
+      "items",
+      "Authorization",
+      "Bearer"
+    ],
+    "source": "https://developer.paddle.com/api-reference/transactions/create-transaction",
+    "quote": "Create a transaction Creates a new transaction. POST /transactions",
+    "base": {
+      "source": "https://developer.paddle.com/api-reference/about",
+      "quote": "Environment Base URL Sandbox https://sandbox-api.paddle.com Live https://api.paddle.com"
+    }
+  },
+  "github": {
+    "account": "PaddleHQ",
+    "source": "https://developer.paddle.com/sdks/libraries/node"
+  },
+  "npm": [
+    {
+      "name": "@paddle/paddle-node-sdk",
+      "source": "https://developer.paddle.com/sdks/libraries/node"
+    },
+    {
+      "name": "@paddle/paddle-js",
+      "source": "https://developer.paddle.com/sdks/libraries/paddle-js-wrapper"
+    }
+  ],
+  "urls": {
+    "docs": {
+      "url": "https://developer.paddle.com/",
+      "status": "ok",
+      "checked": "2026-11-07"
+    },
+    "api_reference": {
+      "url": "https://developer.paddle.com/api-reference/",
+      "status": "ok",
+      "checked": "2026-11-07"
+    },
+    "status": {
+      "url": "https://status.paddle.com/",
+      "status": "ok",
+      "checked": "2026-11-07",
+      "note": "Redirects to paddlestatus.com."
+    },
+    "pricing": {
+      "url": "https://www.paddle.com/pricing",
+      "status": "ok",
+      "checked": "2026-11-07"
+    },
+    "signup": {
+      "url": "https://login.paddle.com/signup",
+      "status": "ok",
+      "checked": "2026-11-07"
+    },
+    "llms_txt": {
+      "url": "https://developer.paddle.com/llms.txt",
+      "status": "ok",
+      "checked": "2026-11-07",
+      "note": "On the docs domain; www.paddle.com/llms.txt is a 404."
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "id": "ckb-otp-banka",
+  "name": "CKB eCommerce (OTP banka, formerly Crnogorska komercijalna banka)",
+  "kind": "bank-acquirer",
+  "markets": {
+    "ME": {
+      "takes": true,
+      "why": "A Montenegrin bank's own e-commerce service, for legal-entity clients with a year-old account and at least 100,000 EUR a year of payments through the bank.",
+      "evidence": {
+        "source": "https://www.otpbanka.me/mala-i-srednja-preduzeca/elektronsko-bankarstvo-1/e-commerce-1",
+        "quote": "CKB eCommerce servis namijenjen je svim klijentima, pravnim licima, koja: imaju otvoren račun najmanje jednu godinu … imaju godišnji platni promet preko CKB-a od minimalno 100.000,00 EUR",
+        "english": "The CKB eCommerce service is meant for all clients that are legal entities and that have had an account for at least a year … and move at least 100,000 EUR a year through CKB."
+      },
+      "sole_trader": {
+        "answer": "not found"
+      },
+      "company": {
+        "answer": "yes",
+        "source": "https://www.otpbanka.me/mala-i-srednja-preduzeca/elektronsko-bankarstvo-1/e-commerce-1",
+        "quote": "CKB eCommerce servis namijenjen je svim klijentima, pravnim licima",
+        "english": "The CKB eCommerce service is meant for all clients that are legal entities."
+      }
+    }
+  },
+  "search": "ckb",
+  "urls": {
+    "docs": {
+      "url": null,
+      "status": "not found",
+      "checked": "2026-11-07",
+      "note": "The product page promises a test package and test server, with no public docs."
+    },
+    "api_reference": {
+      "url": null,
+      "status": "not found",
+      "checked": "2026-11-07"
+    },
+    "status": {
+      "url": null,
+      "status": "not found",
+      "checked": "2026-11-07"
+    },
+    "pricing": {
+      "url": "https://www.otpbanka.me/upload/Lista-uslova-za-pravna-lica-i-preduzetnike.pdf",
+      "status": "ok",
+      "checked": "2026-11-07",
+      "note": "Fee list for legal entities and sole traders, section 21, E-commerce sistem."
+    },
+    "signup": {
+      "url": "https://www.otpbanka.me/mala-i-srednja-preduzeca/zakazi/zakazi-pravna",
+      "status": "ok",
+      "checked": "2026-11-07",
+      "note": "A meeting-booking page for legal entities; no e-commerce application."
+    },
+    "llms_txt": {
+      "url": null,
+      "status": "not found",
+      "checked": "2026-11-07"
+    }
+  }
+}

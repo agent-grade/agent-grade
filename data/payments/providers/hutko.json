@@ -1,0 +1,87 @@
+{
+  "id": "hutko",
+  "name": "hutko (PUMB)",
+  "kind": "gateway",
+  "markets": {
+    "UA": {
+      "takes": true,
+      "why": "An internet-acquiring service that works only with Ukrainian residents, sole traders and companies alike.",
+      "evidence": {
+        "source": "https://hutko.org/uk/faq/",
+        "quote": "Ми працюємо лише з резидентами України",
+        "english": "We work only with residents of Ukraine."
+      },
+      "sole_trader": {
+        "answer": "yes",
+        "source": "https://hutko.org/uk/faq/",
+        "quote": "Щоб приймати оплати з hutko, ви повинні мати ФОП або юридичну особу.",
+        "english": "To accept payments with hutko you must be a sole trader or a legal entity."
+      },
+      "company": {
+        "answer": "yes",
+        "source": "https://hutko.org/uk/faq/",
+        "quote": "Мерчант – це ФОП або юридична особа, яка приймає оплати від клієнтів",
+        "english": "A merchant is a sole trader or legal entity that accepts payments from customers."
+      }
+    }
+  },
+  "search": "hutko",
+  "probe": {
+    "method": "POST",
+    "url": "https://pay.hutko.org/api/checkout/url/",
+    "format": "json",
+    "fields": [
+      "merchant_id",
+      "order_id",
+      "signature",
+      "request"
+    ],
+    "source": "https://docs.hutko.org/uk/docs/page/3/",
+    "quote": "https://pay.hutko.org/api/checkout/url/ Схема взаємодії B API підтримує такі текстові формати запитів: HTML FORM, JSON."
+  },
+  "github": {
+    "account": "hutkorg",
+    "source": "https://docs.hutko.org/uk/docs/page/python-sdk/"
+  },
+  "npm": [
+    {
+      "name": "@hutko/js-sdk",
+      "source": "https://docs.hutko.org/uk/docs/page/step-by-step-instruction-to-accept-payments-with-javascript-sdk/"
+    }
+  ],
+  "urls": {
+    "docs": {
+      "url": "https://docs.hutko.org/uk/docs/page/1/",
+      "status": "ok",
+      "checked": "2026-11-07"
+    },
+    "api_reference": {
+      "url": null,
+      "status": "not found",
+      "checked": "2026-11-07",
+      "note": "Endpoints are described in prose inside the docs; no separate reference or spec."
+    },
+    "status": {
+      "url": null,
+      "status": "not found",
+      "checked": "2026-11-07"
+    },
+    "pricing": {
+      "url": "https://hutko.org/uk/pricing/",
+      "status": "ok",
+      "checked": "2026-11-07"
+    },
+    "signup": {
+      "url": "https://portal.hutko.org/",
+      "status": "ok",
+      "checked": "2026-11-07",
+      "note": "The merchant portal; account creation is a route inside it."
+    },
+    "llms_txt": {
+      "url": "https://hutko.org/llms.txt",
+      "status": "ok",
+      "checked": "2026-11-07",
+      "note": "docs.hutko.org/llms.txt is a 404."
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "stripe",
+  "name": "Stripe",
+  "kind": "gateway",
+  "markets": {
+    "ME": {
+      "takes": false,
+      "why": "Montenegro is not on Stripe's list of countries where a business can open an account.",
+      "evidence": {
+        "source": "https://stripe.com/global",
+        "quote": "Stripe is currently supported in the following countries/regions, with more to come.",
+        "english": "The list that follows does not include Montenegro."
+      }
+    },
+    "UA": {
+      "takes": false,
+      "why": "Ukraine is not on Stripe's list of countries where a business can open an account.",
+      "evidence": {
+        "source": "https://stripe.com/global",
+        "quote": "Stripe is currently supported in the following countries/regions, with more to come.",
+        "english": "The list that follows does not include Ukraine."
+      }
+    }
+  }
+}

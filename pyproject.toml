@@ -1,0 +1,23 @@
+[project]
+name = "agent-grade"
+version = "0.1.0"
+description = "Dated measurements of service providers against what an AI agent needs from them"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "anthropic==2.3.0",
+    "pypdf==7.0.0",
+]
+
+[project.scripts]
+agent-grade-check = "agent_grade.check:main"
+agent-grade-price = "agent_grade.price:main"
+
+[build-system]
+requires = ["uv_build>=0.12.10,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+]

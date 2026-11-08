@@ -1,0 +1,16 @@
+{
+  "id": "concordpay",
+  "name": "ConcordPay (Concord Bank)",
+  "kind": "bank-acquirer",
+  "markets": {
+    "UA": {
+      "takes": false,
+      "why": "The National Bank of Ukraine decided to revoke Concord Bank's banking licence and liquidate it.",
+      "evidence": {
+        "source": "https://bank.gov.ua/ua/news/all/natsionalniy-bank-uhvaliv-rishennya-vidklikati-bankivsku-litsenziyu-ta-likviduvati-at-akb-konkord",
+        "quote": "Національний банк ухвалив рішення відкликати банківську ліцензію та ліквідувати АТ “АКБ “КОНКОРДˮ",
+        "english": "The National Bank decided to revoke the banking licence of AKB Konkord and liquidate it."
+      }
+    }
+  }
+}

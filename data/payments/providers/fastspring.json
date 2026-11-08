@@ -1,0 +1,84 @@
+{
+  "id": "fastspring",
+  "name": "FastSpring",
+  "kind": "merchant-of-record",
+  "markets": {
+    "ME": {
+      "takes": true,
+      "why": "A merchant of record for software and digital goods; Montenegro is not on its list of prohibited countries.",
+      "evidence": {
+        "source": "https://fastspring.com/terms-use/restricted-countries/",
+        "quote": "Prohibited Countries and Territories Belarus Cuba Iran North Korea Palestine Russia",
+        "english": "Montenegro is not on the prohibited list."
+      },
+      "sole_trader": {
+        "answer": "not found"
+      },
+      "company": {
+        "answer": "not found"
+      }
+    },
+    "UA": {
+      "takes": true,
+      "why": "A merchant of record for software and digital goods; its prohibited list names three occupied regions of Ukraine, not the country.",
+      "evidence": {
+        "source": "https://fastspring.com/terms-use/restricted-countries/",
+        "quote": "Ukraine Regions: Crimea, Donetsk, Luhansk",
+        "english": "Only three occupied regions of Ukraine are prohibited, not the country."
+      },
+      "sole_trader": {
+        "answer": "not found"
+      },
+      "company": {
+        "answer": "not found"
+      }
+    }
+  },
+  "search": "fastspring",
+  "probe": {
+    "method": "POST",
+    "url": "https://api.fastspring.com/sessions",
+    "format": "json",
+    "fields": [
+      "items",
+      "Authorization"
+    ],
+    "source": "https://developer.fastspring.com/reference/createordersession",
+    "quote": "Create a session post https://api.fastspring.com /sessions"
+  },
+  "urls": {
+    "docs": {
+      "url": "https://developer.fastspring.com/",
+      "status": "ok",
+      "checked": "2026-11-07"
+    },
+    "api_reference": {
+      "url": "https://developer.fastspring.com/reference",
+      "status": "ok",
+      "checked": "2026-11-07",
+      "note": "Redirects to the developer hub, whose FastSpring API section lists each endpoint."
+    },
+    "status": {
+      "url": "https://status.fastspring.com/",
+      "status": "ok",
+      "checked": "2026-11-07"
+    },
+    "pricing": {
+      "url": "https://fastspring.com/pricing/",
+      "status": "ok",
+      "checked": "2026-11-07",
+      "note": "Priced by gross transaction volume through an estimator."
+    },
+    "signup": {
+      "url": "https://fastspring.com/sign-up/",
+      "status": "ok",
+      "checked": "2026-11-07"
+    },
+    "llms_txt": {
+      "url": "https://fastspring.com/llms.txt",
+      "status": "ok",
+      "checked": "2026-11-07",
+      "note": "Also at developer.fastspring.com/llms.txt."
+    }
+  }
+}

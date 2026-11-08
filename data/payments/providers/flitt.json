@@ -1,0 +1,16 @@
+{
+  "id": "flitt",
+  "name": "Flitt",
+  "kind": "gateway",
+  "markets": {
+    "UA": {
+      "takes": false,
+      "why": "Flitt lists the countries whose businesses it supports and Ukraine is not among them.",
+      "evidence": {
+        "source": "https://flitt.com/",
+        "quote": "supports businesses registered in Georgia, Uzbekistan, Moldova, Armenia",
+        "english": "Supports businesses registered in Georgia, Uzbekistan, Moldova and Armenia."
+      }
+    }
+  }
+}

@@ -1,0 +1,296 @@
+{
+  "country": "UA",
+  "checked": "2026-11-07",
+  "summary": "In Ukraine a web shop that takes card payments through internet acquiring or a payment page must issue its own fiscal receipt from a registered software cash register (ПРРО); the payment provider's slip does not count. The receipt is due no later than handover, can be sent to the buyer's phone number or e-mail, and for cash on delivery is made before dispatch. Only single-tax group 1 is exempt, and group 1 cannot sell online. Payment straight to the seller's IBAN account needs no receipt. The State Tax Service offers a free ПРРО app; fines are 100% of the sale, 150% for a repeat.",
+  "note": "zir.tax.gov.ua and tax.gov.ua answer our HTTP client with 403, so their quotes were read and checked in a browser. ZIR answers carry no publication date; each was marked current (\"Чинна публікація\") when read.",
+  "claims": [
+    {
+      "topic": "Online card payment (internet acquiring / payment page)",
+      "statement": "When a buyer orders online and pays with a card (electronic payment instrument) through a payment service, the SELLER must put the payment through its own РРО/ПРРО and give a fiscal receipt. The payment provider does not do it for the seller.",
+      "source": "https://zir.tax.gov.ua/main/bz/view/?src=ques&id=42949",
+      "quote": "такі операції здійснюються із обов’язковим застосуванням РРО саме продавцем товарів (робіт, послуг)",
+      "english": "Such operations require the РРО to be used by the seller of the goods or services itself.",
+      "official": true
+    },
+    {
+      "topic": "Law text on Internet orders (art. 3 p. 2 Law 265, as quoted by ДПС)",
+      "statement": "Art. 3 p. 2 of Law 265 requires a receipt for the full amount, created on paper and/or electronically, also for orders or payments made over the Internet.",
+      "source": "https://zir.tax.gov.ua/main/bz/view/?src=ques&id=42071",
+      "quote": "включаючи ті, замовлення або оплата яких здійснюється з використанням мережі Інтернет",
+      "english": "Including those whose order or payment is made over the Internet.",
+      "official": true
+    },
+    {
+      "topic": "The payment provider's slip is not a receipt",
+      "statement": "ДПС, citing an NBU letter of 28.11.2019, says the acquirer's or payment provider's card-payment slip is not a settlement document under Law 265. It only shows that a transfer was started.",
+      "source": "https://zir.tax.gov.ua/main/bz/view/?src=ques&id=42949",
+      "quote": "квитанція, отримана при здійсненні розрахунку за допомогою ЕПЗ, не є розрахунковим документом у розумінні Закону № 265",
+      "english": "The slip from paying with an electronic payment instrument is not a settlement document under Law 265.",
+      "official": true
+    },
+    {
+      "topic": "Exception: place of settlement cannot be determined (purely digital goods)",
+      "statement": "ДПС says using a РРО is optional when the place of settlement cannot be determined. Its examples are software, e-books, certificates and expert opinions received only electronically. When the buyer physically receives goods or services, the РРО is mandatory. This is ДПС's reading, not wording in the law.",
+      "source": "https://zir.tax.gov.ua/main/bz/view/?src=ques&id=42949",
+      "quote": "якщо місце здійснення розрахунків визначити неможливо ... то у такому випадку застосування є необов’язковим",
+      "english": "If the place of settlement cannot be determined, using a РРО is optional.",
+      "official": true
+    },
+    {
+      "topic": "Timing of the receipt",
+      "statement": "The receipt must be created no later than the moment the goods are handed over. If payment and handover happen together, it is created at the moment of payment.",
+      "source": "https://zir.tax.gov.ua/main/bz/view/?src=ques&id=42949",
+      "quote": "розрахунковий документ повинен бути сформований та надрукований не пізніше вручення товару (надання послуги, приймання роботи)",
+      "english": "The receipt must be created no later than delivery of the goods (or the service or work).",
+      "official": true
+    },
+    {
+      "topic": "Exception: payment to the seller's IBAN account",
+      "statement": "Payment by Internet banking to the seller's current account using its IBAN details needs no РРО/ПРРО. A bank transfer is not a settlement operation.",
+      "source": "https://zir.tax.gov.ua/main/bz/view/?src=ques&id=42314",
+      "quote": "Ні, якщо оплата за продані товари (послуги) здійснюється за допомогою сервісу «Інтернет-банкінг» із використанням реквізитів поточного рахунку",
+      "english": "No [РРО needed], if payment is made by Internet banking using the seller's current-account details.",
+      "official": true
+    },
+    {
+      "topic": "QR-code payments",
+      "statement": "A QR code that carries the seller's IBAN account needs no РРО. A QR code that carries any other payment-instrument details, such as card or acquiring details, makes the РРО mandatory.",
+      "source": "https://zir.tax.gov.ua/main/bz/view/?src=ques&id=39569",
+      "quote": "у разі здійснення розрахунків за допомогою QR-коду, в якому закодовані реквізити ... відмінного від реквізитів рахунку у форматі ІВАN, – застосування РРО та/або ПРРО є обов’язковим",
+      "english": "If the QR code carries payment details other than an IBAN account, the РРО/ПРРО is mandatory.",
+      "official": true
+    },
+    {
+      "topic": "Card details or a bank 'key-card' given for payment",
+      "statement": "Taking payment with the seller's electronic payment instrument details, such as a card or a bank 'key-card', needs a РРО/ПРРО. Only IBAN bank operations are outside its scope.",
+      "source": "https://zir.tax.gov.ua/main/bz/view/?src=ques&id=43434",
+      "quote": "Приймання оплати за товари із використанням реквізитів електронних платіжних засобів продавця потребує обов’язкового застосування РРО / ПРРО",
+      "english": "Accepting payment using the seller's electronic payment instrument details requires a РРО/ПРРО.",
+      "official": true
+    },
+    {
+      "topic": "Cash on delivery through a delivery service (Nova Poshta-type forwarder)",
+      "statement": "When the forwarder does not take part in the sale, the seller creates the receipt BEFORE dispatch. It is put in the parcel, or sent to the buyer at or before handover to the forwarder. Payment type is credit or deferred payment, and form of payment is non-cash. The financial intermediary (e.g. NovaPay) needs no extra receipt. ДПС adds that the seller's delivery contract decides its exact duties.",
+      "source": "https://zir.tax.gov.ua/main/bz/view/?src=ques&id=40693",
+      "quote": "фіскальний касовий чек має бути сформований до відправки товару та вкладений продавцем у коробку з товаром",
+      "english": "The fiscal receipt must be created before dispatch and placed by the seller in the box with the goods.",
+      "official": true
+    },
+    {
+      "topic": "Cash on delivery paid at a non-bank payment provider's branch",
+      "statement": "When goods go by a forwarder and the buyer pays at a non-bank payment provider's branch, a РРО/ПРРО is required. The receipt shows the form of payment as non-cash.",
+      "source": "https://zir.tax.gov.ua/main/bz/view/?src=ques&id=42071",
+      "quote": "Так, необхідно застосовувати реєстратори розрахункових операцій ... в якому зазначено форму оплати – безготівкова",
+      "english": "Yes, a РРО must be used, with the receipt stating the form of payment as non-cash.",
+      "official": true
+    },
+    {
+      "topic": "Seller's own courier taking cash or a card",
+      "statement": "When the seller's own courier takes cash or a card at delivery, the courier must issue the fiscal receipt on the spot for the full amount.",
+      "source": "https://zir.tax.gov.ua/main/bz/view/?src=ques&id=37936",
+      "quote": "кур’єр продавця зобов’язаний оформити і видати покупцю фіскальний чек на повну суму розрахункової операції",
+      "english": "The seller's courier must create and give the buyer a fiscal receipt for the full amount.",
+      "official": true
+    },
+    {
+      "topic": "Parcels refused or not collected",
+      "statement": "A refund (return) operation goes through the РРО/ПРРО on the day the seller receives the delivery service's return slip. It is based on that slip plus the original receipt.",
+      "source": "https://zir.tax.gov.ua/main/bz/view/?src=ques&id=41504",
+      "quote": "Операція має бути проведена в день отримання суб’єктом господарювання квитанції від служби доставки про повернення відправлення",
+      "english": "The operation must be recorded on the day the seller receives the delivery service's return slip.",
+      "official": true
+    },
+    {
+      "topic": "Who is exempt: ФОП group 1 only",
+      "statement": "Art. 9 p. 6 of Law 265 points to the Tax Code. Tax Code p. 296.10 exempts single-tax group 1 only.",
+      "source": "https://zir.tax.gov.ua/main/bz/view/?src=ques&id=38308",
+      "quote": "РРО та/або ПРРО не застосовуються платниками єдиного податку першої групи (п. 296.10 ст. 296 ПКУ)",
+      "english": "Single-tax group 1 payers do not use РРО/ПРРО (Tax Code p. 296.10).",
+      "official": true
+    },
+    {
+      "topic": "The general rule since 01.01.2022 (no income threshold left)",
+      "statement": "Since 01.01.2022 the duty to use РРО/ПРРО covers everyone except ФОП group 1. The old exemption for groups 2–4 below 1000 minimum wages of income no longer applies. ТОВ (companies) are never exempt by single-tax group.",
+      "source": "https://zir.tax.gov.ua/main/bz/view/?src=ques&id=42949",
+      "quote": "обов’язок застосовувати РРО/ПРРО на загальних засадах з 01.01.2022 не поширюється лише на фізичних осіб – підприємців платників єдиного податку І групи",
+      "english": "Since 01.01.2022 the general РРО/ПРРО duty does not apply only to ФОП single-tax group 1.",
+      "official": true
+    },
+    {
+      "topic": "Groups 2–4: regardless of income, or switch to cashless only",
+      "statement": "ФОП on the single tax must use РРО/ПРРО regardless of income, or switch to taking only cashless (IBAN transfer) payments. The quote is from an answer about agency and commission services, but states the general rule.",
+      "source": "https://zir.tax.gov.ua/main/bz/view/?src=ques&id=38308",
+      "quote": "незалежно від обсягу доходу зобов’язані ... застосовувати РРО та/або ПРРО ... або перейти на використання виключно безготівкових розрахунків",
+      "english": "Regardless of income they must use РРО/ПРРО, or switch to purely cashless settlements.",
+      "official": true
+    },
+    {
+      "topic": "Group 1 cannot run a web shop",
+      "statement": "Group 1 is limited to retail from market stalls and household services to the public. Its income cap is 167 minimum wages. A web shop does not fit group 1, so the group-1 exemption is in practice unavailable to it. That conclusion is drawn from p. 291.4 of the Tax Code as quoted by ДПС, not stated by ДПС.",
+      "source": "https://zir.tax.gov.ua/main/bz/view/?src=ques&id=40695",
+      "quote": "здійснюють виключно роздрібний продаж товарів з торговельних місць на ринках та/або провадять господарську діяльність з надання побутових послуг населенню",
+      "english": "[Group 1] only sells at retail from market stalls and/or provides household services to the public.",
+      "official": true
+    },
+    {
+      "topic": "Village exemption (CMU resolution 1336) excludes online sellers",
+      "statement": "Groups 2–4 selling at retail in a village under 167 minimum wages a year may use a settlement book instead of a РРО. That relief is lost if the ФОП also sells remotely, including online.",
+      "source": "https://zir.tax.gov.ua/main/bz/view/?src=ques&id=38870",
+      "quote": "такими фізичними особами – підприємцями також здійснюється дистанційна торгівля, зокрема, через Інтернет",
+      "english": "[РРО is required if] such ФОП also sell remotely, in particular over the Internet.",
+      "official": true
+    },
+    {
+      "topic": "Registration sequence",
+      "statement": "Steps: (1) the business is registered with ДПС; (2) the business unit (the 'object', e.g. the internet shop) is declared on form 20-ОПП; (3) the ПРРО is registered on form 1-ПРРО through the Електронний кабінет or the API; (4) the cashier's qualified certificate (КЕП) or a seal is reported on form 5-ПРРО.",
+      "source": "https://zir.tax.gov.ua/main/bz/view/?src=ques&id=40252",
+      "quote": "Реєстрація ПРРО здійснюється на підставі Заяви про реєстрацію програмного реєстратора розрахункових операцій за формою № 1-ПРРО",
+      "english": "A ПРРО is registered on the basis of an application on form No. 1-ПРРО.",
+      "official": true
+    },
+    {
+      "topic": "Qualified e-signature (КЕП)",
+      "statement": "The cashier signs into the ПРРО with the КЕП named on form 5-ПРРО. An electronic seal can be used instead (the monobank page below, not official).",
+      "source": "https://zir.tax.gov.ua/main/bz/view/?src=ques&id=39404",
+      "quote": "Запустити застосунок та авторизуватися за допомогою КЕП, який було вказано в Повідомленні за ф. № 5–ПРРО",
+      "english": "Launch the app and sign in with the КЕП listed in the form 5-ПРРО notice.",
+      "official": true
+    },
+    {
+      "topic": "ПРРО type 'Інтернет торгівля' and the shop as business unit",
+      "statement": "Form 1-ПРРО has a ПРРО type 'Інтернет торгівля' (internet trade) for a web shop. The business unit's name may carry a sign of remote trading or a commercial name (ZIR 43247).",
+      "source": "https://zir.tax.gov.ua/main/bz/view/?src=ques&id=36067",
+      "quote": "Поняття тип програмного реєстратора розрахункових операцій (далі – ПРРО) «Інтернет торгівля» означає, що такий ПРРО встановлений на конкретну господарську одиницю",
+      "english": "The ПРРО type 'Internet trade' means the ПРРО is installed for a specific business unit.",
+      "official": true
+    },
+    {
+      "topic": "What the customer gets",
+      "statement": "A paper and/or electronic receipt. The law, as quoted by ДПС, names a QR code on the device display and sending the electronic receipt to the buyer's phone number or e-mail. Delivery by messenger is not named in that text (see open questions).",
+      "source": "https://zir.tax.gov.ua/main/bz/view/?src=ques&id=42949",
+      "quote": "надсиланням електронного розрахункового документа на наданий такою особою абонентський номер або адресу електронної пошти",
+      "english": "By sending the electronic receipt to the phone number or e-mail address the buyer provides.",
+      "official": true
+    },
+    {
+      "topic": "Receipt content (new form since 01.03.2025)",
+      "statement": "The receipt's required details are set by Minfin order No. 13 in the version of order No. 601 of 22.11.2024, applied from 01.03.2025. ДПС says there is no fine for missing lines 12–17 (payment-terminal data) when the РРО/ПРРО cannot be linked to the terminal (ZIR 42738).",
+      "source": "https://zir.tax.gov.ua/main/bz/view/?src=ques&id=42677",
+      "quote": "Обов’язкові реквізити, які повинен містити фіскальний чек визначені п. 2 розд. ІІ Положення ... (в редакції наказу Мінфіну від 22.11.2024 № 601)",
+      "english": "The mandatory receipt details are set by order No. 13 as revised by Minfin order No. 601 of 22.11.2024.",
+      "official": true
+    },
+    {
+      "topic": "Web shops must accept cashless payment",
+      "statement": "Under CMU resolution 894, remote sellers must make cashless payment possible. Dates depend on town size: 2023 for over 25,000 people, 2024 for 5,000–25,000, 2025 for under 5,000. For group 1 and a few others the date was moved to 3 months after martial law ends (CMU resolution 1768 of 29.12.2025, ZIR 43892). The penalty is under art. 163-15 of the Code of Administrative Offences (ZIR 43965).",
+      "source": "https://zir.tax.gov.ua/main/bz/view/?src=ques&id=43911",
+      "quote": "з 01 січня 2023 року – торговці, які провадять господарську діяльність у населених пунктах з чисельністю населення понад 25 тис. осіб",
+      "english": "From 1 January 2023, sellers operating in towns of over 25,000 people [must enable cashless payment].",
+      "official": true
+    },
+    {
+      "topic": "Free ДПС ПРРО",
+      "statement": "ДПС's free app is now 'ПРРО ДПС', which replaced the old 'ПРРО каса'. It runs on Android, iOS, Windows and the web (webrro.tax.gov.ua). (Published 05.03.2025.)",
+      "source": "https://tax.gov.ua/media-tsentr/novini/875915.html",
+      "quote": "рекомендується перейти до застосування «ПРРО ДПС», який розроблений на заміну «ПРРО каса»",
+      "english": "Users are advised to move to 'ПРРО ДПС', developed to replace 'ПРРО каса'.",
+      "official": true
+    },
+    {
+      "topic": "'Реєстр ПРРО' is a register of registered instances, not of software",
+      "statement": "The Реєстр ПРРО records the fiscal number of each registered ПРРО. ДПС's ПРРО section links its free app and the fiscal-server API spec (version dated 26.10.2026), but no list of approved commercial ПРРО software. No official list of third-party ПРРО vendors was found.",
+      "source": "https://zir.tax.gov.ua/main/bz/view/?src=ques&id=37663",
+      "quote": "Фіскальний номер ПРРО становить унікальний числовий порядковий номер реєстраційного запису в Реєстрі програмних реєстраторів розрахункових операцій",
+      "english": "A ПРРО's fiscal number is the unique serial number of its record in the Register of ПРРО.",
+      "official": true
+    },
+    {
+      "topic": "Wartime amnesty for receipt violations has ended",
+      "statement": "Law 3219-IX freed businesses from liability under Law 265 only for violations from 01.01.2022 to 01.10.2023. Since 01.10.2023 the freedom applies only on occupied, active-combat and possible-combat territories.",
+      "source": "https://zir.tax.gov.ua/main/bz/view/?src=ques&id=40516",
+      "quote": "звільняються від відповідальності за порушення вимог Закону № 265, вчинені ними у період з 01 січня 2022 року до 01 жовтня 2023 року",
+      "english": "They are freed from liability for violations of Law 265 committed between 1 January 2022 and 1 October 2023.",
+      "official": true
+    },
+    {
+      "topic": "Fines",
+      "statement": "Under art. 17 Law 265: 100% of the sale amount for a first violation (no receipt, incomplete amount, or not through the РРО), and 150% for each repeat.",
+      "source": "https://zir.tax.gov.ua/main/bz/view/?src=ques&id=42426",
+      "quote": "застосовуються фінансові санкції у розмірі 100 відс. суми ... за кожне наступне вчинене порушення – у розмірі 150 відс.",
+      "english": "Fines are 100% of the amount for a first violation and 150% for each subsequent one.",
+      "official": true
+    },
+    {
+      "topic": "Law editions (from the archived Rada card)",
+      "statement": "The Rada card, archived on 2026-10-12, lists the current edition as 26.06.2026 (Law 4465-IX, on financial-inclusion banks, irrelevant to shops). It lists the next edition from 01.11.2026 (Law 3173-IX, electronic excise stamps, relevant only to alcohol, tobacco and e-liquid sellers). The text in force from 01.11.2026 was not read.",
+      "source": "https://web.archive.org/web/20261012135655/https://zakon.rada.gov.ua/laws/show/265/95-%D0%B2%D1%80",
+      "quote": "Редакція від 26.06.2026 , підстава - 4465-IX ( Остання подія — Редакція , відбудеться 01.11.2026 , підстава - 3173-IX",
+      "english": "Edition of 26.06.2026 (basis 4465-IX); next edition on 01.11.2026 (basis 3173-IX).",
+      "official": true
+    },
+    {
+      "topic": "single-tax income date with a receipt",
+      "statement": "For a ФОП on the single tax paid by internet acquiring with a fiscal receipt, income is the full amount including the bank's fee, dated by the receipt. This follows Minfin letter 11210-04-62/11995 of 10.04.2024.",
+      "source": "https://zir.tax.gov.ua/main/bz/view/?src=ques&id=44181",
+      "quote": "доходом ... є вся сума виручки, включаючи комісію банку, а датою отримання доходу ... є дата, зазначена в фіскальному (касовому) чекові",
+      "english": "Income is the whole revenue including the bank fee, and its date is the date on the fiscal receipt.",
+      "official": true
+    },
+    {
+      "topic": "income date for cash on delivery through NovaPay",
+      "statement": "For cash on delivery the income date is when the money reaches the seller's account, not the receipt date. Example: a receipt made on 31.12 counts as income on 02.01 when the money arrives then. Also ZIR 42879.",
+      "source": "https://zir.tax.gov.ua/main/bz/view/?src=ques&id=42841",
+      "quote": "Коротка: Дата зарахування коштів на рахунок.",
+      "english": "Short answer: the date the money is credited to the account.",
+      "official": true
+    }
+  ],
+  "services": [
+    {
+      "name": "ПРРО ДПС (free, State Tax Service)",
+      "source": "https://tax.gov.ua/baneryi/programni-rro/",
+      "what": "Free ПРРО for Android (Google Play com.STS.PRRO), iOS (App Store id1634048990), Windows (PRRODPS.zip) and the web (https://webrro.tax.gov.ua/). It replaced 'ПРРО каса'. The same page links user manuals, the ПРРО forms and the fiscal-server API spec.",
+      "source_says": "ДПС, 05.03.2025: the current 'ПРРО ДПС' for Android and iOS is on App Store, Google Play and the ДПС portal; Windows and web versions are on the same page.",
+      "official_list": true
+    },
+    {
+      "name": "Checkbox",
+      "source": "https://checkbox.ua/",
+      "what": "Commercial cloud ПРРО with an API for internet shops. Plugins for ROZETKA, Prom, Horoshop, Shopify, WooCommerce, OpenCart, PrestaShop and others. Receipts by e-mail, Viber or SMS. 348 UAH a month per cash register including VAT, first month free (vendor's page).",
+      "source_says": "Vendor page: receipts 'автоматично відправляються на електронну пошту покупця' (automatically sent to the buyer's e-mail). The page does not name LiqPay, WayForPay or NovaPay.",
+      "official_list": false
+    },
+    {
+      "name": "Вчасно.Каса",
+      "source": "https://help.vchasno.ua/kasa/check-list/",
+      "what": "Commercial ПРРО with an API (through its Device Manager), CMS integrations (WooCommerce, OpenCart, Shopify, Prom, Horoshop) and auto-close of shifts.",
+      "source_says": "Read through search results only (the vchasno.ua product page returned 404 and the cash-register login redirects). The help centre describes API setup: register the shop point, cash register and cashier key, then create a token. The price seen (99 UAH a month) is from an old page and unverified.",
+      "official_list": false
+    },
+    {
+      "name": "Cashalot",
+      "source": "https://cashalot.ua/",
+      "what": "Commercial ПРРО. API COM and API BRIDGE for other systems, a server WebAPI to the ДПС fiscal server, and a BAS driver. Nova Poshta and NovaPay shown as integrated. Electronic receipts, receipt links by SMS through TurboSMS, BSG or SendPulse. 'КАСА' module 200 UAH a month, first month free (vendor's page).",
+      "source_says": "Vendor page: 'Реєстрація чеків безпосередньо в ДПС' (receipts registered directly with ДПС), and 'Можливість відмовитись від друку чеків' (option to stop printing receipts).",
+      "official_list": false
+    },
+    {
+      "name": "monobank — 'печатка для ПРРО' (electronic seal, not a ПРРО)",
+      "source": "https://monobank.ua/knowledge-base/kep/pechatka-dlia-prro",
+      "what": "Free qualified electronic seal for a ФОП, issued in the monobank app. It signs shifts, receipts and Z-reports instead of a cashier's personal КЕП. Valid 2 years; every reissue needs a new form 5-ПРРО.",
+      "source_says": "Vendor page: it 'працює з будь-яким ПРРО' (works with any ПРРО). It does not say monobank acquiring creates receipts automatically.",
+      "official_list": false
+    }
+  ],
+  "open_questions": [
+    "zakon.rada.gov.ua, and its open-data host, could not be reached when checked. Law 265 art. 2, art. 3 p. 2 and art. 9 p. 6, and Tax Code p. 296.10, are quoted from ДПС's ZIR answers, not from the Rada's own text.",
+    "The text of Law 265 in force since 01.11.2026 (after 3173-IX) was not read. Sources say that change concerns electronic excise stamps only, but this is not confirmed first-hand.",
+    "ZIR answers show no publication or update date; they were marked current ('Чинна публікація') on 2026-11-07. Older ДПС positions conflict: an individual tax ruling of 16.03.2020 (No. 1087/6/99-00-05-04-01-06/ІПК, reported by a blog only) said no РРО for a card paid on a site. The current ZIR line (42949) says the opposite.",
+    "Messenger delivery: the law text as quoted names only a phone number and e-mail (plus a QR code). Regional ДПС notes, seen only as search snippets, mention messengers. SMS and Viber delivery by Checkbox and Cashalot is the vendors' claim. Not confirmed on an official page.",
+    "Whether the payment provider can create the receipt for the seller: No official exception was found. ДПС says the provider is neither payer nor payee, so the seller must use its own ПРРО. Some providers or ПРРО vendors offer automatic fiscalisation. A search snippet said only LiqPay and Plata by mono pass the needed card data to Checkbox. Not verified on LiqPay or monobank documentation.",
+    "No official list of ПРРО software found. ДПС publishes its own app and the fiscal-server API spec only. Whether third-party ПРРО software needs certification was not confirmed in an official text.",
+    "A search summary mentioned CMU resolution No. 773 of 17.06.2026 changing РРО/ПРРО rules, including the list of cases allowed without a РРО. Not verified; check it before relying on the CMU 1336 lists.",
+    "Not covered: marketplace-collected payments (e.g. Rozetka or Prom payment services), Ukrposhta cash on delivery, VAT for a ТОВ, and 2026 single-tax limits and rates (only the group-1 cap of 167 minimum wages was seen, in ZIR 40695).",
+    "Vendor prices were read on the vendors' pages on 2026-11-07 or in search snippets, and may change; Вчасно pricing is unverified."
+  ]
+}

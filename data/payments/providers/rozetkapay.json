@@ -1,0 +1,74 @@
+{
+  "id": "rozetkapay",
+  "name": "RozetkaPay",
+  "kind": "gateway",
+  "markets": {
+    "UA": {
+      "takes": true,
+      "why": "A Ukrainian payment service whose requirements for a merchant's site name legal entities.",
+      "evidence": {
+        "source": "https://rozetkapay.com/website-requirements/",
+        "quote": "ІПН (для юросіб) або податковий номер",
+        "english": "The merchant's site must show its tax ID (for legal entities) or a tax number."
+      },
+      "sole_trader": {
+        "answer": "not found"
+      },
+      "company": {
+        "answer": "not found"
+      }
+    }
+  },
+  "search": "rozetkapay",
+  "probe": {
+    "method": "POST",
+    "url": "https://api-epdev.rozetkapay.com/api/payments/v1/new",
+    "format": "json",
+    "fields": [
+      "amount",
+      "currency",
+      "external_id",
+      "Authorization"
+    ],
+    "source": "https://docs.rozetkapay.com/openapi.json",
+    "quote": "curl -X POST https://api-epdev.rozetkapay.com/api/payments/v1/new"
+  },
+  "github": {
+    "account": "rozetkapay",
+    "source": "https://docs.rozetkapay.com/"
+  },
+  "urls": {
+    "docs": {
+      "url": "https://docs.rozetkapay.com/",
+      "status": "ok",
+      "checked": "2026-11-07"
+    },
+    "api_reference": {
+      "url": "https://docs.rozetkapay.com/openapi.json",
+      "status": "ok",
+      "checked": "2026-11-07",
+      "note": "OpenAPI 3.0.3."
+    },
+    "status": {
+      "url": null,
+      "status": "not found",
+      "checked": "2026-11-07"
+    },
+    "pricing": {
+      "url": "https://rozetkapay.com/rates/",
+      "status": "ok",
+      "checked": "2026-11-07"
+    },
+    "signup": {
+      "url": "https://business.rozetkapay.com/registration",
+      "status": "unreadable",
+      "checked": "2026-11-07",
+      "note": "Linked from the main site; robots.txt disallows it for our HTTP client."
+    },
+    "llms_txt": {
+      "url": null,
+      "status": "not found",
+      "checked": "2026-11-07"
+    }
+  }
+}

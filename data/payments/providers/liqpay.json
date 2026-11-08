@@ -1,0 +1,77 @@
+{
+  "id": "liqpay",
+  "name": "LiqPay (PrivatBank)",
+  "kind": "gateway",
+  "markets": {
+    "UA": {
+      "takes": true,
+      "why": "PrivatBank's internet-acquiring gateway, which pays out only to sole-trader or company accounts.",
+      "evidence": {
+        "source": "https://www.liqpay.ua/uk/information/handbook/activation",
+        "quote": "Приймати платежі можливо лише на рахунки ФОП або юридичних організацій.",
+        "english": "Payments can be received only into accounts of sole traders or legal entities."
+      },
+      "sole_trader": {
+        "answer": "yes",
+        "source": "https://www.liqpay.ua/uk/information/handbook/activation",
+        "quote": "Приймати платежі можливо лише на рахунки ФОП або юридичних організацій.",
+        "english": "Payments can be received only into accounts of sole traders or legal entities."
+      },
+      "company": {
+        "answer": "yes",
+        "source": "https://www.liqpay.ua/uk/information/handbook/activation",
+        "quote": "паспорт та РНОКПП представника юридичної особи",
+        "english": "For a legal entity: the representative's passport and tax number."
+      }
+    }
+  },
+  "search": "liqpay",
+  "probe": {
+    "method": "POST",
+    "url": "https://www.liqpay.ua/api/request",
+    "format": "form",
+    "fields": [
+      "data",
+      "signature",
+      "public_key"
+    ],
+    "source": "https://www.liqpay.ua/uk/doc/api/internet_acquiring/checkout",
+    "quote": "https://www.liqpay.ua/api/request — Server-Server;"
+  },
+  "github": {
+    "account": "liqpay",
+    "source": "https://www.liqpay.ua/uk/doc/sdk"
+  },
+  "urls": {
+    "docs": {
+      "url": "https://www.liqpay.ua/uk/doc",
+      "status": "ok",
+      "checked": "2026-11-07"
+    },
+    "api_reference": {
+      "url": "https://www.liqpay.ua/uk/doc/api",
+      "status": "ok",
+      "checked": "2026-11-07"
+    },
+    "status": {
+      "url": null,
+      "status": "not found",
+      "checked": "2026-11-07"
+    },
+    "pricing": {
+      "url": "https://www.liqpay.ua/uk/tariffs",
+      "status": "ok",
+      "checked": "2026-11-07"
+    },
+    "signup": {
+      "url": "https://www.liqpay.ua/uk/authorization?register=true",
+      "status": "ok",
+      "checked": "2026-11-07"
+    },
+    "llms_txt": {
+      "url": "https://www.liqpay.ua/llms.txt",
+      "status": "ok",
+      "checked": "2026-11-07"
+    }
+  }
+}

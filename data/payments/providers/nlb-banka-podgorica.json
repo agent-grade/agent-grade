@@ -1,0 +1,58 @@
+{
+  "id": "nlb-banka-podgorica",
+  "name": "NLB E-commerce (NLB Banka Podgorica)",
+  "kind": "bank-acquirer",
+  "markets": {
+    "ME": {
+      "takes": true,
+      "why": "A Montenegrin bank's own card acceptance for a merchant's online shop.",
+      "evidence": {
+        "source": "https://www.nlb.me/preduzeca/kanali-prodaje/nlb-e-commerce",
+        "quote": "Omogućite svojim kupcima plaćanje karticom preko interneta i unaprijedite svoju online prodavnicu.",
+        "english": "Let your customers pay by card online and improve your online shop."
+      },
+      "sole_trader": {
+        "answer": "not found"
+      },
+      "company": {
+        "answer": "not found"
+      }
+    }
+  },
+  "search": "nlb",
+  "urls": {
+    "docs": {
+      "url": null,
+      "status": "not found",
+      "checked": "2026-11-07",
+      "note": "The FAQ says a manual comes with the service; no public docs."
+    },
+    "api_reference": {
+      "url": null,
+      "status": "not found",
+      "checked": "2026-11-07"
+    },
+    "status": {
+      "url": null,
+      "status": "not found",
+      "checked": "2026-11-07"
+    },
+    "pricing": {
+      "url": "https://www.nlb.me/preduzeca/kanali-prodaje/nlb-e-commerce",
+      "status": "ok",
+      "checked": "2026-11-07",
+      "note": "Fees in the product page's cost block."
+    },
+    "signup": {
+      "url": "https://www.nlb.me/preduzeca/kanali-prodaje/nlb-e-commerce",
+      "status": "ok",
+      "checked": "2026-11-07",
+      "note": "A call-back request form on the product page."
+    },
+    "llms_txt": {
+      "url": null,
+      "status": "not found",
+      "checked": "2026-11-07"
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "id": "allsecure",
+  "name": "AllSecure Payment Gateway",
+  "kind": "gateway",
+  "markets": {
+    "ME": {
+      "takes": true,
+      "why": "A gateway whose connector list includes the Montenegrin acquirers Hipotekarna and CKB.",
+      "evidence": {
+        "source": "https://globalcoverage.allsecure.eu",
+        "quote": "Hipotekarna Banka … CKB Banka",
+        "english": "Both Montenegrin banks appear on AllSecure's connector list."
+      },
+      "sole_trader": {
+        "answer": "not found"
+      },
+      "company": {
+        "answer": "not found"
+      }
+    }
+  },
+  "search": "allsecure",
+  "probe": {
+    "method": "POST",
+    "url": "https://asxgw.com/api/v3/transaction/{apiKey}/debit",
+    "format": "json",
+    "fields": [
+      "merchantTransactionId",
+      "amount",
+      "currency",
+      "Authorization",
+      "apiKey"
+    ],
+    "source": "https://asxgw.com/documentation/gateway",
+    "quote": "POST https://asxgw.com/api/v3/transaction/{INSERT_API_KEY_HERE}/debit"
+  },
+  "urls": {
+    "docs": {
+      "url": "https://www.allsecure.eu/developers/",
+      "status": "ok",
+      "checked": "2026-11-07"
+    },
+    "api_reference": {
+      "url": "https://asxgw.com/documentation/gateway",
+      "status": "ok",
+      "checked": "2026-11-07"
+    },
+    "status": {
+      "url": "https://status.allsecure.xyz/",
+      "status": "unreadable",
+      "checked": "2026-11-07",
+      "note": "The TLS handshake failed from our HTTP client."
+    },
+    "pricing": {
+      "url": null,
+      "status": "not found",
+      "checked": "2026-11-07",
+      "note": "Pricing is quoted on enquiry."
+    },
+    "signup": {
+      "url": "https://www.allsecure.eu/about/contact/",
+      "status": "ok",
+      "checked": "2026-11-07",
+      "note": "An enquiry form; no self-serve sign-up."
+    },
+    "llms_txt": {
+      "url": "https://www.allsecure.eu/llms.txt",
+      "status": "ok",
+      "checked": "2026-11-07",
+      "note": "An SEO-plugin page index, not task docs."
+    }
+  }
+}

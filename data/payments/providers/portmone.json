@@ -1,0 +1,67 @@
+{
+  "id": "portmone",
+  "name": "Portmone.business",
+  "kind": "gateway",
+  "markets": {
+    "UA": {
+      "takes": true,
+      "why": "A Ukrainian gateway that pays out in hryvnia to a sole trader's or company's account at any Ukrainian bank.",
+      "evidence": {
+        "source": "https://business.portmone.com.ua/tariffs",
+        "quote": "Компанія обов'язково має бути зареєстрована в Україні як ФОП або юридична особа.",
+        "english": "The business must be registered in Ukraine as a sole trader or a legal entity."
+      },
+      "sole_trader": {
+        "answer": "yes",
+        "source": "https://business.portmone.com.ua/tariffs",
+        "quote": "Компанія обов'язково має бути зареєстрована в Україні як ФОП або юридична особа.",
+        "english": "The business must be registered in Ukraine as a sole trader or a legal entity."
+      },
+      "company": {
+        "answer": "yes",
+        "source": "https://business.portmone.com.ua/tariffs",
+        "quote": "Приймати оплати можна на гривневий розрахунковий рахунок ФОП та юридичної особи, відкритий в будь-якому українському банку.",
+        "english": "Payments can be received into a hryvnia account of a sole trader or a legal entity, opened at any Ukrainian bank."
+      }
+    }
+  },
+  "search": "portmone",
+  "github": {
+    "account": "Portmone",
+    "source": "https://docs.portmone.com.ua/uk/cms"
+  },
+  "urls": {
+    "docs": {
+      "url": "https://docs.portmone.com.ua/docs/uk/PaymentGatewayUa/",
+      "status": "ok",
+      "checked": "2026-11-07"
+    },
+    "api_reference": {
+      "url": null,
+      "status": "not found",
+      "checked": "2026-11-07",
+      "note": "The API is described inside the docs; no separate reference or spec file."
+    },
+    "status": {
+      "url": null,
+      "status": "not found",
+      "checked": "2026-11-07"
+    },
+    "pricing": {
+      "url": "https://business.portmone.com.ua/tariffs",
+      "status": "ok",
+      "checked": "2026-11-07"
+    },
+    "signup": {
+      "url": "https://business.portmone.com.ua/signup",
+      "status": "ok",
+      "checked": "2026-11-07"
+    },
+    "llms_txt": {
+      "url": null,
+      "status": "not found",
+      "checked": "2026-11-07",
+      "note": "/llms.txt on www., business. and docs. answers with the site's HTML, not an llms.txt."
+    }
+  }
+}

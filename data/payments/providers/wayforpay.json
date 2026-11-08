@@ -1,0 +1,81 @@
+{
+  "id": "wayforpay",
+  "name": "WayForPay",
+  "kind": "gateway",
+  "markets": {
+    "UA": {
+      "takes": true,
+      "why": "A Ukrainian payment service that pays out to a sole-trader or company account at any Ukrainian bank.",
+      "evidence": {
+        "source": "https://help.wayforpay.com/view/3342440",
+        "quote": "Зарахування оплати доступне тільки на розрахунковий рахунок ФОП чи юр. особи будь-якого українського банку",
+        "english": "Payouts go only to a current account of a sole trader or legal entity at any Ukrainian bank."
+      },
+      "sole_trader": {
+        "answer": "yes",
+        "source": "https://help.wayforpay.com/view/1737806",
+        "quote": "Для ФОП доступні 3 варіанти завантаження документів",
+        "english": "Sole traders have three ways to upload their documents."
+      },
+      "company": {
+        "answer": "yes",
+        "source": "https://help.wayforpay.com/view/3342440",
+        "quote": "Зарахування оплати доступне тільки на розрахунковий рахунок ФОП чи юр. особи будь-якого українського банку",
+        "english": "Payouts go only to a current account of a sole trader or legal entity at any Ukrainian bank."
+      }
+    }
+  },
+  "search": "wayforpay",
+  "probe": {
+    "method": "POST",
+    "url": "https://api.wayforpay.com/api",
+    "format": "json",
+    "fields": [
+      "transactionType",
+      "merchantAccount",
+      "merchantSignature"
+    ],
+    "source": "https://wiki.wayforpay.com/view/608996852",
+    "quote": "передається методом POST по протоколу HTTP на URL https://api.wayforpay.com/api"
+  },
+  "github": {
+    "account": "wayforpay",
+    "source": "https://wiki.wayforpay.com/view/852554"
+  },
+  "urls": {
+    "docs": {
+      "url": "https://wiki.wayforpay.com/",
+      "status": "ok",
+      "checked": "2026-11-07"
+    },
+    "api_reference": {
+      "url": null,
+      "status": "not found",
+      "checked": "2026-11-07",
+      "note": "The API is described page by page in the docs wiki; no separate reference or spec file."
+    },
+    "status": {
+      "url": null,
+      "status": "not found",
+      "checked": "2026-11-07"
+    },
+    "pricing": {
+      "url": null,
+      "status": "unreadable",
+      "checked": "2026-11-07",
+      "note": "wayforpay.com answers 403 to our HTTP client, so its tariffs page could not be found."
+    },
+    "signup": {
+      "url": null,
+      "status": "unreadable",
+      "checked": "2026-11-07",
+      "note": "wayforpay.com answers 403 to our HTTP client, so its sign-up page could not be found."
+    },
+    "llms_txt": {
+      "url": "https://wayforpay.com/llms.txt",
+      "status": "unreadable",
+      "checked": "2026-11-07",
+      "note": "wayforpay.com answers 403 to our HTTP client."
+    }
+  }
+}
