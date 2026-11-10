@@ -1,0 +1,1074 @@
+{
+  "date": "2026-11-10",
+  "providers": {
+    "allsecure": {
+      "checks": {
+        "github": {
+          "note": "the manifest names no GitHub account",
+          "status": "not found"
+        },
+        "llms_txt": {
+          "links": 37,
+          "present": true,
+          "status": "ok"
+        },
+        "mcp": {
+          "servers": [],
+          "status": "ok"
+        },
+        "npm": [],
+        "probe": {
+          "error": "{\"success\":false,\"errorMessage\":\"Invalid credentials.\",\"errorCode\":3002}",
+          "gives_an_example": false,
+          "http": 401,
+          "json": true,
+          "names_a_field": false,
+          "names_the_rule": true,
+          "status": "ok",
+          "url": "https://asxgw.com/api/v3/transaction/invalid/debit"
+        },
+        "spec": {
+          "note": "the API reference is a page, not a spec file",
+          "present": false,
+          "status": "ok"
+        },
+        "status": {
+          "note": "robots.txt unreachable (SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1010)), so all disallowed",
+          "status": "unreadable"
+        }
+      },
+      "urls": {
+        "api_reference": {
+          "changed": false,
+          "content_type": "text/html",
+          "http": 200,
+          "redirected_to": null,
+          "seconds": 0.42,
+          "sha256": "ccc27823a98eff6cc278de3f36c5356b772e692713fa78ac4cbf923b0d6c7a2d",
+          "status": "ok",
+          "url": "https://asxgw.com/documentation/gateway"
+        },
+        "docs": {
+          "changed": true,
+          "content_type": "text/html",
+          "http": 200,
+          "redirected_to": null,
+          "seconds": 0.86,
+          "sha256": "ae4fec391c26c4c0c9560d4d9b43b109e38166a51a16edb1a0510ca757ba4d42",
+          "status": "ok",
+          "url": "https://www.allsecure.eu/developers/"
+        },
+        "llms_txt": {
+          "changed": false,
+          "content_type": "text/plain",
+          "http": 200,
+          "redirected_to": null,
+          "seconds": 0.18,
+          "sha256": "f1428a90d65af7c99c5c65dbb9773fc5f656db564e95aa91816434eb12b4d44c",
+          "status": "ok",
+          "url": "https://www.allsecure.eu/llms.txt"
+        },
+        "pricing": {
+          "note": "Pricing is quoted on enquiry.",
+          "status": "not found"
+        },
+        "signup": {
+          "changed": true,
+          "content_type": "text/html",
+          "http": 200,
+          "redirected_to": null,
+          "seconds": 0.75,
+          "sha256": "b1437d3e388e9393af50d06af5e59472a0ec8a2138184ecd69d44613e0a9c00d",
+          "status": "ok",
+          "url": "https://www.allsecure.eu/about/contact/"
+        },
+        "status": {
+          "http": null,
+          "note": "robots.txt unreachable (SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1010)), so all disallowed",
+          "seconds": 0.0,
+          "status": "unreadable",
+          "url": "https://status.allsecure.xyz/"
+        }
+      }
+    },
+    "ckb-otp-banka": {
+      "checks": {
+        "github": {
+          "note": "the manifest names no GitHub account",
+          "status": "not found"
+        },
+        "llms_txt": {
+          "status": "not found"
+        },
+        "mcp": {
+          "servers": [],
+          "status": "ok"
+        },
+        "npm": [],
+        "probe": {
+          "note": "no API endpoint in the manifest to probe",
+          "status": "not found"
+        },
+        "spec": {
+          "status": "not found"
+        },
+        "status": {
+          "status": "not found"
+        }
+      },
+      "urls": {
+        "api_reference": {
+          "note": null,
+          "status": "not found"
+        },
+        "docs": {
+          "note": "The product page promises a test package and test server, with no public docs.",
+          "status": "not found"
+        },
+        "llms_txt": {
+          "note": null,
+          "status": "not found"
+        },
+        "pricing": {
+          "http": null,
+          "note": "robots.txt unreachable (SSLZeroReturnError: TLS/SSL connection has been closed (EOF) (_ssl.c:1010)), so all disallowed",
+          "seconds": 0.0,
+          "status": "unreadable",
+          "url": "https://www.otpbanka.me/upload/Lista-uslova-za-pravna-lica-i-preduzetnike.pdf"
+        },
+        "signup": {
+          "http": null,
+          "note": "robots.txt unreachable (SSLZeroReturnError: TLS/SSL connection has been closed (EOF) (_ssl.c:1010)), so all disallowed",
+          "seconds": 0.0,
+          "status": "unreadable",
+          "url": "https://www.otpbanka.me/mala-i-srednja-preduzeca/zakazi/zakazi-pravna"
+        },
+        "status": {
+          "note": null,
+          "status": "not found"
+        }
+      }
+    },
+    "fastspring": {
+      "checks": {
+        "github": {
+          "note": "the manifest names no GitHub account",
+          "status": "not found"
+        },
+        "llms_txt": {
+          "links": 26,
+          "present": true,
+          "status": "ok"
+        },
+        "mcp": {
+          "servers": [],
+          "status": "ok"
+        },
+        "npm": [],
+        "probe": {
+          "error": "",
+          "gives_an_example": false,
+          "http": 401,
+          "json": false,
+          "names_a_field": false,
+          "names_the_rule": false,
+          "status": "ok",
+          "url": "https://api.fastspring.com/sessions"
+        },
+        "spec": {
+          "note": "the API reference is a page, not a spec file",
+          "present": false,
+          "status": "ok"
+        },
+        "status": {
+          "api": "/api/v2/summary.json",
+          "note": "robots.txt disallows it for our HTTP client",
+          "status": "unreadable"
+        }
+      },
+      "urls": {
+        "api_reference": {
+          "changed": false,
+          "content_type": "text/html",
+          "http": 200,
+          "redirected_to": "https://developer.fastspring.com/reference/developer-documentation-hub",
+          "seconds": 2.07,
+          "sha256": "adff8e15a3e9023e58d58aa030513bafcdc9be3b74ed3a64856d46a0bb7703af",
+          "status": "ok",
+          "url": "https://developer.fastspring.com/reference"
+        },
+        "docs": {
+          "changed": false,
+          "content_type": "text/html",
+          "http": 200,
+          "redirected_to": null,
+          "seconds": 0.33,
+          "sha256": "54534e5107622f86481f9ec2a7e5147b0ebfcfa90e291901d2c16673d0848342",
+          "status": "ok",
+          "url": "https://developer.fastspring.com/"
+        },
+        "llms_txt": {
+          "changed": false,
+          "content_type": "text/plain",
+          "http": 200,
+          "redirected_to": null,
+          "seconds": 0.85,
+          "sha256": "60912c061d23e5cac9abb43b203d7d68fbfe3550094fa102fb42937f29a1849b",
+          "status": "ok",
+          "url": "https://fastspring.com/llms.txt"
+        },
+        "pricing": {
+          "changed": false,
+          "content_type": "text/html",
+          "http": 200,
+          "redirected_to": null,
+          "seconds": 0.89,
+          "sha256": "b4d34c9e3aefc0a3dc6dcf8999e7b40011e1ddbfacded49726a60f5992fbc8f2",
+          "status": "ok",
+          "url": "https://fastspring.com/pricing/"
+        },
+        "signup": {
+          "changed": false,
+          "content_type": "text/html",
+          "http": 200,
+          "redirected_to": null,
+          "seconds": 1.38,
+          "sha256": "d8547792ced0fad1a9a39f1732611bec85d54c82a5ffbb95fd2649f4b11c787e",
+          "status": "ok",
+          "url": "https://fastspring.com/sign-up/"
+        },
+        "status": {
+          "changed": true,
+          "content_type": "text/html",
+          "http": 200,
+          "redirected_to": null,
+          "seconds": 2.62,
+          "sha256": "a204a501e1869e26a5c696fd11a9a03673584e4670e4af0215e7f749d52ba37a",
+          "status": "ok",
+          "url": "https://status.fastspring.com/"
+        }
+      }
+    },
+    "hipotekarna-banka": {
+      "checks": {
+        "github": {
+          "note": "the manifest names no GitHub account",
+          "status": "not found"
+        },
+        "llms_txt": {
+          "links": 21,
+          "present": true,
+          "status": "ok"
+        },
+        "mcp": {
+          "servers": [],
+          "status": "ok"
+        },
+        "npm": [],
+        "probe": {
+          "note": "no API endpoint in the manifest to probe",
+          "status": "not found"
+        },
+        "spec": {
+          "status": "not found"
+        },
+        "status": {
+          "status": "not found"
+        }
+      },
+      "urls": {
+        "api_reference": {
+          "note": null,
+          "status": "not found"
+        },
+        "docs": {
+          "note": "The product page offers a test server and integration support, with no public docs.",
+          "status": "not found"
+        },
+        "llms_txt": {
+          "changed": false,
+          "content_type": "text/plain",
+          "http": 200,
+          "redirected_to": null,
+          "seconds": 0.16,
+          "sha256": "d29fc46877963fcec19dbc16f5def4f865e529f09b6ce4f2abbb02b97db86105",
+          "status": "ok",
+          "url": "https://hipotekarnabanka.com/llms.txt"
+        },
+        "pricing": {
+          "changed": false,
+          "content_type": "application/pdf",
+          "http": 200,
+          "redirected_to": null,
+          "seconds": 0.52,
+          "sha256": "f323b9bdd22282de0605e187db98de62130d384bcd14ef78232fbd5d1af59ea8",
+          "status": "ok",
+          "url": "https://hipotekarnabanka.com/wp-content/uploads/2026/10/tarife_naknade_oktobar_sajt.pdf"
+        },
+        "signup": {
+          "changed": false,
+          "content_type": "text/html",
+          "http": 200,
+          "redirected_to": null,
+          "seconds": 1.55,
+          "sha256": "dbfe8e71ccc7e88c7515d358280579a08ef21f9da4cc5b7fe14e6eb32c94e652",
+          "status": "ok",
+          "url": "https://hipotekarnabanka.com/digitalna-banka/e-commerce/"
+        },
+        "status": {
+          "note": null,
+          "status": "not found"
+        }
+      }
+    },
+    "hutko": {
+      "checks": {
+        "github": {
+          "account": "hutkorg",
+          "status": "not found"
+        },
+        "llms_txt": {
+          "links": 202,
+          "present": true,
+          "status": "ok"
+        },
+        "mcp": {
+          "servers": [],
+          "status": "ok"
+        },
+        "npm": [
+          {
+            "latest": "2.0.6",
+            "name": "@hutko/js-sdk",
+            "status": "ok"
+          }
+        ],
+        "probe": {
+          "error": "{\"response\": {\"error_code\": 1002, \"error_message\": \"Application error\", \"request_id\": \"TVlhwU3InXERB\", \"response_status\": \"failure\"}}",
+          "gives_an_example": false,
+          "http": 200,
+          "json": true,
+          "names_a_field": false,
+          "names_the_rule": false,
+          "status": "ok",
+          "url": "https://pay.hutko.org/api/checkout/url/"
+        },
+        "spec": {
+          "note": "Endpoints are described in prose inside the docs; no separate reference or spec.",
+          "status": "not found"
+        },
+        "status": {
+          "status": "not found"
+        }
+      },
+      "urls": {
+        "api_reference": {
+          "note": "Endpoints are described in prose inside the docs; no separate reference or spec.",
+          "status": "not found"
+        },
+        "docs": {
+          "changed": false,
+          "content_type": "text/html",
+          "http": 200,
+          "redirected_to": null,
+          "seconds": 0.51,
+          "sha256": "5468e0fba039bf05693eb62e359f34fb927360b24e60d23501b9fea206c462b5",
+          "status": "ok",
+          "url": "https://docs.hutko.org/uk/docs/page/1/"
+        },
+        "llms_txt": {
+          "changed": false,
+          "content_type": "text/plain",
+          "http": 200,
+          "redirected_to": null,
+          "seconds": 0.71,
+          "sha256": "2d845667f664374c1e4f72b9a3f33b492cf8bffe356e44dac4bca13b660cf927",
+          "status": "ok",
+          "url": "https://hutko.org/llms.txt"
+        },
+        "pricing": {
+          "changed": false,
+          "content_type": "text/html",
+          "http": 200,
+          "redirected_to": null,
+          "seconds": 1.11,
+          "sha256": "e33a1e09a915f922d419084bb0d4ab79c8e51401c3fc3ca6767466ca02301436",
+          "status": "ok",
+          "url": "https://hutko.org/uk/pricing/"
+        },
+        "signup": {
+          "changed": false,
+          "content_type": "text/html",
+          "http": 200,
+          "redirected_to": null,
+          "seconds": 0.45,
+          "sha256": "6965c27dbce2d96615719eb074239e425c1bf64ed6d8bda87c60480d069ce2f3",
+          "status": "ok",
+          "url": "https://portal.hutko.org/"
+        },
+        "status": {
+          "note": null,
+          "status": "not found"
+        }
+      }
+    },
+    "liqpay": {
+      "checks": {
+        "github": {
+          "account": "liqpay",
+          "public_repos": 17,
+          "status": "ok"
+        },
+        "llms_txt": {
+          "links": 117,
+          "present": true,
+          "status": "ok"
+        },
+        "mcp": {
+          "servers": [],
+          "status": "ok"
+        },
+        "npm": [],
+        "probe": {
+          "error": "{\"code\":\"err_missing\",\"err_code\":\"err_missing\",\"err_description\":\"Не переданий параметр data\",\"key\":\"data\",\"result\":\"error\",\"status\":\"error\"}",
+          "gives_an_example": false,
+          "http": 200,
+          "json": true,
+          "names_a_field": true,
+          "names_the_rule": true,
+          "status": "ok",
+          "url": "https://www.liqpay.ua/api/request"
+        },
+        "spec": {
+          "note": "the API reference is a page, not a spec file",
+          "present": false,
+          "status": "ok"
+        },
+        "status": {
+          "status": "not found"
+        }
+      },
+      "urls": {
+        "api_reference": {
+          "changed": false,
+          "content_type": "text/html",
+          "http": 200,
+          "redirected_to": null,
+          "seconds": 0.41,
+          "sha256": "2d96c26c73da7871eab52671d490e9ab9f2cdde74ad582baa05195f52a665b75",
+          "status": "ok",
+          "url": "https://www.liqpay.ua/uk/doc/api"
+        },
+        "docs": {
+          "changed": false,
+          "content_type": "text/html",
+          "http": 200,
+          "redirected_to": null,
+          "seconds": 0.45,
+          "sha256": "c61cef399bcc34e50912e7c1de3e7d76602d4f3b54cbbb925adfbc29193aee23",
+          "status": "ok",
+          "url": "https://www.liqpay.ua/uk/doc"
+        },
+        "llms_txt": {
+          "changed": false,
+          "content_type": "text/plain",
+          "http": 200,
+          "redirected_to": null,
+          "seconds": 0.31,
+          "sha256": "3f05359346582c24074cd7d3746393c0e654f66aff396c8bbbe71d763623ae8f",
+          "status": "ok",
+          "url": "https://www.liqpay.ua/llms.txt"
+        },
+        "pricing": {
+          "changed": false,
+          "content_type": "text/html",
+          "http": 200,
+          "redirected_to": null,
+          "seconds": 0.42,
+          "sha256": "4f8a11d38d97d141eda695eda9a768fe4406c5583d4646df714f39e7e849ea37",
+          "status": "ok",
+          "url": "https://www.liqpay.ua/uk/tariffs"
+        },
+        "signup": {
+          "changed": false,
+          "content_type": "text/html",
+          "http": 200,
+          "redirected_to": null,
+          "seconds": 0.43,
+          "sha256": "834dedf19bc3a7dd32e75cbb2824c4dded1f0db63c60faa3156318df7d33e5f1",
+          "status": "ok",
+          "url": "https://www.liqpay.ua/uk/authorization?register=true"
+        },
+        "status": {
+          "note": null,
+          "status": "not found"
+        }
+      }
+    },
+    "nlb-banka-podgorica": {
+      "checks": {
+        "github": {
+          "note": "the manifest names no GitHub account",
+          "status": "not found"
+        },
+        "llms_txt": {
+          "status": "not found"
+        },
+        "mcp": {
+          "servers": [],
+          "status": "ok"
+        },
+        "npm": [],
+        "probe": {
+          "note": "no API endpoint in the manifest to probe",
+          "status": "not found"
+        },
+        "spec": {
+          "status": "not found"
+        },
+        "status": {
+          "status": "not found"
+        }
+      },
+      "urls": {
+        "api_reference": {
+          "note": null,
+          "status": "not found"
+        },
+        "docs": {
+          "note": "The FAQ says a manual comes with the service; no public docs.",
+          "status": "not found"
+        },
+        "llms_txt": {
+          "note": null,
+          "status": "not found"
+        },
+        "pricing": {
+          "http": null,
+          "note": "robots.txt unreachable (SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)), so all disallowed",
+          "seconds": 0.0,
+          "status": "unreadable",
+          "url": "https://www.nlb.me/preduzeca/kanali-prodaje/nlb-e-commerce"
+        },
+        "signup": {
+          "http": null,
+          "note": "robots.txt unreachable (SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)), so all disallowed",
+          "seconds": 0.0,
+          "status": "unreadable",
+          "url": "https://www.nlb.me/preduzeca/kanali-prodaje/nlb-e-commerce"
+        },
+        "status": {
+          "note": null,
+          "status": "not found"
+        }
+      }
+    },
+    "paddle": {
+      "checks": {
+        "github": {
+          "account": "PaddleHQ",
+          "public_repos": 59,
+          "status": "ok"
+        },
+        "llms_txt": {
+          "links": 19,
+          "present": true,
+          "status": "ok"
+        },
+        "mcp": {
+          "servers": [
+            "com.paddle/mcp",
+            "com.paddle/mcp-sandbox",
+            "io.github.mrfentmen/paddle-mcp",
+            "io.github.pipeworx-io/paddle"
+          ],
+          "status": "ok"
+        },
+        "npm": [
+          {
+            "latest": "3.11.1",
+            "name": "@paddle/paddle-node-sdk",
+            "status": "ok"
+          },
+          {
+            "latest": "1.6.6",
+            "name": "@paddle/paddle-js",
+            "status": "ok"
+          }
+        ],
+        "probe": {
+          "note": "robots.txt disallows it for our HTTP client",
+          "status": "unreadable"
+        },
+        "spec": {
+          "note": "the API reference is a page, not a spec file",
+          "present": false,
+          "status": "ok"
+        },
+        "status": {
+          "api": "/api/v2/summary.json",
+          "api_http": 200,
+          "api_seconds": 0.24,
+          "components": 25,
+          "machine_readable": true,
+          "status": "ok"
+        }
+      },
+      "urls": {
+        "api_reference": {
+          "changed": false,
+          "content_type": "text/html",
+          "http": 200,
+          "redirected_to": null,
+          "seconds": 0.97,
+          "sha256": "f6d5c61155389f3c212ca5b3076bcae82fd336a9f97e19d2a19bb054658a4c84",
+          "status": "ok",
+          "url": "https://developer.paddle.com/api-reference/"
+        },
+        "docs": {
+          "changed": true,
+          "content_type": "text/html",
+          "http": 200,
+          "redirected_to": null,
+          "seconds": 0.85,
+          "sha256": "71f9d0d84d76c49796e5b00981d7bfd1f02462980e3d75c0d4cca2f4a3a7e025",
+          "status": "ok",
+          "url": "https://developer.paddle.com/"
+        },
+        "llms_txt": {
+          "changed": false,
+          "content_type": "text/plain",
+          "http": 200,
+          "redirected_to": null,
+          "seconds": 0.52,
+          "sha256": "d72fd2bf46e975f4908aef91e64ba43c74920ee2035de28cd43d825b3d9b7f11",
+          "status": "ok",
+          "url": "https://developer.paddle.com/llms.txt"
+        },
+        "pricing": {
+          "changed": false,
+          "content_type": "text/html",
+          "http": 200,
+          "redirected_to": null,
+          "seconds": 0.44,
+          "sha256": "247d9b0c4a2762043b8976176f3d61fb200938c15c9d97b00c7c8ade2e196c36",
+          "status": "ok",
+          "url": "https://www.paddle.com/pricing"
+        },
+        "signup": {
+          "changed": false,
+          "content_type": "text/html",
+          "http": 200,
+          "redirected_to": null,
+          "seconds": 0.64,
+          "sha256": "d86c8c276c7215b2b051aa77d2dede5c0c3c2247f1dd2869c4bdc866c70f137b",
+          "status": "ok",
+          "url": "https://login.paddle.com/signup"
+        },
+        "status": {
+          "changed": false,
+          "content_type": "text/html",
+          "http": 200,
+          "redirected_to": "https://paddlestatus.com/",
+          "seconds": 1.34,
+          "sha256": "f8855db3bc9dae5cd30926d8f8cf9f182715d30a0039a260c8df4dcb2285c9f0",
+          "status": "ok",
+          "url": "https://status.paddle.com/"
+        }
+      }
+    },
+    "plata-by-mono": {
+      "checks": {
+        "github": {
+          "note": "the manifest names no GitHub account",
+          "status": "not found"
+        },
+        "llms_txt": {
+          "links": 4,
+          "present": true,
+          "status": "ok"
+        },
+        "mcp": {
+          "servers": [
+            "io.github.akutishevsky/monobank-mcp-server"
+          ],
+          "status": "ok"
+        },
+        "npm": [],
+        "probe": {
+          "error": "{\"errCode\":\"BAD_REQUEST\",\"errText\":\"Missing required header 'X-Token'\",\"errorDescription\":\"Missing required header 'X-Token'\"}",
+          "gives_an_example": false,
+          "http": 400,
+          "json": true,
+          "names_a_field": true,
+          "names_the_rule": true,
+          "status": "ok",
+          "url": "https://api.monobank.ua/api/merchant/invoice/create"
+        },
+        "spec": {
+          "note": "the API reference is a page, not a spec file",
+          "present": false,
+          "status": "ok"
+        },
+        "status": {
+          "status": "not found"
+        }
+      },
+      "urls": {
+        "api_reference": {
+          "changed": false,
+          "content_type": "text/html",
+          "http": 200,
+          "redirected_to": null,
+          "seconds": 0.57,
+          "sha256": "f05224e1f91f5ce333ca60f5262a32befdd03378aaf1a06e0d6b85f6a90e3c87",
+          "status": "ok",
+          "url": "https://api.monobank.ua/docs/acquiring.html"
+        },
+        "docs": {
+          "changed": false,
+          "content_type": "text/html",
+          "http": 200,
+          "redirected_to": null,
+          "seconds": 0.45,
+          "sha256": "6817924e7cbae3c40583b8042df6bd8c8e0a154aae3fa08a485db02c8b6aa899",
+          "status": "ok",
+          "url": "https://monobank.ua/api-docs/acquiring"
+        },
+        "llms_txt": {
+          "changed": false,
+          "content_type": "text/plain",
+          "http": 200,
+          "redirected_to": null,
+          "seconds": 0.16,
+          "sha256": "a26779011090ec1357f9063811b11eab4191d8ee1d9f4eaec9196e9feafa731f",
+          "status": "ok",
+          "url": "https://monobank.ua/llms.txt"
+        },
+        "pricing": {
+          "changed": false,
+          "content_type": "text/html",
+          "http": 200,
+          "redirected_to": null,
+          "seconds": 1.53,
+          "sha256": "c215ff7285446ec3d47c64eb38327af6b121a60b4ccc6d73212dbaa2d1174ff0",
+          "status": "ok",
+          "url": "https://monobank.ua/plata-by-mono"
+        },
+        "signup": {
+          "changed": false,
+          "content_type": "text/html",
+          "http": 200,
+          "redirected_to": null,
+          "seconds": 0.31,
+          "sha256": "e1104345a1508a7659b4d375401d1dfa84394a68ce88cba697ae078e12ecde83",
+          "status": "ok",
+          "url": "https://web.monobank.ua/"
+        },
+        "status": {
+          "note": null,
+          "status": "not found"
+        }
+      }
+    },
+    "portmone": {
+      "checks": {
+        "github": {
+          "account": "Portmone",
+          "public_repos": 8,
+          "status": "ok"
+        },
+        "llms_txt": {
+          "note": "/llms.txt on www., business. and docs. answers with the site's HTML, not an llms.txt.",
+          "status": "not found"
+        },
+        "mcp": {
+          "servers": [],
+          "status": "ok"
+        },
+        "npm": [],
+        "probe": {
+          "note": "no API endpoint in the manifest to probe",
+          "status": "not found"
+        },
+        "spec": {
+          "note": "The API is described inside the docs; no separate reference or spec file.",
+          "status": "not found"
+        },
+        "status": {
+          "status": "not found"
+        }
+      },
+      "urls": {
+        "api_reference": {
+          "note": "The API is described inside the docs; no separate reference or spec file.",
+          "status": "not found"
+        },
+        "docs": {
+          "changed": false,
+          "content_type": "text/html",
+          "http": 200,
+          "redirected_to": null,
+          "seconds": 0.7,
+          "sha256": "28aca750f89ce336b157cb93116e120625d809ed751b07061840f7ea71acfec2",
+          "status": "ok",
+          "url": "https://docs.portmone.com.ua/docs/uk/PaymentGatewayUa/"
+        },
+        "llms_txt": {
+          "note": "/llms.txt on www., business. and docs. answers with the site's HTML, not an llms.txt.",
+          "status": "not found"
+        },
+        "pricing": {
+          "changed": false,
+          "content_type": "text/html",
+          "http": 200,
+          "redirected_to": null,
+          "seconds": 0.56,
+          "sha256": "41de407cf9d709aa89257aa595cbb80df93c9b3f2156bd5bcb23636c240a3a5b",
+          "status": "ok",
+          "url": "https://business.portmone.com.ua/tariffs"
+        },
+        "signup": {
+          "changed": false,
+          "content_type": "text/html",
+          "http": 200,
+          "redirected_to": null,
+          "seconds": 0.31,
+          "sha256": "b6f651fe87cec6c452a1171f709554f0ad582d33eb61c63e3ce5100e86072327",
+          "status": "ok",
+          "url": "https://business.portmone.com.ua/signup"
+        },
+        "status": {
+          "note": null,
+          "status": "not found"
+        }
+      }
+    },
+    "rozetkapay": {
+      "checks": {
+        "github": {
+          "account": "rozetkapay",
+          "public_repos": 27,
+          "status": "ok"
+        },
+        "llms_txt": {
+          "status": "not found"
+        },
+        "mcp": {
+          "servers": [],
+          "status": "ok"
+        },
+        "npm": [],
+        "probe": {
+          "note": "robots.txt disallows it for our HTTP client",
+          "status": "unreadable"
+        },
+        "spec": {
+          "format": "openapi 3.0.3",
+          "lint": {
+            "duplicate_operation_ids": 0,
+            "no_servers": false,
+            "no_title_or_version": false,
+            "operations": 88,
+            "without_description": 0,
+            "without_error_response": 0
+          },
+          "present": true,
+          "status": "ok"
+        },
+        "status": {
+          "status": "not found"
+        }
+      },
+      "urls": {
+        "api_reference": {
+          "changed": false,
+          "content_type": "application/json",
+          "http": 200,
+          "redirected_to": null,
+          "seconds": 0.49,
+          "sha256": "a0018e73c830d339e1753d559cc3f00caf7ce0cc353899c505ffba1320adef95",
+          "status": "ok",
+          "url": "https://docs.rozetkapay.com/openapi.json"
+        },
+        "docs": {
+          "changed": false,
+          "content_type": "text/html",
+          "http": 200,
+          "redirected_to": null,
+          "seconds": 0.29,
+          "sha256": "c2798de3f2332d688eb09e0fd88da92aa7cac93bb86d1391ccec6f6c31372770",
+          "status": "ok",
+          "url": "https://docs.rozetkapay.com/"
+        },
+        "llms_txt": {
+          "note": null,
+          "status": "not found"
+        },
+        "pricing": {
+          "changed": false,
+          "content_type": "text/html",
+          "http": 200,
+          "redirected_to": null,
+          "seconds": 0.81,
+          "sha256": "e5d709da2c1ad8a5f1e882e31ac7e41cff183d8ad8a199eb637712de00853eb9",
+          "status": "ok",
+          "url": "https://rozetkapay.com/rates/"
+        },
+        "signup": {
+          "http": null,
+          "note": "robots.txt disallows it for our HTTP client",
+          "seconds": 0.0,
+          "status": "unreadable",
+          "url": "https://business.rozetkapay.com/registration"
+        },
+        "status": {
+          "note": null,
+          "status": "not found"
+        }
+      }
+    },
+    "wayforpay": {
+      "checks": {
+        "github": {
+          "account": "wayforpay",
+          "public_repos": 23,
+          "status": "ok"
+        },
+        "llms_txt": {
+          "note": "HTTP 403",
+          "status": "unreadable"
+        },
+        "mcp": {
+          "servers": [],
+          "status": "ok"
+        },
+        "npm": [],
+        "probe": {
+          "error": "{\"reasonCode\":1129,\"reason\":\"ScriptError. Empty api version received\"}",
+          "gives_an_example": false,
+          "http": 200,
+          "json": true,
+          "names_a_field": false,
+          "names_the_rule": true,
+          "status": "ok",
+          "url": "https://api.wayforpay.com/api"
+        },
+        "spec": {
+          "note": "The API is described page by page in the docs wiki; no separate reference or spec file.",
+          "status": "not found"
+        },
+        "status": {
+          "status": "not found"
+        }
+      },
+      "urls": {
+        "api_reference": {
+          "note": "The API is described page by page in the docs wiki; no separate reference or spec file.",
+          "status": "not found"
+        },
+        "docs": {
+          "changed": false,
+          "content_type": "text/html",
+          "http": 200,
+          "redirected_to": null,
+          "seconds": 0.48,
+          "sha256": "b6b91b7dec9d3d7e5e4836a7e61fe4803436be4db1390e640867e17f493963e5",
+          "status": "ok",
+          "url": "https://wiki.wayforpay.com/"
+        },
+        "llms_txt": {
+          "http": 403,
+          "note": "HTTP 403",
+          "seconds": 0.24,
+          "status": "unreadable",
+          "url": "https://wayforpay.com/llms.txt"
+        },
+        "pricing": {
+          "note": "wayforpay.com answers 403 to our HTTP client, so its tariffs page could not be found.",
+          "status": "unreadable"
+        },
+        "signup": {
+          "note": "wayforpay.com answers 403 to our HTTP client, so its sign-up page could not be found.",
+          "status": "unreadable"
+        },
+        "status": {
+          "note": null,
+          "status": "not found"
+        }
+      }
+    }
+  },
+  "tests": {
+    "R1 llms.txt lists the task pages, examples run in CI": {
+      "informed_by": [
+        "llms_txt",
+        "docs"
+      ]
+    },
+    "R1 one canonical page per task, first try from the docs alone": {
+      "undecided": "needs a model run, beyond no-account checks"
+    },
+    "R2 every error names the field, the rule broken, a valid example": {
+      "informed_by": [
+        "probe"
+      ]
+    },
+    "R2 one SDK per major language from the same spec": {
+      "informed_by": [
+        "api_reference",
+        "spec",
+        "npm"
+      ]
+    },
+    "R2 repeating a write with the same key is a no-op": {
+      "undecided": "needs an account, beyond no-account checks"
+    },
+    "R3 a working key with no human in under five minutes": {
+      "undecided": "needs an account, beyond no-account checks"
+    },
+    "R3 the human's first involvement is one tap": {
+      "undecided": "needs an account, beyond no-account checks"
+    },
+    "R4 an MCP server in the public registries": {
+      "informed_by": [
+        "mcp"
+      ]
+    },
+    "R4 an entry in each model vendor's tool or plugin catalog": {
+      "undecided": "needs a read of each vendor's catalog, beyond no-account checks"
+    },
+    "R4 each major model names it unprompted": {
+      "undecided": "needs a model survey, beyond no-account checks"
+    },
+    "R4 open-source clients and examples on GitHub": {
+      "informed_by": [
+        "github",
+        "npm"
+      ]
+    },
+    "R4 questions answered in public under the product's name": {
+      "undecided": "needs a search of public answers, beyond no-account checks"
+    },
+    "R5 a status endpoint under a second with per-component state": {
+      "informed_by": [
+        "status"
+      ]
+    },
+    "R5 outage webhooks within a minute": {
+      "undecided": "needs an account, beyond no-account checks"
+    },
+    "R5 usage and spend readable per key by API": {
+      "undecided": "needs an account, beyond no-account checks"
+    },
+    "R6 spend caps settable and enforced": {
+      "undecided": "needs an account, beyond no-account checks"
+    },
+    "R6 the price is published, flat or per-unit, readable by API": {
+      "informed_by": [
+        "pricing"
+      ]
+    }
+  },
+  "user_agent": "Agent-Grade/0.1.0 (+https://agent-grade.com)"
+}
