@@ -1,0 +1,33 @@
+{
+  "cost_usd": 0.000646825,
+  "effort": "low",
+  "excerpts": [
+    "Pricing One flat rate. No hidden fees.",
+    "Pricing is typically based on volume of sales and custom rates can be negotiated in conversation with our Sales team.",
+    "FastSpring operates on a revenue-sharing model. So, when your buyers purchase a product from you, FastSpring charges a small commission from that transaction."
+  ],
+  "excerpts_found_on_page": true,
+  "fits_one_sentence": false,
+  "method_sha256": "a4485e5e5984047beb83213366fd52392bb3c60fe3122792c96c827e4bc97313",
+  "model": "claude-haiku-5-5",
+  "rubric": "r6-price-1",
+  "sentence": null,
+  "status": "ok",
+  "usage": {
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 0,
+      "ephemeral_5m_input_tokens": 929
+    },
+    "cache_creation_input_tokens": 929,
+    "cache_read_input_tokens": 0,
+    "inference_geo": "global",
+    "input_tokens": 4162,
+    "output_tokens": 229,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "service_tier": "standard",
+    "speed": "standard"
+  },
+  "why_not": "The page states no price a small shop can read: it says 'One flat rate. No hidden fees.' but gives no number, and the FAQ says pricing is set by volume and negotiated with Sales, with a 'small commission' and no subscription fee stated as an amount."
+}
