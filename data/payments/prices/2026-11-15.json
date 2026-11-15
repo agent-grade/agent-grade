@@ -1,0 +1,370 @@
+{
+  "cost_usd_this_run": 0,
+  "date": "2026-11-15",
+  "model": "claude-haiku-5-5",
+  "providers": {
+    "allsecure": {
+      "fits_one_sentence": null,
+      "note": "Pricing is quoted on enquiry.",
+      "status": "not found"
+    },
+    "ckb-otp-banka": {
+      "fits_one_sentence": null,
+      "note": "robots.txt unreachable (SSLZeroReturnError: TLS/SSL connection has been closed (EOF) (_ssl.c:1010)), so all disallowed",
+      "status": "unreadable",
+      "url": "https://www.otpbanka.me/upload/Lista-uslova-za-pravna-lica-i-preduzetnike.pdf"
+    },
+    "fastspring": {
+      "chars": 11362,
+      "decided_by": "model",
+      "fits_one_sentence": false,
+      "judgment": {
+        "cached": true,
+        "cost_usd": 0.000680125,
+        "effort": "low",
+        "excerpts": [
+          "Pricing is typically based on volume of sales and custom rates can be negotiated in conversation with our Sales team.",
+          "Our pricing works on a revenue-sharing model and our fees vary depending on the transaction volume you move through FastSpring.",
+          "FastSpring’s team will work with you to determine simple, flat-rate pricing based on transaction type and your volume of business"
+        ],
+        "excerpts_found_on_page": true,
+        "fits_one_sentence": false,
+        "method_sha256": "a4485e5e5984047beb83213366fd52392bb3c60fe3122792c96c827e4bc97313",
+        "model": "claude-haiku-5-5",
+        "rubric": "r6-price-1",
+        "sentence": null,
+        "status": "ok",
+        "usage": {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 929
+          },
+          "cache_creation_input_tokens": 929,
+          "cache_read_input_tokens": 0,
+          "inference_geo": "global",
+          "input_tokens": 4155,
+          "output_tokens": 297,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "service_tier": "standard",
+          "speed": "standard"
+        },
+        "why_not": "The page says 'One flat rate. No hidden fees.' but never states the rate. It says pricing is set by a quote ('Get your pricing quote', 'Build A Custom Quote'), depends on volume and negotiation ('custom rates can be negotiated in conversation with our Sales team'), and that the fee is withheld from payouts with no number given. A small shop's fees are not stated, so the price cannot be said in one sentence."
+      },
+      "sha256": "4edd21885f76bb524f620b7082addf35cf4fe391e18a7ff14637a82d902b0ecd",
+      "status": "ok",
+      "truncated": false,
+      "url": "https://fastspring.com/pricing/"
+    },
+    "hipotekarna-banka": {
+      "chars": 68456,
+      "decided_by": "model",
+      "fits_one_sentence": false,
+      "judgment": {
+        "cached": true,
+        "cost_usd": 0.0038860899999999996,
+        "effort": "low",
+        "excerpts": [
+          "C17.1. Naknada za obavljanje platnog prometa po poslovima prihvatanja Platnih kartica Ovlašćenje za odstupanje od naknade direktor filijale Nadležni član Upravnog odbora Akceptant 3,00% od iznosa transakcije do 0,7 p. p. preko 0,7 p. p.",
+          "* Tarife označene asteriksom nijesu obavezne i ugovaraju se u odnosu na projekciju profitabilnosti klijenta i nivo rizika."
+        ],
+        "excerpts_found_on_page": true,
+        "fits_one_sentence": false,
+        "method_sha256": "a4485e5e5984047beb83213366fd52392bb3c60fe3122792c96c827e4bc97313",
+        "model": "claude-haiku-5-5",
+        "rubric": "r6-price-1",
+        "sentence": null,
+        "status": "ok",
+        "usage": {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 929,
+          "inference_geo": "global",
+          "input_tokens": 36608,
+          "output_tokens": 432,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "service_tier": "standard",
+          "speed": "standard"
+        },
+        "why_not": "This is a bank fee tariff (Hipotekarna banka, Montenegro) listing many per-transaction rates for accounts, cards, loans and guarantees, not a payment-provider price for card acceptance. Card acquiring fees appear only as ranges and as 'individual' tariffs that are negotiated ('ugovaraju se u odnosu na projekciju profitabilnosti klijenta i nivo rizika', 'Ovlašćenje za odstupanje od naknade'), with a 3.00% merchant rate that depends on approval levels and a 'do 0,7 p. p.' split, so no single flat price for a small shop's card payments can be stated."
+      },
+      "sha256": "06eacbad9b08f05d2994e26c61ce37bde3f0be8a79da47c7a860050cb192989e",
+      "status": "ok",
+      "truncated": false,
+      "url": "https://hipotekarnabanka.com/wp-content/uploads/2026/10/tarife_naknade_oktobar_sajt.pdf"
+    },
+    "hutko": {
+      "chars": 12285,
+      "decided_by": "model",
+      "fits_one_sentence": false,
+      "judgment": {
+        "cached": true,
+        "cost_usd": 0.00094509,
+        "effort": "low",
+        "excerpts": [
+          "Базовий тариф при обороті до 5 млн грн на місяць 1.5%",
+          "при оплаті іноземними картками комісія встановлюється індивідуально",
+          "Якщо ж клієнт розраховується іноземною карткою, комісія за інтернет-еквайринг відрізняється від базового тарифу і встановлюється індивідуально."
+        ],
+        "excerpts_found_on_page": true,
+        "fits_one_sentence": false,
+        "method_sha256": "a4485e5e5984047beb83213366fd52392bb3c60fe3122792c96c827e4bc97313",
+        "model": "claude-haiku-5-5",
+        "rubric": "r6-price-1",
+        "sentence": null,
+        "status": "ok",
+        "usage": {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 929,
+          "inference_geo": "global",
+          "input_tokens": 5383,
+          "output_tokens": 795,
+          "output_tokens_details": {
+            "thinking_tokens": 552
+          },
+          "service_tier": "standard",
+          "speed": "standard"
+        },
+        "why_not": "The page states a 1.5% base rate for Ukrainian cards at up to 5 million UAH monthly turnover, but the commission for foreign cards is set individually, so the owner would have to ask for the actual number. Fees for a shop above 5 million UAH are also individual."
+      },
+      "sha256": "e33a1e09a915f922d419084bb0d4ab79c8e51401c3fc3ca6767466ca02301436",
+      "status": "ok",
+      "truncated": false,
+      "url": "https://hutko.org/uk/pricing/"
+    },
+    "liqpay": {
+      "chars": 1781,
+      "decided_by": "model",
+      "fits_one_sentence": true,
+      "judgment": {
+        "cached": true,
+        "cost_usd": 0.00047169,
+        "effort": "low",
+        "excerpts": [
+          "Стандартний 1,3% Україна для українських карток",
+          "2% Світ для закордонних карток"
+        ],
+        "excerpts_found_on_page": true,
+        "fits_one_sentence": true,
+        "method_sha256": "a4485e5e5984047beb83213366fd52392bb3c60fe3122792c96c827e4bc97313",
+        "model": "claude-haiku-5-5",
+        "rubric": "r6-price-1",
+        "sentence": "The standard tariff is 1.3% per payment with Ukrainian cards and 2% with foreign cards, and this page lists no monthly fee.",
+        "status": "ok",
+        "usage": {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 929,
+          "inference_geo": "global",
+          "input_tokens": 869,
+          "output_tokens": 751,
+          "output_tokens_details": {
+            "thinking_tokens": 632
+          },
+          "service_tier": "standard",
+          "speed": "standard"
+        },
+        "why_not": null
+      },
+      "sha256": "4f8a11d38d97d141eda695eda9a768fe4406c5583d4646df714f39e7e849ea37",
+      "status": "ok",
+      "truncated": false,
+      "url": "https://www.liqpay.ua/uk/tariffs"
+    },
+    "nlb-banka-podgorica": {
+      "fits_one_sentence": null,
+      "note": "robots.txt unreachable (SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)), so all disallowed",
+      "status": "unreadable",
+      "url": "https://www.nlb.me/preduzeca/kanali-prodaje/nlb-e-commerce"
+    },
+    "paddle": {
+      "chars": 7216,
+      "decided_by": "model",
+      "fits_one_sentence": true,
+      "judgment": {
+        "cached": true,
+        "cost_usd": 0.00032998999999999995,
+        "effort": "low",
+        "excerpts": [
+          "5% + 50¢ per Checkout transaction",
+          "No monthly fees, migration fees, or hidden extras",
+          "our pricing model is all-inclusive with no monthly fee"
+        ],
+        "excerpts_found_on_page": true,
+        "fits_one_sentence": true,
+        "method_sha256": "a4485e5e5984047beb83213366fd52392bb3c60fe3122792c96c827e4bc97313",
+        "model": "claude-haiku-5-5",
+        "rubric": "r6-price-1",
+        "sentence": "Paddle charges 5% plus 50¢ per checkout transaction with no monthly fee, and all payments, tax and fraud handling are included.",
+        "status": "ok",
+        "usage": {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 929,
+          "inference_geo": "global",
+          "input_tokens": 2487,
+          "output_tokens": 144,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "service_tier": "standard",
+          "speed": "standard"
+        },
+        "why_not": null
+      },
+      "sha256": "2127ba0641562363cb28d5a3103dc9f8be7a040cb0b20520fd7c19e11616261b",
+      "status": "ok",
+      "truncated": false,
+      "url": "https://www.paddle.com/pricing"
+    },
+    "plata-by-mono": {
+      "chars": 6670,
+      "decided_by": "model",
+      "fits_one_sentence": true,
+      "judgment": {
+        "cached": true,
+        "cost_usd": 0.00037629,
+        "effort": "low",
+        "excerpts": [
+          "1,3% комісії з транзакції",
+          "А якщо оплата з-за кордону — то 2%.",
+          "Комісія з кожної оплати"
+        ],
+        "excerpts_found_on_page": true,
+        "fits_one_sentence": true,
+        "method_sha256": "a4485e5e5984047beb83213366fd52392bb3c60fe3122792c96c827e4bc97313",
+        "model": "claude-haiku-5-5",
+        "rubric": "r6-price-1",
+        "sentence": "1.3% commission per card payment, 2% for payments from foreign cards, with no monthly fee stated on this page.",
+        "status": "ok",
+        "usage": {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 929,
+          "inference_geo": "global",
+          "input_tokens": 3055,
+          "output_tokens": 123,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "service_tier": "standard",
+          "speed": "standard"
+        },
+        "why_not": null
+      },
+      "sha256": "c215ff7285446ec3d47c64eb38327af6b121a60b4ccc6d73212dbaa2d1174ff0",
+      "status": "ok",
+      "truncated": false,
+      "url": "https://monobank.ua/plata-by-mono"
+    },
+    "portmone": {
+      "chars": 3510,
+      "decided_by": "model",
+      "fits_one_sentence": true,
+      "judgment": {
+        "cached": true,
+        "cost_usd": 0.00046698999999999997,
+        "effort": "low",
+        "excerpts": [
+          "Інтернет-магазини 2% Оплата картою 1% BankPay Комісія за платіж, стягується з компанії",
+          "Комісія знімається на шляху зарахування коштів на розрахунковий рахунок."
+        ],
+        "excerpts_found_on_page": true,
+        "fits_one_sentence": true,
+        "method_sha256": "a4485e5e5984047beb83213366fd52392bb3c60fe3122792c96c827e4bc97313",
+        "model": "claude-haiku-5-5",
+        "rubric": "r6-price-1",
+        "sentence": "An online shop pays 2% of each card payment, plus 1% on BankPay payments, with the fee deducted from the company's payment when it is credited to its account.",
+        "status": "ok",
+        "usage": {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 929,
+          "inference_geo": "global",
+          "input_tokens": 1547,
+          "output_tokens": 606,
+          "output_tokens_details": {
+            "thinking_tokens": 444
+          },
+          "service_tier": "standard",
+          "speed": "standard"
+        },
+        "why_not": null
+      },
+      "sha256": "41de407cf9d709aa89257aa595cbb80df93c9b3f2156bd5bcb23636c240a3a5b",
+      "status": "ok",
+      "truncated": false,
+      "url": "https://business.portmone.com.ua/tariffs"
+    },
+    "rozetkapay": {
+      "chars": 5495,
+      "decided_by": "model",
+      "fits_one_sentence": true,
+      "judgment": {
+        "cached": true,
+        "cost_usd": 0.0006563249999999999,
+        "effort": "low",
+        "excerpts": [
+          "Ваш тариф — 1,3% від суми кожного платежу.",
+          "Ні. Ви сплачуєте лише відсоток від успішного платежу. Плати за реєстрацію чи щомісячної абонплати немає."
+        ],
+        "excerpts_found_on_page": true,
+        "fits_one_sentence": true,
+        "method_sha256": "a4485e5e5984047beb83213366fd52392bb3c60fe3122792c96c827e4bc97313",
+        "model": "claude-haiku-5-5",
+        "rubric": "r6-price-1",
+        "sentence": "Card payments on your own online store, app or social media cost 1.3% of each successful payment, with no setup fee and no monthly fee.",
+        "status": "ok",
+        "usage": {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 929
+          },
+          "cache_creation_input_tokens": 929,
+          "cache_read_input_tokens": 0,
+          "inference_geo": "global",
+          "input_tokens": 2582,
+          "output_tokens": 564,
+          "output_tokens_details": {
+            "thinking_tokens": 407
+          },
+          "service_tier": "standard",
+          "speed": "standard"
+        },
+        "why_not": null
+      },
+      "sha256": "ae6c036fd83ca7971cd35c49bccfab53420ba4a021811652efca252640e12fe7",
+      "status": "ok",
+      "truncated": false,
+      "url": "https://rozetkapay.com/rates/"
+    },
+    "wayforpay": {
+      "fits_one_sentence": null,
+      "note": "wayforpay.com answers 403 to our HTTP client, so its tariffs page could not be found.",
+      "status": "unreadable"
+    }
+  },
+  "rubric": "r6-price-1"
+}
