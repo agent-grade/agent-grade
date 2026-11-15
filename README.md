@@ -21,6 +21,8 @@ issue for each card payment.
 - [data/payments/prices/](data/payments/prices/) — one file per night: whether each provider's price can
   be told to the owner in one sentence, that sentence as an agent would say it, and the excerpts of the
   pricing page it rests on.
+- [data/payments/models/](data/payments/models/) — the model runs: whether Claude writes a correct first
+  payment request from each provider's task page alone, and which providers Claude names unprompted.
 - [data/payments/receipts/](data/payments/receipts/) — per country, what a small online seller must issue
   for a card payment, each claim sourced and quoted, and the services that do the receipts part.
 - [METHOD.md](METHOD.md) — the six requirements, which check informs which test, what is not measured

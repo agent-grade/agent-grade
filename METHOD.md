@@ -77,6 +77,28 @@ The nightly checks never sign up, never log in and never send a real payment cal
 account is recorded as undecided rather than guessed. The model runs and the searches of answers and vendor
 catalogs are separate measurements, not part of a night.
 
+## The model runs
+
+`agent-grade-models` writes `data/payments/models/<date>.json` with every prompt, raw answer and verdict,
+saving after each answer; a second run on the same date keeps what is there and asks only what is missing.
+Each model call is a fresh session with no tools, at effort `medium`; a refused or failed call is recorded
+as not measured. A spend cap stops any call that could pass it.
+
+R1, first try from the docs alone: for each provider that takes a business, Claude Sonnet is given the one
+task page the manifest names (the page behind its error call, else the docs entry page) and asked to write
+the first request that takes a card payment, with placeholders for keys and signatures. The request is not
+sent. A second Claude Sonnet call judges it against the same page under a fixed rubric, quoting the excerpts
+its verdict rests on, and each excerpt is checked against the page. A provider with no public docs, or whose
+page has under 1,000 or over 200,000 characters of readable text, is not measured, with the reason. The page
+cannot erase what the model already remembers, so a correct first try shows the page suffices together with
+that memory.
+
+R4, named unprompted: Claude Haiku, Sonnet, Opus and Fable are each asked three times per country, without a
+provider's name in the question, which providers a sole trader there can use to accept card payments. The
+answer records each manifest provider it names, matched as a whole word by the manifest's search term or a
+spelling listed in the code (`OTP banka`, `Rozetka Pay`). Other vendors' models are not measured: only the
+Anthropic API was available.
+
 ## Manifests
 
 An answer about who a provider takes is "yes" only where a quoted line from the provider's own pages says
