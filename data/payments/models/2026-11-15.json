@@ -1,0 +1,1452 @@
+{
+  "cap_usd": 4.5,
+  "date": "2026-11-15",
+  "effort": "medium",
+  "r1": {
+    "id": "r1-first-try-1",
+    "judge": "claude-sonnet-5-5",
+    "model": "claude-sonnet-5-5",
+    "providers": {
+      "allsecure": {
+        "attempt": {
+          "cost_usd": 0.06148,
+          "json": {
+            "body": "{\"merchantTransactionId\":\"{UNIQUE_ORDER_ID}\",\"amount\":\"100.00\",\"currency\":\"{CURRENCY_CODE}\",\"successUrl\":\"{SUCCESS_URL}\",\"cancelUrl\":\"{CANCEL_URL}\",\"errorUrl\":\"{ERROR_URL}\",\"callbackUrl\":\"{CALLBACK_URL}\",\"description\":\"{ORDER_DESCRIPTION}\",\"customer\":{\"identification\":\"{CUSTOMER_ID}\",\"firstName\":\"{FIRST_NAME}\",\"lastName\":\"{LAST_NAME}\",\"email\":\"{CUSTOMER_EMAIL}\",\"ipAddress\":\"{CUSTOMER_IP}\"}}",
+            "gaps": [
+              "The currency for the 100.00 order is not stated; a placeholder is used.",
+              "The merchant's API key (for the URL path) is not provided and must come from the merchant account.",
+              "The exact format of the Authorization header is not documented, only 'use your API User & Password'; it is unclear whether it is Basic auth or something else.",
+              "The exact X-Signature construction for outgoing requests is not documented on this page; only the postback notification signature algorithm is described. It is also unclear whether a signature is required for this merchant's configuration.",
+              "Which fields are mandatory for this merchant account (especially customer data) depends on the merchant configuration and is not listed on this page; the full API Reference is needed.",
+              "Whether to use Debit or Preauthorize depends on the business model; I assumed an immediate Debit for payment.",
+              "Which integration flow applies (hosted payment page, which needs no card token, vs payment.js, which needs a transactionToken) is not decided by the page. I used the hosted payment page variant so no card data or transactionToken is needed. For the seamless flow, transactionToken must be added from payment.js, which also needs the public integration key.",
+              "Whether the Content-Type header is required for the request is not stated explicitly, though the body is JSON and the signature uses the Content-Type value.",
+              "The Date header is only mentioned for the signature message, so it is unclear if it is required on outgoing requests.",
+              "The merchant's callback, success, cancel and error URLs are not known.",
+              "The page does not say whether 3D Secure should be activated for this merchant or how it is configured; the threeDSecureData field is therefore omitted.",
+              "Customer data requirements for risk checks and 3D Secure are unspecified for this account."
+            ],
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json; charset=utf-8"
+              },
+              {
+                "name": "Authorization",
+                "value": "{AUTHORIZATION_CREDENTIALS_FROM_API_USER_AND_PASSWORD}"
+              },
+              {
+                "name": "X-Signature",
+                "value": "{SIGNATURE_IF_REQUIRED_BY_MERCHANT_CONFIG}"
+              },
+              {
+                "name": "Date",
+                "value": "{CURRENT_HTTP_DATE_IF_SIGNING}"
+              }
+            ],
+            "method": "POST",
+            "url": "https://asxgw.com/api/v3/transaction/{API_KEY}/debit"
+          },
+          "model": "claude-sonnet-5-5",
+          "status": "ok",
+          "usage": {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "inference_geo": "global",
+            "input_tokens": 25360,
+            "output_tokens": 1076,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "service_tier": "standard",
+            "speed": "standard"
+          }
+        },
+        "chars": 69334,
+        "correct": true,
+        "errors": [],
+        "excerpts": [
+          "POST https://asxgw.com/api/v3/transaction/{INSERT_API_KEY_HERE}/debit Authorization: .... (use your API User & Password) X-Signature: .... (optional, may be necessary if required by your merchant configuration)",
+          "\"amount\": \"9.99\", \"currency\": \"EUR\", \"successUrl\": \"https://example.com/success\", \"cancelUrl\": \"https://example.com/cancel\", \"errorUrl\": \"https://example.com/error\", \"callbackUrl\": \"https://example.com/callback\"",
+          "The mandatory fields for this request, especially the end-customer data, greatly depends on the configuration of your merchant account."
+        ],
+        "excerpts_found_on_page": true,
+        "page": "https://asxgw.com/documentation/gateway",
+        "page_sha256": "ccc27823a98eff6cc278de3f36c5356b772e692713fa78ac4cbf923b0d6c7a2d",
+        "status": "ok",
+        "verdict": {
+          "cost_usd": 0.0554,
+          "json": {
+            "correct": true,
+            "errors": [],
+            "excerpts": [
+              "POST https://asxgw.com/api/v3/transaction/{INSERT_API_KEY_HERE}/debit Authorization: .... (use your API User & Password) X-Signature: .... (optional, may be necessary if required by your merchant configuration)",
+              "\"amount\": \"9.99\", \"currency\": \"EUR\", \"successUrl\": \"https://example.com/success\", \"cancelUrl\": \"https://example.com/cancel\", \"errorUrl\": \"https://example.com/error\", \"callbackUrl\": \"https://example.com/callback\"",
+              "The mandatory fields for this request, especially the end-customer data, greatly depends on the configuration of your merchant account."
+            ]
+          },
+          "model": "claude-sonnet-5-5",
+          "status": "ok",
+          "usage": {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "inference_geo": "global",
+            "input_tokens": 26420,
+            "output_tokens": 256,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "service_tier": "standard",
+            "speed": "standard"
+          }
+        }
+      },
+      "ckb-otp-banka": {
+        "note": "no public docs",
+        "status": "not measured"
+      },
+      "fastspring": {
+        "attempt": {
+          "cost_usd": 0.01135,
+          "json": {
+            "body": "{\"contact\":{\"email\":\"<CUSTOMER_EMAIL>\"},\"items\":[{\"product\":\"<PRODUCT_PATH>\",\"quantity\":1}]}",
+            "gaps": [
+              "The page does not describe the fields of the items objects (e.g. the product identifier field name, quantity, or price override fields), so 'product' and 'quantity' are guesses not confirmed by this page.",
+              "The page does not say how to set a total order amount of 100.00 directly; the price likely must come from a product configured in FastSpring or a price override, and the override field names are not documented here.",
+              "The currency is not documented on this page, so it is unknown how to specify it or whether it is derived from the product or the customer's location.",
+              "The contact object fields (such as email, first name, last name) are not listed on this page.",
+              "The page does not explain how card payment is chosen or collected; the session creation only creates an order session, and how the customer completes card payment (checkout URL, Store Builder Library, or embedded component) is not described in the response documentation.",
+              "The response schema is not shown, so the session ID or checkout URL to use in the next step is unknown.",
+              "The credentials format is only given as 'Basic base64'; it is not stated what the username and password are or where to get them (API credentials from the FastSpring app are assumed).",
+              "The page does not state whether any additional headers are required, so Content-Type and Accept are assumed.",
+              "The page does not describe how to receive confirmation of successful payment (e.g. webhooks or retrieving the order), beyond navigation links.",
+              "Which products exist in the owner's FastSpring account is unknown, so the product path is a placeholder."
+            ],
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": "Basic <BASE64_ENCODED_API_USERNAME:API_PASSWORD>"
+              },
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "url": "https://api.fastspring.com/sessions"
+          },
+          "model": "claude-sonnet-5-5",
+          "status": "ok",
+          "usage": {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "inference_geo": "global",
+            "input_tokens": 2430,
+            "output_tokens": 649,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "service_tier": "standard",
+            "speed": "standard"
+          }
+        },
+        "chars": 5522,
+        "correct": false,
+        "errors": [
+          "The 'items' entries use 'product' and 'quantity' fields that the page does not document, so the item format is unverified.",
+          "Nothing in the request sets or conveys the 100.00 amount; it relies on an undocumented product price or override, so the order total is not guaranteed.",
+          "The 'contact' object contains only 'email', but the page does not list the contact fields, so this is unverified.",
+          "The request does not select or collect a card payment; the page does not document how card payment is specified."
+        ],
+        "excerpts": [
+          "items array of objects required One or more items to include in the session. Each item can represent a product, subscription, or advanced configuration (such as price overrides and custom attributes).",
+          "contact object Contact information for the customer. Used when an account ID is not provided.",
+          "Creates custom order sessions with various configurations, such as single product sessions, price overrides, coupons, and custom tags."
+        ],
+        "excerpts_found_on_page": true,
+        "page": "https://developer.fastspring.com/reference/createordersession",
+        "page_sha256": "be2182843c443b06dc37f2f547ad974ab463d6fa52556b1f4dcee964f306a4d9",
+        "status": "ok",
+        "verdict": {
+          "cost_usd": 0.00901,
+          "json": {
+            "correct": false,
+            "errors": [
+              "The 'items' entries use 'product' and 'quantity' fields that the page does not document, so the item format is unverified.",
+              "Nothing in the request sets or conveys the 100.00 amount; it relies on an undocumented product price or override, so the order total is not guaranteed.",
+              "The 'contact' object contains only 'email', but the page does not list the contact fields, so this is unverified.",
+              "The request does not select or collect a card payment; the page does not document how card payment is specified."
+            ],
+            "excerpts": [
+              "items array of objects required One or more items to include in the session. Each item can represent a product, subscription, or advanced configuration (such as price overrides and custom attributes).",
+              "contact object Contact information for the customer. Used when an account ID is not provided.",
+              "Creates custom order sessions with various configurations, such as single product sessions, price overrides, coupons, and custom tags."
+            ]
+          },
+          "model": "claude-sonnet-5-5",
+          "status": "ok",
+          "usage": {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "inference_geo": "global",
+            "input_tokens": 3080,
+            "output_tokens": 285,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "service_tier": "standard",
+            "speed": "standard"
+          }
+        }
+      },
+      "hipotekarna-banka": {
+        "note": "no public docs",
+        "status": "not measured"
+      },
+      "hutko": {
+        "attempt": {
+          "cost_usd": 0.027856,
+          "json": {
+            "body": "{\"request\":{\"order_id\":\"ORDER_ID_PLACEHOLDER\",\"merchant_id\":\"MERCHANT_ID_PLACEHOLDER\",\"order_desc\":\"Order payment\",\"amount\":\"10000\",\"currency\":\"UAH\",\"response_url\":\"https://SHOP_DOMAIN_PLACEHOLDER/payment/response\",\"server_callback_url\":\"https://SHOP_DOMAIN_PLACEHOLDER/payment/callback\",\"signature\":\"SHA1_SIGNATURE_PLACEHOLDER\"}}",
+            "gaps": [
+              "Currency for the 100.00 order is not stated by the owner; UAH assumed (docs list UAH, USD, EUR, GBP, CZK).",
+              "Merchant ID and merchant secret password are not provided; they must come from the merchant portal's technical settings.",
+              "Signature must be computed at request time: SHA1 of password plus all non-empty request parameter values sorted alphabetically by parameter name, joined with |, lowercase hex. The docs do not clarify exactly which parameters are included when optional ones such as response_url and server_callback_url are sent, though the example implies all non-empty ones except signature.",
+              "Docs do not say whether the version parameter is required, though the text says to pass 1.0.1; it was omitted since it is listed as optional with a default.",
+              "Docs do not describe any authentication header; authentication appears to rely only on the signature.",
+              "The shop's real response_url and callback URL are unknown and use placeholders.",
+              "Order ID generation scheme is not specified; the shop must generate a unique order_id.",
+              "The docs do not state whether the amount in the JSON body must be a string or an integer; the examples use strings.",
+              "The page does not say how to verify the final payment result beyond the callback signature; a separate status-check page exists but is not included here."
+            ],
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "url": "https://pay.hutko.org/api/checkout/url/"
+          },
+          "model": "claude-sonnet-5-5",
+          "status": "ok",
+          "usage": {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "inference_geo": "global",
+            "input_tokens": 10478,
+            "output_tokens": 690,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "service_tier": "standard",
+            "speed": "standard"
+          }
+        },
+        "chars": 24139,
+        "correct": true,
+        "errors": [],
+        "excerpts": [
+          "Схема взаємодії B (з попереднім host-to-host запитом для отримання url платіжної сторінки) через надсилання HTML форми на URL https://pay.hutko.org/api/checkout/url/",
+          "Сума замовлення в копійках / центах без роздільників",
+          "Content Type: application/json Запит { \" request \": { \" response_url \": \"https://pay.hutko.org/responsepage/\" , \" order_id \": \"test8037875286\""
+        ],
+        "excerpts_found_on_page": true,
+        "page": "https://docs.hutko.org/uk/docs/page/3/",
+        "page_sha256": "68de30c3788b917c4424534d3324a00e699dbb0d6ac02219146919e57a9d86cc",
+        "status": "ok",
+        "verdict": {
+          "cost_usd": 0.024066,
+          "json": {
+            "correct": true,
+            "errors": [],
+            "excerpts": [
+              "Схема взаємодії B (з попереднім host-to-host запитом для отримання url платіжної сторінки) через надсилання HTML форми на URL https://pay.hutko.org/api/checkout/url/",
+              "Сума замовлення в копійках / центах без роздільників",
+              "Content Type: application/json Запит { \" request \": { \" response_url \": \"https://pay.hutko.org/responsepage/\" , \" order_id \": \"test8037875286\""
+            ]
+          },
+          "model": "claude-sonnet-5-5",
+          "status": "ok",
+          "usage": {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "inference_geo": "global",
+            "input_tokens": 11153,
+            "output_tokens": 176,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "service_tier": "standard",
+            "speed": "standard"
+          }
+        }
+      },
+      "liqpay": {
+        "attempt": {
+          "cost_usd": 0.028034,
+          "json": {
+            "body": "data=<BASE64_ENCODED_JSON>&signature=<BASE64_SIGNATURE>",
+            "gaps": [
+              "The page does not state the Content-Type header for the POST; application/x-www-form-urlencoded is inferred from the HTML form and the curl --data-urlencode example.",
+              "The data placeholder is base64 of the JSON {\"version\":7,\"public_key\":\"<PUBLIC_KEY>\",\"action\":\"pay\",\"amount\":100,\"currency\":\"UAH\",\"description\":\"<ORDER_DESCRIPTION>\",\"order_id\":\"<UNIQUE_ORDER_ID>\"}. I computed none of it, because the real public_key is not available.",
+              "The signature is base64(sha3-256(private_key + data + private_key)), and the private_key is a secret I do not have. The page is inconsistent here: the prose says sha3-256, but the bash SDK example uses sha1, so which algorithm is correct is unclear.",
+              "The page does not say which currency the shop uses. It lists USD, EUR and UAH, and I assumed UAH for the 100.00 order.",
+              "The page does not say whether amount should be a number or a string. The examples show both 3 and \"3\".",
+              "The page gives two version values: 7 as current, but 3 in the SDK examples. I used 7.",
+              "This Client-Server checkout endpoint is meant to redirect the customer's browser to the payment page. The page does not describe a JSON response from it. The alternative Server-Server endpoint is https://www.liqpay.ua/api/request, but the page does not say what it returns for a pay action.",
+              "The server_url (for payment status callbacks) and result_url (customer return page) are optional, and I do not know the shop's real URLs. The page does not say how to verify the callback signature.",
+              "The public_key and private_key come from the owner's LiqPay merchant account and must be supplied by the owner. The page does not say where in the account they are found.",
+              "The page does not say how to handle the card details, other than that the customer enters them on the LiqPay page."
+            ],
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "method": "POST",
+            "url": "https://www.liqpay.ua/api/3/checkout"
+          },
+          "model": "claude-sonnet-5-5",
+          "status": "ok",
+          "usage": {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "inference_geo": "global",
+            "input_tokens": 10292,
+            "output_tokens": 745,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "service_tier": "standard",
+            "speed": "standard"
+          }
+        },
+        "chars": 20935,
+        "correct": true,
+        "errors": [],
+        "excerpts": [
+          "https://www.liqpay.ua/api/3/checkout — Client-Server;",
+          "Для виклику API LiqPay необхідно передати параметри data і signature (Server - Server) POST методом або перенаправити клієнта (Client-Server) використовуючи POST метод",
+          "data - json рядок з параметрами APIs закодована функцією base64, base64_encode( json_string ) , signature - унікальний підпис кожного запиту base64_encode( sha3-256( private_key + data + private_key) )",
+          "amount Required Number Сума платежу. Наприклад: 5 , 7.34",
+          "currency Required String Валюта платежу. Можливі значення: USD , EUR , UAH"
+        ],
+        "excerpts_found_on_page": true,
+        "page": "https://www.liqpay.ua/uk/doc/api/internet_acquiring/checkout",
+        "page_sha256": "56115fa41b234d0c887553bcf6aabd173f3a1ff236d4a04e1c1d77c523d2639f",
+        "status": "ok",
+        "verdict": {
+          "cost_usd": 0.024492,
+          "json": {
+            "correct": true,
+            "errors": [],
+            "excerpts": [
+              "https://www.liqpay.ua/api/3/checkout — Client-Server;",
+              "Для виклику API LiqPay необхідно передати параметри data і signature (Server - Server) POST методом або перенаправити клієнта (Client-Server) використовуючи POST метод",
+              "data - json рядок з параметрами APIs закодована функцією base64, base64_encode( json_string ) , signature - унікальний підпис кожного запиту base64_encode( sha3-256( private_key + data + private_key) )",
+              "amount Required Number Сума платежу. Наприклад: 5 , 7.34",
+              "currency Required String Валюта платежу. Можливі значення: USD , EUR , UAH"
+            ]
+          },
+          "model": "claude-sonnet-5-5",
+          "status": "ok",
+          "usage": {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "inference_geo": "global",
+            "input_tokens": 11011,
+            "output_tokens": 247,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "service_tier": "standard",
+            "speed": "standard"
+          }
+        }
+      },
+      "nlb-banka-podgorica": {
+        "note": "no public docs",
+        "status": "not measured"
+      },
+      "paddle": {
+        "attempt": {
+          "cost_usd": 0.133102,
+          "json": {
+            "body": "{\"items\":[{\"quantity\":1,\"price\":{\"description\":\"Online shop order\",\"name\":\"Order <ORDER_ID>\",\"unit_price\":{\"amount\":\"10000\",\"currency_code\":\"<CURRENCY_CODE>\"},\"product\":{\"name\":\"Order <ORDER_ID>\",\"tax_category\":\"<TAX_CATEGORY>\"}}}],\"currency_code\":\"<CURRENCY_CODE>\",\"collection_mode\":\"automatic\",\"customer_id\":\"<CUSTOMER_ID>\",\"address_id\":\"<ADDRESS_ID>\",\"custom_data\":{\"order_id\":\"<ORDER_ID>\"}}",
+            "gaps": [
+              "The page does not give the API base URL. I used https://api.paddle.com/transactions only because the page links api.paddle.com in the dashboard auth data. The Postman link mentions sandbox-api.paddle.com, but the page does not say which one to use for live versus testing.",
+              "The page does not describe how API requests are authenticated here (header name, bearer scheme, key format). The Authorization: Bearer header is inferred from the Postman environment's 'bearerToken' variable, and the key is a placeholder. The page also does not say which key type or permissions apply beyond transaction.write.",
+              "The page does not say which currency the 100.00 order is in. I left a currency placeholder. The amount is sent as 10000, in the lowest denomination, which assumes a 2-decimal currency such as USD, EUR or GBP.",
+              "The page does not say whether the 100.00 is tax-inclusive or tax-exclusive. Tax_mode defaults to account_setting, so the final total the customer pays may differ from 100.00.",
+              "The page does not say how to create the customer and address that are needed to make the transaction ready. I used placeholders for customer_id and address_id. Without them the transaction is created as draft, and the page does not say how to collect the details in that case.",
+              "The page does not say which tax_category is enabled on the merchant's account for a non-catalog product. I left a placeholder.",
+              "The page does not say how the customer actually pays by card. It mentions passing the transaction to a checkout or using checkout.url, but the Paddle.js or hosted-checkout steps are not on this page. It also does not say how to restrict payment to card only.",
+              "The page does not say whether checkout.url requires an approved domain or default payment URL to be set up in the merchant account first.",
+              "The page does not mention idempotency keys or how to avoid duplicate transactions on retry.",
+              "The page does not explain how to confirm payment afterwards, such as webhooks or signature verification. It only says the status becomes completed on capture."
+            ],
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": "Bearer <PADDLE_API_KEY>"
+              },
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "url": "https://api.paddle.com/transactions"
+          },
+          "model": "claude-sonnet-5-5",
+          "status": "ok",
+          "usage": {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "inference_geo": "global",
+            "input_tokens": 61566,
+            "output_tokens": 997,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "service_tier": "standard",
+            "speed": "standard"
+          }
+        },
+        "chars": 153148,
+        "correct": true,
+        "errors": [],
+        "excerpts": [
+          "Creates a new transaction.",
+          "POST /transactions",
+          "items array required List of items to charge for.",
+          "Automatically-collected transactions are for self-serve checkouts.",
+          "Amount in the lowest denomination for the currency, e.g. 10 USD = 1000 (cents)."
+        ],
+        "excerpts_found_on_page": true,
+        "page": "https://developer.paddle.com/api-reference/transactions/create-transaction",
+        "page_sha256": "d8bcf8e8236015f3398399103d547f521fb02ec6f40aaddc8bc8ea563b32ec0a",
+        "status": "ok",
+        "verdict": {
+          "cost_usd": 0.12623,
+          "json": {
+            "correct": true,
+            "errors": [],
+            "excerpts": [
+              "Creates a new transaction.",
+              "POST /transactions",
+              "items array required List of items to charge for.",
+              "Automatically-collected transactions are for self-serve checkouts.",
+              "Amount in the lowest denomination for the currency, e.g. 10 USD = 1000 (cents)."
+            ]
+          },
+          "model": "claude-sonnet-5-5",
+          "status": "ok",
+          "usage": {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "inference_geo": "global",
+            "input_tokens": 62565,
+            "output_tokens": 110,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "service_tier": "standard",
+            "speed": "standard"
+          }
+        }
+      },
+      "plata-by-mono": {
+        "attempt": {
+          "cost_usd": 0.049502,
+          "json": {
+            "body": "{\"amount\":10000,\"ccy\":980,\"merchantPaymInfo\":{\"reference\":\"<ORDER_ID>\",\"destination\":\"<ORDER_DESCRIPTION>\"},\"redirectUrl\":\"<https://shop.example/order-result>\",\"webHookUrl\":\"<https://shop.example/mono/webhook>\",\"paymentType\":\"debit\"}",
+            "gaps": [
+              "The page does not say where to obtain the production X-Token beyond 'personal cabinet at https://web.monobank.ua/'; the exact steps are not documented, so the owner must supply it.",
+              "The currency for the 100.00 order was not specified by the owner; I assumed 980 (UAH, the documented default), so amount is 10000 in minimal units (kopiyky).",
+              "The page does not describe the structure of merchantPaymInfo (MerchantPaymInfoItem) in a schema; I used only reference and destination from the sample. It is required if a fiscalization (PRRO) link is active, and the page does not say whether the owner has one.",
+              "The page does not say which statuses indicate final success or the full list of invoice statuses; only the samples 'created', 'processing', 'success' appear.",
+              "The page does not state whether the webhook URL needs to be publicly reachable or any IP allowlist; the shop's real redirectUrl and webHookUrl are not known.",
+              "Whether the owner's account may use the test environment or production token is not determined; the page only says a test token is available from https://api.monobank.ua/.",
+              "After this call the customer must be sent to the returned pageUrl; the page shows pageUrl in the sample response but does not explicitly describe the redirect flow."
+            ],
+            "headers": [
+              {
+                "name": "X-Token",
+                "value": "<MERCHANT_X_TOKEN>"
+              },
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "url": "https://api.monobank.ua/api/merchant/invoice/create"
+          },
+          "model": "claude-sonnet-5-5",
+          "status": "ok",
+          "usage": {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "inference_geo": "global",
+            "input_tokens": 21486,
+            "output_tokens": 653,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "service_tier": "standard",
+            "speed": "standard"
+          }
+        },
+        "chars": 44162,
+        "correct": true,
+        "errors": [],
+        "excerpts": [
+          "post /api/merchant/invoice/create https://api.monobank.ua /api/merchant/invoice/create",
+          "X-Token required string Токен з особистого кабінету https://web.monobank.ua/ або тестовий токен з https://api.monobank.ua/",
+          "amount required integer < int64 > Сума оплати у мінімальних одиницях (копійки для гривні)",
+          "ccy integer < int32 > ISO 4217 код валюти, за замовчуванням 980 (гривня)"
+        ],
+        "excerpts_found_on_page": true,
+        "page": "https://api.monobank.ua/docs/acquiring.html",
+        "page_sha256": "f05224e1f91f5ce333ca60f5262a32befdd03378aaf1a06e0d6b85f6a90e3c87",
+        "status": "ok",
+        "verdict": {
+          "cost_usd": 0.046036,
+          "json": {
+            "correct": true,
+            "errors": [],
+            "excerpts": [
+              "post /api/merchant/invoice/create https://api.monobank.ua /api/merchant/invoice/create",
+              "X-Token required string Токен з особистого кабінету https://web.monobank.ua/ або тестовий токен з https://api.monobank.ua/",
+              "amount required integer < int64 > Сума оплати у мінімальних одиницях (копійки для гривні)",
+              "ccy integer < int32 > ISO 4217 код валюти, за замовчуванням 980 (гривня)"
+            ]
+          },
+          "model": "claude-sonnet-5-5",
+          "status": "ok",
+          "usage": {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "inference_geo": "global",
+            "input_tokens": 22103,
+            "output_tokens": 183,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "service_tier": "standard",
+            "speed": "standard"
+          }
+        }
+      },
+      "portmone": {
+        "note": "longer than 200000 characters, more than one page can carry",
+        "page": "https://docs.portmone.com.ua/docs/uk/PaymentGatewayUa/",
+        "page_note": "no task page in the manifest, so the docs entry page",
+        "status": "not measured"
+      },
+      "rozetkapay": {
+        "note": "longer than 200000 characters, more than one page can carry",
+        "page": "https://docs.rozetkapay.com/openapi.json",
+        "status": "not measured"
+      },
+      "wayforpay": {
+        "attempt": {
+          "cost_usd": 0.019926,
+          "json": {
+            "body": "{\"transactionType\":\"CREATE_INVOICE\",\"merchantAccount\":\"<MERCHANT_ACCOUNT>\",\"merchantAuthType\":\"SimpleSignature\",\"merchantDomainName\":\"<SHOP_DOMAIN>\",\"merchantSignature\":\"<HMAC_MD5_SIGNATURE>\",\"apiVersion\":1,\"orderReference\":\"<UNIQUE_ORDER_ID>\",\"orderDate\":<UNIX_TIMESTAMP>,\"amount\":100.00,\"currency\":\"UAH\",\"productName\":[\"<PRODUCT_NAME>\"],\"productPrice\":[100.00],\"productCount\":[1],\"paymentSystems\":\"card\",\"serviceUrl\":\"<SHOP_SERVICE_URL>\"}",
+            "gaps": [
+              "The merchantAccount identifier and the merchant SecretKey are not given on the page; the owner must supply them from their WayForPay account.",
+              "The shop's domain name (merchantDomainName) is needed and not known.",
+              "The page does not state the Content-Type header for the POST; JSON is assumed because the example request is a JSON body.",
+              "The orderDate format is not explicitly defined; the example uses a Unix timestamp in seconds, so that is assumed.",
+              "The page lists the signature string order (merchantAccount, merchantDomainName, orderReference, orderDate, amount, currency, productName[], productCount[], productPrice[] separated by ';'), but gives no worked example or number formatting rules (e.g. whether 100 or 100.00 is used in the signed string), so the signature cannot be computed here.",
+              "The page does not say which currency the shop should use beyond UAH being listed for currency; UAH is assumed for the 100.00 order.",
+              "The actual product names, quantity and unit price for the order are unknown; a single placeholder item priced 100.00 is assumed so the total equals the order amount.",
+              "The page does not state whether amount must equal the sum of productPrice x productCount, though it is assumed.",
+              "serviceUrl is optional and the shop's callback endpoint is unknown; it is needed to learn the payment result.",
+              "The page does not say if this endpoint is the Purchase flow; Create invoice returns an invoiceUrl for a payment page rather than taking card details directly, so the customer must be sent to that URL, which is how card payment is assumed to happen.",
+              "The page does not specify any authentication header; authentication is only through merchantSignature in the body.",
+              "The page's response example is inconsistent: reason and reasonCode appear swapped (reason '1100', reasonCode 'Ok'), so success checking is unclear.",
+              "The page does not describe the invoice expiry beyond the default of 1 hour or how to handle a failed or expired invoice."
+            ],
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "url": "https://api.wayforpay.com/api"
+          },
+          "model": "claude-sonnet-5-5",
+          "status": "ok",
+          "usage": {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "inference_geo": "global",
+            "input_tokens": 4973,
+            "output_tokens": 998,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "service_tier": "standard",
+            "speed": "standard"
+          }
+        },
+        "chars": 9736,
+        "correct": true,
+        "errors": [],
+        "excerpts": [
+          "передається методом POST по протоколу HTTP на URL https://api.wayforpay.com/api",
+          "transactionType CREATE_INVOICE Так",
+          "productName[] Масив з найменуванням замовлених товарів Так productPrice[] Масив з цінами за одиницю товару.",
+          "paymentSystems Список платіжних систем, доступних клієнтові при виборі способу оплати на платіжній сторінці."
+        ],
+        "excerpts_found_on_page": true,
+        "page": "https://wiki.wayforpay.com/view/608996852",
+        "page_sha256": "5209eeadb19e362522cd9f2355ed1f7158be245eef209d71c652b6e0892b06bd",
+        "status": "ok",
+        "verdict": {
+          "cost_usd": 0.013532,
+          "json": {
+            "correct": true,
+            "errors": [],
+            "excerpts": [
+              "передається методом POST по протоколу HTTP на URL https://api.wayforpay.com/api",
+              "transactionType CREATE_INVOICE Так",
+              "productName[] Масив з найменуванням замовлених товарів Так productPrice[] Масив з цінами за одиницю товару.",
+              "paymentSystems Список платіжних систем, доступних клієнтові при виборі способу оплати на платіжній сторінці."
+            ]
+          },
+          "model": "claude-sonnet-5-5",
+          "status": "ok",
+          "usage": {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "inference_geo": "global",
+            "input_tokens": 5971,
+            "output_tokens": 159,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "service_tier": "standard",
+            "speed": "standard"
+          }
+        }
+      }
+    },
+    "rubric": "You check one HTTP request an AI agent wrote from a payment provider's documentation page, for Agent-Grade. The agent was asked to write the first request that takes a card payment for an order of 100.00.\n\nJudge it against the page only, not against what you know about the provider. It is correct when a merchant with valid credentials could send it as written, after filling in the placeholders, and the provider would accept it as the start of that payment: the right method and endpoint, the required fields present and in the documented format, and the documented authentication. Placeholders for keys, signatures and IDs are fine; a signature scheme described but left as a placeholder is fine.\n\nList each error as one short line. Quote the excerpts of the page your judgment rests on, copied character for character, each under 200 characters.\n\nReturn JSON only, matching the schema.",
+    "task": "You are an AI agent building a small online shop for a non-technical owner. The owner already has a merchant account with {name}, and wants customers to pay for an order of 100.00 by card.\n\nUsing only the documentation page below, write the first HTTP request your code would send to {name}'s API to take that payment. Use placeholders for keys, signatures and IDs you do not have. Do not use what you remember about {name}: if the page does not tell you something you need, list it under gaps.\n\nReturn JSON only, matching the schema."
+  },
+  "r4": {
+    "answers": {
+      "ME/claude-fable-5-2/1": {
+        "cost_usd": 0.067032,
+        "model": "claude-fable-5-2",
+        "named": [
+          "allsecure",
+          "ckb-otp-banka",
+          "hipotekarna-banka",
+          "nlb-banka-podgorica",
+          "paddle",
+          "paypal",
+          "stripe"
+        ],
+        "status": "ok",
+        "text": "Stripe doesn't support businesses registered in Montenegro, so your realistic options are a local bank or an international provider that accepts Montenegrin merchants. Terms and availability change, so confirm the details with each provider before committing.\n\n**1. Local bank acquiring (my main recommendation for physical goods)**\n\nYou sign a merchant agreement with a bank, which connects you to a payment gateway.\n\n- **CKB (Crnogorska komercijalna banka)** is the largest bank and has an established e-commerce service.\n- **Hipotekarna banka**, as far as I know, works with the AllSecure gateway, which has ready-made plugins for WooCommerce and similar platforms.\n- **NLB Banka** and **Erste Bank** both offer e-commerce acquiring too.\n\nMoney settles directly into your local account in euros, and the banks accept sole traders (preduzetnik). The downside is more paperwork: your website usually has to meet requirements (terms, refund policy, card logos) before approval, and setup can take a few weeks. Get quotes from two or three banks, since commissions and monthly fees vary and are often negotiable.\n\n**2. International providers**\n\n- **2Checkout (now Verifone)** accepts merchants from Montenegro and is the best fit if you sell mainly to customers abroad. Fees are higher than a local bank's.\n- **PayPal** works in Montenegro, and accounts could receive payments last I knew. It is useful as a second option at checkout, but check the current withdrawal options and fees.\n- **Paddle or Lemon Squeezy** only apply if you sell digital products or software. They act as the merchant of record and handle foreign VAT for you.\n\n**What I'd do**\n\n- **Physical goods, mostly local or regional customers:** use a local bank (start with CKB and Hipotekarna and compare offers), and optionally add PayPal.\n- **Mostly international customers:** use 2Checkout plus PayPal.\n- **Digital products:** use Paddle or Lemon Squeezy.\n\nCheck which gateways your shop platform supports before choosing. Shopify Payments, for example, isn't available in Montenegro, so you'd need a third-party gateway there. WooCommerce is usually the easiest to integrate with local bank gateways.\n\nWhat are you selling, and to whom? I can narrow this down further if I know.",
+        "usage": {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "inference_geo": "global",
+          "input_tokens": 64,
+          "output_tokens": 1663,
+          "output_tokens_details": {
+            "thinking_tokens": 897
+          },
+          "service_tier": "standard",
+          "speed": "standard"
+        }
+      },
+      "ME/claude-fable-5-2/2": {
+        "cost_usd": 0.067272,
+        "model": "claude-fable-5-2",
+        "named": [
+          "allsecure",
+          "ckb-otp-banka",
+          "hipotekarna-banka",
+          "nlb-banka-podgorica",
+          "paddle",
+          "paypal",
+          "stripe"
+        ],
+        "status": "ok",
+        "text": "**Short answer:** Stripe isn't available to Montenegrin businesses, so your realistic options are a local bank's e-commerce acquiring service or an international provider that accepts Montenegrin merchants.\n\n## What I'd recommend\n\n**1. E-commerce acquiring from a local bank (my first choice)**\n\nThis is the standard route for Montenegrin online shops. Banks that offer it include:\n\n- **CKB** (OTP group)\n- **NLB Banka**\n- **Hipotekarna banka**\n- **Erste Bank**\n\nYou sign a merchant agreement with the bank, and payments go through a gateway they work with, typically **AllSecure**, **Monri** or **Payten/NestPay**. These have plugins for WooCommerce and other common platforms, though you should check that your shop platform is supported.\n\nI'd start with the bank where you already have your business account, then compare with one or two others. Ask about:\n\n- setup fee and monthly fee\n- commission per transaction (often around 2–3% and negotiable)\n- settlement time\n- which gateway and platform plugins they support\n\nBanks will also require your site to show terms of sale, a refund policy, company details and card logos before approval. Expect approval to take a few weeks.\n\n**2. 2Checkout (now Verifone)**\n\nThis international provider has accepted merchants from Montenegro. It costs more (roughly 3.5–6% depending on the plan) but is useful if you sell mostly to foreign customers or want quicker setup without a bank contract. Confirm current eligibility and that your product category is allowed.\n\n**3. PayPal as a supplement**\n\nPayPal operates in Montenegro, but check whether a business account there can currently receive payments and how you would withdraw funds. This has historically been limited in the region. I'd treat it as an extra checkout option, not your main one.\n\n## What won't work\n\n- **Stripe, Square, Adyen, Mollie:** these don't onboard Montenegrin sole traders. Stripe would require a company registered in a supported country.\n- **Paddle or Lemon Squeezy:** these only work if you sell digital products or software, not physical goods.\n\n## One more thing\n\nMontenegro's fiscalization rules also apply to online sales, so make sure your shop or invoicing software can issue fiscalized invoices. Your accountant can confirm the setup.\n\nFees and eligibility change, so verify the details directly with the providers. If you tell me what you're selling, which platform you're using and whether your customers are mostly local or abroad, I can narrow this down.",
+        "usage": {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "inference_geo": "global",
+          "input_tokens": 64,
+          "output_tokens": 1669,
+          "output_tokens_details": {
+            "thinking_tokens": 850
+          },
+          "service_tier": "standard",
+          "speed": "standard"
+        }
+      },
+      "ME/claude-fable-5-2/3": {
+        "cost_usd": 0.073112,
+        "model": "claude-fable-5-2",
+        "named": [
+          "allsecure",
+          "ckb-otp-banka",
+          "hipotekarna-banka",
+          "nlb-banka-podgorica",
+          "paypal",
+          "stripe"
+        ],
+        "status": "ok",
+        "text": "Your options are narrower than in the EU because Stripe does not support businesses registered in Montenegro, so the usual route is a local bank, often through a regional payment gateway.\n\n**What I'd recommend**\n\n1. **Local bank acquiring (best choice for most shops).** You sign an e-commerce merchant agreement with a Montenegrin bank, and payouts go in euros straight to your business account. Banks to ask:\n   - CKB (OTP group)\n   - Hipotekarna banka\n   - NLB Banka\n   - Erste Bank\n\n   I'd start with the bank where you already have your business account, then compare with one or two others.\n\n2. **A regional gateway on top of the bank.** These handle the technical side and usually offer ready-made plugins for WooCommerce and similar platforms, which makes setup easier than a bank's raw integration:\n   - **AllSecure**: active in Montenegro and works with local banks.\n   - **Monri (WebPay)**: widely used in the region.\n\n   Confirm with each which Montenegrin banks they currently work with and whether they onboard sole traders.\n\n3. **Verifone (formerly 2Checkout) as a fallback.** It is an international provider that has accepted Montenegrin merchants. It is quicker to set up, but fees are higher (roughly 3.5% plus a fixed fee, or more) and payouts are slower. It is mainly worth it if you sell mostly abroad or the banks turn you down.\n\n4. **PayPal as an extra, not your main method.** Montenegrin accounts can receive payments as far as I know, but withdrawal options are limited, so check the current terms before relying on it.\n\n**Practical points**\n\n- **Fees:** Local banks usually charge about 2–3.5% per transaction, sometimes with a setup or monthly fee. This is negotiable, so get quotes.\n- **Website requirements:** Before approval, banks will want your site to show your business details (name, address, PIB), terms and conditions, delivery and refund policies, a privacy policy, and card logos.\n- **Fiscalisation:** Online card sales still need to be invoiced under Montenegro's e-fiscalisation rules, so check with your accountant how your shop will handle this.\n\nProvider coverage and terms change, so confirm the details directly before committing.\n\nIf you tell me which platform you're using (WooCommerce, Shopify, custom) and whether your customers are mostly local or abroad, I can narrow this down. Note that Shopify Payments isn't available in Montenegro, so you'd need a third-party gateway there.",
+        "usage": {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "inference_geo": "global",
+          "input_tokens": 64,
+          "output_tokens": 1815,
+          "output_tokens_details": {
+            "thinking_tokens": 984
+          },
+          "service_tier": "standard",
+          "speed": "standard"
+        }
+      },
+      "ME/claude-haiku-5-5/1": {
+        "cost_usd": 0.000902,
+        "model": "claude-haiku-5-5",
+        "named": [
+          "ckb-otp-banka",
+          "hipotekarna-banka",
+          "nlb-banka-podgorica",
+          "paypal",
+          "stripe"
+        ],
+        "status": "ok",
+        "text": "For a sole trader in Montenegro, I'd look at these options, roughly in order of fit:\n\n1. **Monri** (Monri Payments): A payment gateway founded in Croatia that works widely across the Balkans, including Montenegro. It supports cards, local payment methods, and integrations with common shopping platforms. It's usually the most practical choice for a local online shop because it's set up for the region, with local currency settlement and support.\n\n2. **Your bank's virtual POS (e-commerce acquiring):** Several Montenegrin banks offer card acceptance for online shops, including Crnogorska komercijalna banka (CKB), Erste Bank Montenegro, NLB Banka Montenegro, Lovćen banka, and Hipotekarna. Since you'll need a business account anyway, ask your bank about this. Fees are often competitive, and settlement goes straight to your account. Integration may be less smooth than with a modern gateway, so ask what plugins or APIs they support.\n\n3. **PayPal:** Useful as a complement, since many customers, especially abroad, expect it. Check whether a Montenegrin business account can receive payments and withdraw to your local bank in your situation, because availability has changed over time.\n\n4. **Stripe:** The best developer experience, but its support for Montenegro as a business location is limited or changes over time. Check their current list of supported countries before relying on it.\n\nOther international providers such as Adyen, Mollie, or 2Checkout (Verifone) may or may not accept a Montenegrin sole trader, so verify directly.\n\n**Practical tips:**\n- Compare the per-transaction fee and any monthly or setup fees, not just the headline rate. Ask about the currency conversion fee if customers pay in a currency other than EUR. Montenegro uses the euro, so most shops price in EUR.\n- Make sure the provider supports 3D Secure (SCA), which is required for many European card payments.\n- Use a hosted payment page or redirect so you don't handle raw card data. This keeps your PCI DSS obligations light.\n- Confirm payout timing and whether settlements go to your sole trader account.\n- Check that your registration (PIB, tax status, and business activity code) matches what the provider asks for in onboarding.\n\nSince provider coverage and fees change, check current terms on each provider's website, or ask two or three of them for a quote before you choose. If you tell me what platform you're building on (WooCommerce, Shopify, a custom site, etc.), I can narrow this down further.",
+        "usage": {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "inference_geo": "global",
+          "input_tokens": 64,
+          "output_tokens": 1792,
+          "output_tokens_details": {
+            "thinking_tokens": 976
+          },
+          "service_tier": "standard",
+          "speed": "standard"
+        }
+      },
+      "ME/claude-haiku-5-5/2": {
+        "cost_usd": 0.000863,
+        "model": "claude-haiku-5-5",
+        "named": [
+          "ckb-otp-banka",
+          "nlb-banka-podgorica",
+          "paddle",
+          "paypal",
+          "stripe"
+        ],
+        "status": "ok",
+        "text": "For a sole trader in Montenegro, these are the main options:\n\n**Recommended**\n\n1. **Monri Payments**: A regional payment gateway (Croatia-based) that works well with Montenegrin businesses. It supports cards and local bank acquiring, has plugins for WooCommerce, Shopify, and other platforms, and is familiar with local banks. It's usually the most practical choice for a small shop in the region.\n\n2. **A local bank's card acquiring service**: Montenegrin banks such as Crnogorska komercijalna banka (CKB), NLB Montenegro, Lovćen banka, Erste Bank, and Addiko offer e-commerce acceptance, sometimes through partners like Monri, CaSys, or Payten. If you already bank with one of them, ask about this first. Fees and setup can be negotiated, and settlement goes straight to your account.\n\n**Worth adding**\n\n3. **PayPal**: Widely trusted by customers, and it's easy to add alongside cards. Check that it's available for your account type in Montenegro, and expect higher fees.\n\n**Check before choosing**\n\n4. **Stripe**: Excellent tooling, but it doesn't always onboard businesses from every country, and Montenegro's availability for sole traders has been limited. Check Stripe's current supported-country list before planning around it.\n\n5. **Adyen, Checkout.com, Paddle**: These are generally aimed at larger or higher-volume merchants, or at software businesses. They're usually overkill for a small shop.\n\n**Practical points**\n\n- **Fiscalization**: Montenegro requires fiscal receipts for sales, and this generally applies to online sales too. Make sure your setup works with the Tax Administration's e-fiscalization system, or that your payment provider's integration handles it.\n- **Compare the total cost**: Look at the per-transaction fee, monthly fees, settlement time, and currency conversion if you sell to customers abroad.\n- **Use a hosted checkout**: Let the provider's payment page handle card data. This keeps your PCI DSS obligations light.\n- **Confirm sole-trader eligibility**: Ask the provider directly whether they accept preduzetnici with your registration type and activity code.\n\nIf you tell me which e-commerce platform you're using (WooCommerce, Shopify, a custom site, etc.) and roughly how many orders you expect, I can narrow this down further.",
+        "usage": {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "inference_geo": "global",
+          "input_tokens": 64,
+          "output_tokens": 1714,
+          "output_tokens_details": {
+            "thinking_tokens": 928
+          },
+          "service_tier": "standard",
+          "speed": "standard"
+        }
+      },
+      "ME/claude-haiku-5-5/3": {
+        "cost_usd": 0.000864,
+        "model": "claude-haiku-5-5",
+        "named": [
+          "ckb-otp-banka",
+          "hipotekarna-banka",
+          "nlb-banka-podgorica",
+          "paypal",
+          "stripe"
+        ],
+        "status": "ok",
+        "text": "The best option for a Montenegrin sole trader is usually a **local bank's e-commerce acquiring service**, often paired with a **payment gateway**. Availability changes, so confirm each option's current terms for Montenegro before committing.\n\n**1. Local bank acquiring (start here)**\nSeveral Montenegrin banks offer virtual POS or e-commerce acquiring for registered businesses, including sole traders. Examples include Crnogorska komercijalna banka (CKB), NLB Montenegro, Erste Bank Montenegro, Addiko Bank, and Hipotekarna banka. Settlement is in euros to your local account, fees are usually reasonable, and the process is familiar. Ask which of them supports online card acceptance for sole traders (*preduzetnici*) and which payment page or gateway they integrate with.\n\n**2. Monri or CorvusPay (payment gateways)**\nThese regional gateways work with several banks and card schemes, so you can accept Visa and Mastercard through one integration. They are commonly used by online merchants in the former Yugoslav region and are worth comparing with your bank's offer. Confirm that they support Montenegrin merchants and sole traders.\n\n**3. PayPal**\nUseful for customers who prefer it, but check whether a Montenegrin business account is available to you and what the fees and payout conditions are. Treat it as a complement to card acceptance rather than the only option.\n\n**4. Stripe or Adyen (international)**\nThese are popular with online shops and integrate well with platforms like Shopify and WooCommerce. Their coverage of Montenegro has changed over time, so check whether they accept your country of registration. If they do, they can be a good option, but local banks may be simpler for payouts.\n\n**Practical suggestions:**\n- Compare the **merchant fee percentage, fixed per-transaction fee, setup/monthly fees, and payout schedule** across at least two or three providers.\n- Check whether your **e-commerce platform** has a native integration with the provider. This matters more than small differences in fees.\n- Ask about **3D Secure (3DS2)** support, which is now standard for card payments in the EU region and reduces fraud and chargebacks.\n- Check your **fiscalization obligations** with the Tax Administration (Uprava prihoda i carina). Montenegro requires fiscal receipts for sales, and online sales may need specific handling.\n\nIf you tell me which e-commerce platform you plan to use (Shopify, WooCommerce, a custom site, etc.) and what you expect your monthly volume to be, I can narrow this down further.",
+        "usage": {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "inference_geo": "global",
+          "input_tokens": 64,
+          "output_tokens": 1715,
+          "output_tokens_details": {
+            "thinking_tokens": 871
+          },
+          "service_tier": "standard",
+          "speed": "standard"
+        }
+      },
+      "ME/claude-opus-5-5/1": {
+        "cost_usd": 0.034636,
+        "model": "claude-opus-5-5",
+        "named": [
+          "allsecure",
+          "ckb-otp-banka",
+          "hipotekarna-banka",
+          "nlb-banka-podgorica",
+          "paddle",
+          "paypal",
+          "stripe"
+        ],
+        "status": "ok",
+        "text": "# Accepting Card Payments Online as a Sole Trader in Montenegro\n\nMontenegro isn't supported by some of the best-known providers, Stripe in particular, so your options are a bit narrower than in the EU. Availability changes, so confirm each provider's current country support before committing.\n\n## Recommended Options\n\n### 1. Local bank acquiring + regional payment gateway (best for most physical-goods shops)\nThis is the standard route for Montenegrin webshops. You open an e-commerce merchant agreement with a local bank, and a payment gateway processes the transactions.\n\n**Banks offering internet acquiring** (ask about \"internet prodajno mjesto\" or e-commerce acquiring):\n- CKB (Crnogorska komercijalna banka)\n- NLB Banka\n- Erste Bank\n- Hipotekarna banka\n- Addiko Bank\n- Lovćen banka\n\n**Gateways commonly used in the region:**\n- **Monri**: widely used in the Western Balkans, with plugins for WooCommerce and other platforms. A strong first choice.\n- **AllSecure**: regional gateway with a presence in Montenegro and Serbia.\n- **Payten**: works with several banks in the region.\n\n**Pros:** fully legal and local, payouts in EUR to your Montenegrin account, accepts Visa/Mastercard, customers trust it.\n**Cons:** more paperwork, setup fees and monthly fees with some banks, and slower onboarding (often a few weeks). The bank will want to review your website (terms, privacy policy, delivery and refund policy, contact details).\n\n### 2. Merchant of Record platforms (best if you sell digital products)\n- **Paddle**\n- **Lemon Squeezy**\n\nThese platforms act as the legal seller, handle VAT and sales tax globally, and pay you out. They generally accept sellers from many countries, but they're mainly for software, e-books, courses, and other digital goods, not physical products.\n\n### 3. PayPal (as a supplementary option)\nPayPal's functionality for Montenegrin accounts has historically been limited. Check whether you can **receive** payments and withdraw funds with a Montenegrin business account before relying on it. It's best used alongside a card gateway rather than as your only option.\n\n### 4. 2Checkout (Verifone)\n2Checkout supports sellers in many countries outside Stripe's coverage and is worth checking for Montenegro. Fees are higher than local acquiring.\n\n## Not Available / Workarounds\n- **Stripe and Shopify Payments** aren't available for Montenegrin businesses.\n- Some people register a company abroad (e.g., a US LLC via Stripe Atlas, or an Estonian company via e-Residency) to use Stripe. This creates real tax and accounting obligations in two countries, so get advice from an accountant first. It's usually overkill for a small sole trader.\n\n## My Recommendation\n- **Physical products:** Approach your bank (or CKB/NLB/Erste) for e-commerce acquiring with **Monri** as the gateway, and add PayPal if it works for receiving.\n- **Digital products:** Start with **Paddle** or **Lemon Squeezy**. They're the fastest to set up and handle tax compliance for you.\n\nBefore launching, ask your accountant how online card sales affect your fiscalization obligations under Montenegro's fiscalization law, since online sales are generally covered.",
+        "usage": {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "inference_geo": "global",
+          "input_tokens": 64,
+          "output_tokens": 1719,
+          "output_tokens_details": {
+            "thinking_tokens": 593
+          },
+          "service_tier": "standard",
+          "speed": "standard"
+        }
+      },
+      "ME/claude-opus-5-5/2": {
+        "cost_usd": 0.033416,
+        "model": "claude-opus-5-5",
+        "named": [
+          "allsecure",
+          "ckb-otp-banka",
+          "hipotekarna-banka",
+          "nlb-banka-podgorica",
+          "paddle",
+          "paypal",
+          "stripe"
+        ],
+        "status": "ok",
+        "text": "# Accepting Card Payments Online from Montenegro\n\nMontenegro isn't supported by some of the best-known providers, which narrows your options. Availability changes, so confirm current terms with each provider before you commit.\n\n## Not available for Montenegrin businesses\n- **Stripe**: Montenegro isn't a supported country.\n- **Shopify Payments**: not available. You can still run a Shopify store with a third-party gateway.\n- **PayPal**: support for Montenegrin accounts has historically been limited. Check whether you can receive payments and withdraw funds before relying on it.\n\n## Recommended options\n\n### 1. Local bank e-commerce acquiring (best for most small shops)\nMost Montenegrin banks offer internet card acquiring (Visa/Mastercard), usually through a payment gateway partner:\n- **CKB (Crnogorska komercijalna banka)**, part of OTP Group\n- **NLB Banka Podgorica**\n- **Erste Bank Montenegro**\n- **Hipotekarna banka**\n- **Addiko Bank**\n\n**Pros:** payouts in EUR to your local account, compliance with local rules, reasonable fees.\n**Cons:** more paperwork, approval can take weeks, and you'll need a website with terms, privacy policy, refund policy, and contact details.\n\n**Tip:** Start with the bank where you already hold your business account, and compare fees with one or two others.\n\n### 2. Regional payment gateways\nThese connect your shop to a bank's acquiring and often provide ready-made plugins for WooCommerce, Shopify, and similar platforms. Check which ones your chosen bank works with:\n- **Monri**\n- **AllSecure**\n- **Payten**\n\n### 3. International merchant-of-record or reseller platforms\nThese are useful if you sell internationally or want a fast start without bank paperwork:\n- **2Checkout (Verifone)**: supports Montenegro and handles physical and digital goods.\n- **Paddle** or **Lemon Squeezy**: for digital products or software only. They handle VAT and tax as the merchant of record.\n\n**Cons:** higher fees than local acquiring, and payouts may involve currency conversion.\n\n## My recommendation\n- **Selling physical goods mainly in Montenegro or the region:** local bank acquiring with a gateway like Monri or AllSecure.\n- **Selling digital products internationally:** Paddle or Lemon Squeezy.\n- **Selling physical goods internationally and needing a quick start:** 2Checkout, possibly alongside local acquiring later.\n\n## Don't forget: fiscalization\nMontenegro has mandatory fiscalization. Sales paid by card online generally still require issuing fiscalized invoices or receipts. Ask your accountant or the Tax Administration (Poreska uprava) how this applies to your online sales, and make sure your shop or invoicing software supports it.\n\nIf you tell me what you're selling, who your customers are, and which platform you use, I can narrow this down further.",
+        "usage": {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "inference_geo": "global",
+          "input_tokens": 64,
+          "output_tokens": 1658,
+          "output_tokens_details": {
+            "thinking_tokens": 670
+          },
+          "service_tier": "standard",
+          "speed": "standard"
+        }
+      },
+      "ME/claude-opus-5-5/3": {
+        "cost_usd": 0.036016,
+        "model": "claude-opus-5-5",
+        "named": [
+          "allsecure",
+          "ckb-otp-banka",
+          "hipotekarna-banka",
+          "nlb-banka-podgorica",
+          "paddle",
+          "paypal",
+          "stripe"
+        ],
+        "status": "ok",
+        "text": "# Accepting Card Payments Online in Montenegro\n\n**Stripe is not available** to businesses registered in Montenegro, so most Montenegrin shops use a **local bank's e-commerce acquiring** combined with a **regional payment gateway**. Availability and terms change, so confirm the details with each provider before committing.\n\n## 1. Local bank acquiring + payment gateway (recommended)\n\nYou sign an internet acquiring (e-commerce) agreement with a Montenegrin bank, usually the one holding your business account. The bank then connects you through a gateway provider. Banks offering e-commerce acquiring include:\n\n- **CKB (Crnogorska komercijalna banka, OTP Group)**\n- **Hipotekarna banka**\n- **NLB Banka Podgorica**\n- **Erste Bank Podgorica**\n- **Addiko Bank**\n\nCommon gateway / payment service providers in the region:\n\n- **Monri**: very popular in the Balkans, with good plugins for WooCommerce, Shopify-style platforms, and custom sites. This is my top pick for ease of integration.\n- **AllSecure**: active in Montenegro and Serbia, works with several local banks, and handles the bank paperwork for you.\n- **Payten (formerly Asseco SEE)**: the gateway behind many bank solutions in the region.\n\n**Why this route:** you're paid out in EUR to your local account, customers see a trusted local checkout, and it fits Montenegrin regulatory and tax requirements.\n\n**Typical requirements:** a business account, registration documents, a live website with terms and conditions, a privacy policy, delivery and refund policies, contact details, and card logos displayed.\n\n## 2. International alternatives\n\n- **PayPal**: Montenegro is a supported country, but receiving payments and withdrawals have historically been limited there. Check what your account type can actually do before relying on it.\n- **2Checkout (Verifone)**: works as a merchant of record in many countries that Stripe doesn't cover. Fees are higher, but it's useful for international buyers.\n- **Paddle or Lemon Squeezy**: worth considering only if you sell **digital products**. They handle VAT and global payments.\n\n## 3. Don't overlook cash on delivery\n\nFor physical goods sold within Montenegro and the region, **pouzeće (cash on delivery)** remains very common. Offering it alongside card payments often increases conversions.\n\n## My recommendation\n\n1. Open your business account with a bank that offers e-commerce, such as **CKB** or **Hipotekarna**.\n2. Integrate through **Monri** or **AllSecure**, whichever your bank works with.\n3. Add **cash on delivery** for domestic customers.\n4. If you sell internationally or digitally, add **2Checkout** or **Paddle**.\n\n## Also check\n\n- **Fiscalization:** Montenegro's fiscalization law applies to online sales too, so you'll need to issue fiscal invoices. Ask your accountant how this works with your chosen gateway.\n- **Fees:** compare setup fees, monthly fees, and per-transaction percentages. Local banks often negotiate, especially if you bring your business account to them.\n\nIf you tell me what you're selling and which platform you're building on (WooCommerce, Shopify, a custom site), I can narrow this down further.",
+        "usage": {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "inference_geo": "global",
+          "input_tokens": 64,
+          "output_tokens": 1788,
+          "output_tokens_details": {
+            "thinking_tokens": 696
+          },
+          "service_tier": "standard",
+          "speed": "standard"
+        }
+      },
+      "ME/claude-sonnet-5-5/1": {
+        "cost_usd": 0.011248,
+        "model": "claude-sonnet-5-5",
+        "named": [
+          "ckb-otp-banka",
+          "hipotekarna-banka",
+          "nlb-banka-podgorica",
+          "paddle",
+          "paypal",
+          "stripe"
+        ],
+        "status": "ok",
+        "text": "Montenegro has a mixed picture: some global providers don't onboard Montenegrin merchants directly, so local acquirers matter. Here is what I know, with the caveat that availability and terms change, so verify each one before you commit.\n\n**Local options (most reliable for a Montenegrin sole trader)**\n\n- **Bank acquiring via a local bank.** Banks such as CKB (Crnogorska komercijalna banka), Erste Bank Montenegro, NLB Banka, Lovćen Banka, Hipotekarna Banka, and Addiko typically offer e-commerce card acceptance (Visa/Mastercard, often with 3D Secure). You usually need a business account with them, a website with required legal info, and sometimes a contract with a payment gateway.\n- **Monri Payments.** A gateway/payment service provider active in the Balkans, with integrations for WooCommerce and other platforms. It typically works with local acquiring banks. Worth checking whether they currently serve Montenegro for your business type.\n- **Payten / Nestpay (Asseco SEE).** Widely used gateway technology in the region, and several Montenegrin banks run their e-commerce acquiring on it. Often the practical route is the bank's own gateway built on this.\n- **Bankart / other regional processors.** Some banks use these behind the scenes. You normally access them through the bank.\n\n**International options (check eligibility)**\n\n- **Stripe:** Montenegro is not on Stripe's list of directly supported countries as far as I know. Some merchants use workarounds such as a company in a supported country (e.g., via Estonia's e-Residency or a UK/EU entity), but that adds legal and tax complexity, and you should get proper advice before doing it.\n- **PayPal:** You can open a business account in Montenegro, but functionality has historically been limited (e.g., restrictions on receiving or withdrawing funds). Check the current status.\n- **Paddle, Lemon Squeezy, and similar merchant-of-record services:** Useful for digital products, since they handle sales tax/VAT and pay you out. Check payout support for Montenegro.\n- **Other options such as Paysera, Wise Business, or Revolut Business** may help with receiving funds, but card acquiring for a Montenegrin sole trader varies, so confirm.\n\n**What I'd recommend**\n\n1. Start with your local bank or a Montenegrin bank offering e-commerce acquiring, since this is the most dependable path for a sole trader.\n2. If you sell mainly to EU or international customers, ask whether the bank supports multi-currency and what the settlement fees are.\n3. Consider a merchant-of-record provider if you sell digital goods.\n\n**Questions to ask any provider**\n\n- Do they onboard sole traders (preduzetnik), or only companies (d.o.o.)?\n- Fees: percentage per transaction, fixed fee, monthly fee, setup fee, chargeback fee.\n- Settlement currency and payout timing.\n- Plugin support for your platform (WooCommerce, Shopify, etc.). Note that Shopify Payments is not available in Montenegro, so you'd need a third-party gateway.\n- 3D Secure/SCA support and PCI-DSS responsibilities.\n\nIf you tell me what you're selling (physical or digital), your platform, and whether your customers are mostly local or international, I can narrow this down.",
+        "usage": {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "inference_geo": "global",
+          "input_tokens": 64,
+          "output_tokens": 1112,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "service_tier": "standard",
+          "speed": "standard"
+        }
+      },
+      "ME/claude-sonnet-5-5/2": {
+        "cost_usd": 0.010018,
+        "model": "claude-sonnet-5-5",
+        "named": [
+          "ckb-otp-banka",
+          "hipotekarna-banka",
+          "nlb-banka-podgorica",
+          "paddle",
+          "paypal",
+          "stripe"
+        ],
+        "status": "ok",
+        "text": "Montenegro has some constraints: Stripe and PayPal merchant accounts are not generally available to Montenegrin-registered businesses. Here are the realistic options, with a caveat that you should verify current availability directly since this changes.\n\n**Local/regional acquirers and gateways (most reliable for a Montenegrin entity)**\n\n1. **Monri Payments** (Bosnia-based, active in the region): a payment gateway that works with Montenegrin merchants, has plugins for WooCommerce and other platforms, and supports Visa/Mastercard with 3D Secure.\n2. **CorvusPay** (Croatia-based): serves the regional market, including Montenegro, and offers hosted payment pages and e-commerce plugins.\n3. **Bankart / local bank e-commerce services**: Montenegrin banks offer card acquiring and e-commerce gateways directly. Ones to ask:\n   - **Crnogorska komercijalna banka (CKB)**\n   - **Erste Bank Montenegro**\n   - **Hipotekarna banka**\n   - **NLB Banka Podgorica**\n   - **Addiko Bank Montenegro**\n   \n   Bank-based acquiring is often the most straightforward route for a local sole trader, with settlement into your local account in EUR.\n4. **Payten / Nestpay (Asseco SEE)**: the processing platform many regional banks use. Your bank may give you access through it.\n\n**Options that may work, but check eligibility**\n\n- **Paddle or Lemon Squeezy** (merchant-of-record services): these are mainly for digital products/software and handle VAT for you, but they have restrictions on what you can sell.\n- **Payoneer, Wise**: useful for receiving payouts and international payments, but they are not full card-checkout solutions for a shop.\n- **Stripe via a foreign entity**: some Montenegrin entrepreneurs register an Estonian e-Residency company or a UK/US LLC to access Stripe. This works but brings extra tax, compliance, and banking considerations, so get advice from an accountant first.\n\n**What I'd recommend**\n\n- For a small physical-goods shop selling mainly to Montenegro or the region: start with a **local bank's e-commerce acquiring** or **Monri/CorvusPay**.\n- For selling digital products internationally: consider a **merchant of record** or the foreign-entity route.\n\n**Practical tips**\n\n- Compare fees: setup fee, monthly fee, and transaction percentage (typically around 1.5-3.5%).\n- Check that the provider has a plugin for your platform (WooCommerce, Shopify, etc.). Note that Shopify Payments is not available in Montenegro, so you'd need a third-party gateway.\n- Ask about 3D Secure, payout timing, and chargeback handling.\n- You'll usually need your registration documents, a website with clear terms, a return policy, and company contact details before approval.\n\nIf you tell me what you're selling and where your customers are, I can narrow this down.",
+        "usage": {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "inference_geo": "global",
+          "input_tokens": 64,
+          "output_tokens": 989,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "service_tier": "standard",
+          "speed": "standard"
+        }
+      },
+      "ME/claude-sonnet-5-5/3": {
+        "cost_usd": 0.010118,
+        "model": "claude-sonnet-5-5",
+        "named": [
+          "ckb-otp-banka",
+          "hipotekarna-banka",
+          "nlb-banka-podgorica",
+          "paddle",
+          "paypal",
+          "stripe"
+        ],
+        "status": "ok",
+        "text": "Montenegro's payment landscape is limited compared to the EU, so your options depend on whether you sell mainly to local customers or internationally. Check current availability and terms directly with each provider, because onboarding rules for Montenegrin merchants change often.\n\n**Local / regional acquirers (most reliable for a Montenegrin sole trader)**\n\n1. **Banks offering e-commerce acquiring.** Most Montenegrin banks provide a card payment gateway for merchants, including CKB (Crnogorska komercijalna banka), Erste Bank Montenegro, NLB Banka, Hipotekarna banka, and Lovćen banka. They can accept Visa, Mastercard, and often Dina or others depending on the bank. This is usually the most straightforward route for a locally registered business, and settlement goes to your local account in EUR. Expect fees, a setup process, and a requirement for 3D Secure.\n\n2. **Monri Payments.** A regional payment service provider active in the Balkans with a gateway that integrates with common e-commerce platforms. Worth contacting to see whether they serve Montenegrin merchants.\n\n3. **Payten / Nestpay (a gateway used by several regional banks).** Several banks use this infrastructure, so your bank may connect you through it.\n\n**International providers (check eligibility carefully)**\n\n4. **Stripe.** Montenegro is not on Stripe's list of directly supported countries, so you generally cannot open a standard account as a Montenegrin business. Some people use a Stripe Atlas-style foreign entity, but that adds cost, taxes, and compliance complexity, so get accounting advice first.\n\n5. **PayPal.** Available in Montenegro for accounts, but with limitations. Receiving payments is possible, though some features and withdrawal options are restricted. It can work as a secondary option for international customers.\n\n6. **Paddle, Lemon Squeezy, or similar merchant-of-record services.** These suit digital products or software. They handle payments and VAT as the seller of record and pay you out, which can sidestep some country-support issues. They are not suitable for most physical goods.\n\n**My recommendations**\n\n- **For local and regional customers selling physical goods:** start with a Montenegrin bank's e-commerce gateway, or a regional PSP like Monri.\n- **For international customers:** add PayPal as a supplement, or consider a merchant-of-record service if you sell digital goods.\n- Choose a platform (WooCommerce, Shopify, etc.) after confirming which gateways it supports, since this can limit your options. Shopify, for example, has restrictions on supported payment providers by country.\n\n**Questions to ask any provider**\n- Do they onboard sole traders (preduzetnik), or only companies (DOO)?\n- What are the transaction fees, monthly fees, and rolling reserve requirements?\n- What are the payout times and currencies?\n- What documentation do they need (registration, website with terms, returns policy, and so on)?\n\nIf you tell me what you're selling and where your customers are, I can narrow this down further.",
+        "usage": {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "inference_geo": "global",
+          "input_tokens": 64,
+          "output_tokens": 999,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "service_tier": "standard",
+          "speed": "standard"
+        }
+      },
+      "UA/claude-fable-5-2/1": {
+        "cost_usd": 0.067552,
+        "model": "claude-fable-5-2",
+        "named": [
+          "fondy",
+          "liqpay",
+          "paypal",
+          "plata-by-mono",
+          "portmone",
+          "stripe",
+          "wayforpay"
+        ],
+        "status": "ok",
+        "text": "For a small online shop run by a Ukrainian FOP, I'd recommend one of these three:\n\n- **LiqPay (PrivatBank)** is the most widely used and recognised by buyers. It's simple to set up as a FOP, has plugins for most shop platforms, and supports Apple Pay and Google Pay. It's easiest if your FOP account is at PrivatBank.\n- **Plata by mono (monobank)** is a good choice if you have, or are happy to open, a FOP account with monobank. Onboarding is quick and fully in-app, and fees are usually among the lowest.\n- **WayForPay** is not tied to a bank, so you can receive payouts to a FOP account anywhere. It has quick onboarding, lots of CMS integrations (WooCommerce, OpenCart, Horoshop, Shopify and others), and supports payment links and invoices.\n\nFees are typically around 1.3–2.75% per transaction, depending on provider and turnover. Check the current rates, as they change.\n\n**Other options:**\n- **NovaPay** is worth adding if you ship via Nova Poshta, since it handles both online payment and payment on delivery.\n- **Portmone, iPay.ua, UAPAY and Platon** are established alternatives, but for a small shop they rarely beat the three above.\n- **Prom.ua and Rozetka** have their own built-in payment solutions if you sell through them.\n\n**What you can't use:**\n- **Stripe** doesn't onboard businesses registered in Ukraine.\n- **PayPal** doesn't offer merchant accounts for receiving commercial payments in Ukraine.\n- I'd be cautious about **Fondy**. Its UK entity went into special administration in 2024, so check its current status before considering it.\n\n**Fiscal receipts:** FOPs in groups 2–4 generally have to issue a fiscal receipt (PRRO) for online card payments. LiqPay, mono and WayForPay all integrate with PRRO services like Checkbox or Vchasno.Kasa, so set this up at the same time. Your accountant can confirm what applies to your group.\n\n**My pick:** Use LiqPay or plata by mono, whichever matches the bank where you hold your FOP account. Choose WayForPay if you want to stay independent of a bank.",
+        "usage": {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "inference_geo": "global",
+          "input_tokens": 69,
+          "output_tokens": 1675,
+          "output_tokens_details": {
+            "thinking_tokens": 922
+          },
+          "service_tier": "standard",
+          "speed": "standard"
+        }
+      },
+      "UA/claude-fable-5-2/2": {
+        "cost_usd": 0.067392,
+        "model": "claude-fable-5-2",
+        "named": [
+          "fondy",
+          "liqpay",
+          "paypal",
+          "plata-by-mono",
+          "stripe",
+          "wayforpay"
+        ],
+        "status": "ok",
+        "text": "For a small Ukrainian shop run by a FOP, I'd recommend these three:\n\n1. **Plata by mono (Monobank)**: This is the simplest option if you have, or are willing to open, a Monobank FOP account. Sign-up is fully online in the app and the fee is among the lowest on the market, about 1.3%. It supports Apple Pay and Google Pay, and has monobank's instalment option (\"Покупка частинами\").\n\n2. **LiqPay (PrivatBank)**: This is the most widely used provider and the natural choice if your FOP account is with PrivatBank. The fee is about 1.5%. It supports Apple Pay, Google Pay, Privat24 payments and \"Оплата частинами\", and has plugins for virtually every shop platform.\n\n3. **WayForPay**: This is a good option if you don't want to be tied to one bank, since it pays out to an account at any Ukrainian bank. It's a bit more expensive, at about 2%, but has quick onboarding and many integrations (Prom, Horoshop, WooCommerce, OpenCart, Shopify and others).\n\n**NovaPay** is also worth considering if you ship with Nova Poshta, since it integrates well with delivery and payment-on-delivery.\n\nFees are approximate and change, so check current tariffs before signing.\n\nIf you'll have a FOP account at Monobank or PrivatBank anyway, I'd use that bank's acquiring, since it has the lowest fees and the fastest setup. I'd choose WayForPay if you bank elsewhere. Many shops connect two providers so they have a backup.\n\nA few other things to know:\n\n- **Stripe and PayPal:** Stripe doesn't onboard Ukrainian-registered businesses, and PayPal in Ukraine doesn't offer proper merchant accounts, so neither is a realistic option for a FOP.\n- **Fondy:** It was popular, but its Ukrainian entity ran into serious payout and regulatory problems in 2023–2024. I'd avoid it unless you verify its current status.\n- **Fiscal receipts:** FOPs in single-tax groups 2–4 generally must issue fiscal receipts (via PRRO) for card payments through acquiring. Services like Checkbox, Vchasno.Kasa or the bank's own tools integrate with these providers. Confirm your exact obligations with your accountant.\n- **Platform support:** If you use a specific platform (Horoshop, Prom, Shopify and so on), check which providers it supports natively first, as this may narrow your choice.\n\nIf you tell me which platform and bank you plan to use, I can narrow the recommendation.",
+        "usage": {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "inference_geo": "global",
+          "input_tokens": 69,
+          "output_tokens": 1671,
+          "output_tokens_details": {
+            "thinking_tokens": 803
+          },
+          "service_tier": "standard",
+          "speed": "standard"
+        }
+      },
+      "UA/claude-fable-5-2/3": {
+        "cost_usd": 0.064392,
+        "model": "claude-fable-5-2",
+        "named": [
+          "liqpay",
+          "paypal",
+          "plata-by-mono",
+          "stripe",
+          "wayforpay"
+        ],
+        "status": "ok",
+        "text": "For a small Ukrainian online shop run by a FOP, I would recommend one of these three:\n\n- **Plata by mono (monobank)**: This is my first choice if you already have, or are happy to open, a FOP account at monobank. Its fees are among the lowest on the market (around 1.3%), sign-up is fast and fully online, and it supports Apple Pay, Google Pay and monobank's instalment plan, \"Покупка частинами\".\n- **LiqPay (PrivatBank)**: This is the most widely used option, and most Ukrainian buyers know and trust it. It has plugins for practically every CMS, supports Apple Pay, Google Pay and Privat's instalment plan, \"Оплата частинами\", and charges about 1.5%. It is most convenient if your FOP account is at PrivatBank.\n- **WayForPay**: This is the best choice if you don't want to be tied to a particular bank. It pays out to a FOP account at any bank, onboarding is quick, and it has ready-made modules for WordPress/WooCommerce, OpenCart, Horoshop, Shopify and others. Fees are usually a bit higher, around 2%.\n\nFees are approximate and change, so check current rates before signing up.\n\nIf you ship with Nova Poshta, **NovaPay** is also worth considering. It offers online acquiring and handles cash-on-delivery payments, which many Ukrainian buyers still prefer.\n\nOther points to know:\n\n- **Stripe and PayPal:** Stripe does not onboard Ukrainian-registered businesses, and PayPal in Ukraine does not support receiving commercial payments.\n- **Fiscal receipts:** FOPs on single tax groups 2–4 generally must issue fiscal receipts (PRRO) for card payments. All the providers above integrate with services like Checkbox or Вчасно.Каса. It's worth confirming with your accountant how this applies to you.\n- **Platform compatibility:** Before choosing, check which providers have a ready-made integration with your shop platform. Prom.ua, for instance, has its own built-in payment option.\n\nIf you tell me which platform you're building the shop on and where your FOP account is, I can narrow this to one recommendation.",
+        "usage": {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "inference_geo": "global",
+          "input_tokens": 69,
+          "output_tokens": 1596,
+          "output_tokens_details": {
+            "thinking_tokens": 870
+          },
+          "service_tier": "standard",
+          "speed": "standard"
+        }
+      },
+      "UA/claude-haiku-5-5/1": {
+        "cost_usd": 0.000883,
+        "model": "claude-haiku-5-5",
+        "named": [
+          "fondy",
+          "liqpay",
+          "paypal",
+          "plata-by-mono",
+          "portmone",
+          "stripe",
+          "wayforpay"
+        ],
+        "status": "ok",
+        "text": "As a Ukrainian FOP, you can use local payment service providers (PSPs) and bank acquiring. Here are the ones I'd look at first:\n\n1. **WayForPay**: Popular with small online shops. It works with FOPs, offers a hosted payment page, supports Visa/Mastercard and Apple Pay/Google Pay, and has plugins for common platforms like WooCommerce and PrestaShop.\n\n2. **LiqPay** (PrivatBank's service): Easy to set up for FOPs, widely recognized by Ukrainian customers, and simple to integrate. It's a good default choice if you want something established and low-friction.\n\n3. **Monobank Acquiring**: A good option if your business account is with Monobank. Setup is quick and it's well suited to small merchants.\n\n4. **Fondy**: A Ukrainian PSP with solid API documentation and integrations. Worth comparing if you need more customization.\n\nOther options include Portmone and Interkassa, and bank acquiring from Ukrainian banks like PrivatBank, Oschadbank, or Raiffeisen. Bank acquiring tends to take longer to set up.\n\n**International providers:** As far as I know, Stripe and PayPal generally don't onboard Ukraine-based businesses for merchant accounts, so you'd likely need a local PSP. Verify this on their sites, since availability changes.\n\n**What to compare before choosing:**\n- **Fees:** Usually a percentage per transaction, sometimes plus a fixed fee. Check for setup, monthly, and payout fees.\n- **Payout schedule and currency:** How often they pay out and whether you receive UAH to your account.\n- **Accepted cards and wallets:** Make sure foreign cards are supported if you plan to sell abroad.\n- **Platform integration:** Check for a plugin or API that matches your website or e-commerce platform.\n- **Hosted payment page:** This keeps card data off your servers, which reduces your PCI DSS compliance burden.\n- **Onboarding documents:** Typically your FOP registration, tax ID, passport, and business bank details.\n\nFor most small shops I'd start with **WayForPay or LiqPay**, or **Monobank Acquiring** if you already bank with Monobank. Get current fee and onboarding details directly from the providers, since terms change often.",
+        "usage": {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "inference_geo": "global",
+          "input_tokens": 69,
+          "output_tokens": 1752,
+          "output_tokens_details": {
+            "thinking_tokens": 988
+          },
+          "service_tier": "standard",
+          "speed": "standard"
+        }
+      },
+      "UA/claude-haiku-5-5/2": {
+        "cost_usd": 0.000864,
+        "model": "claude-haiku-5-5",
+        "named": [
+          "fondy",
+          "liqpay",
+          "paypal",
+          "plata-by-mono",
+          "portmone",
+          "stripe",
+          "wayforpay"
+        ],
+        "status": "ok",
+        "text": "For a small online shop as a FOP in Ukraine, I'd start with these:\n\n1. **WayForPay**: One of the most popular choices for small Ukrainian online shops. It's easy to onboard as a FOP, supports Visa, Mastercard, and Apple/Google Pay, offers subscriptions and plugins for common platforms (WooCommerce, OpenCart, etc.), and works well for both Ukrainian and some foreign cards.\n\n2. **LiqPay** (PrivatBank): Widely used, especially by businesses already banking with PrivatBank, but it works with other banks too. It's simple to set up, has a good reputation for reliability, and has standard integrations.\n\n3. **Fondy**: A good option if you expect customers outside Ukraine or want multi-currency support. It has solid documentation and integrations.\n\n4. **Monobank acquiring**: Worth checking if you already use a monobank business account. It can be convenient if you want everything in one place.\n\n**Other options to consider:**\n- **Your bank's acquiring service** (e.g., Oschadbank, Raiffeisen, Ukrgasbank): Sometimes better rates if you have high volume, but onboarding can be slower and more paperwork-heavy.\n- **Portmone**: Another established Ukrainian provider that works with FOPs.\n\n**Providers generally unavailable to Ukrainian businesses:** Stripe and PayPal merchant accounts typically aren't open to Ukrainian-registered sole proprietors, though policies change, so check their current country lists.\n\n**When comparing providers, look at:**\n- Commission rates for Ukrainian vs. foreign cards\n- Payout frequency and minimum amounts\n- Whether they support your e-commerce platform\n- Chargeback and refund handling\n- Whether they require a registered cash register (РРО/ПРРО) integration for issuing electronic receipts, which Ukrainian law requires for sales\n\nSince rates and requirements change, compare current tariffs directly on each provider's site, and consider asking your accountant which setup fits your tax regime (simplified system, group 1–3, or general).",
+        "usage": {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "inference_geo": "global",
+          "input_tokens": 69,
+          "output_tokens": 1715,
+          "output_tokens_details": {
+            "thinking_tokens": 1021
+          },
+          "service_tier": "standard",
+          "speed": "standard"
+        }
+      },
+      "UA/claude-haiku-5-5/3": {
+        "cost_usd": 0.000941,
+        "model": "claude-haiku-5-5",
+        "named": [
+          "fondy",
+          "liqpay",
+          "paddle",
+          "paypal",
+          "plata-by-mono",
+          "portmone",
+          "stripe",
+          "wayforpay"
+        ],
+        "status": "ok",
+        "text": "As a Ukrainian FOP you have several local acquirers that accept FOP accounts. The main ones I'd consider:\n\n**Top recommendations**\n\n1. **LiqPay** (PrivatBank group). Widely used by small online shops, easy onboarding for FOPs, supports Visa/Mastercard and Apple Pay/Google Pay, and has plugins for common platforms.\n2. **WayForPay**. Popular with small merchants, good API and documentation, and it supports recurring payments and invoices.\n3. **Portmone**. Long-established, FOP-friendly, with a simple setup and many integrations.\n4. **Fondy**. Feature-rich, with good developer tools, and a common choice for custom-built stores.\n\n**Bank acquiring**\n\nIf you already bank with a major Ukrainian bank (Monobank, PrivatBank, Oschadbank, PUMB, Raiffeisen, etc.), you can ask about their online acquiring. Some offer lower commissions for higher volumes, but onboarding may take longer.\n\n**International options**\n\nStripe and PayPal generally don't onboard Ukrainian sole traders for receiving payments, so check their current country lists before relying on them. Merchant-of-record services like Paddle or Lemon Squeezy are mainly suited to digital products.\n\n**What to compare before choosing**\n\n- **Commission rates**, and whether there are monthly fees or minimums.\n- **Payout schedule and currency**: how quickly you get paid, and whether you can receive funds in UAH only.\n- **Integration with your platform**: check for a ready plugin for WooCommerce, Shopify, Prom.ua, OpenCart, or whatever you use.\n- **Chargeback and refund policy**.\n- **Support for your product type**. Some acquirers restrict certain categories, so confirm your KVED code is accepted.\n\n**Tax note**\n\nDepending on your tax group, online card sales may require issuing electronic receipts through a PRRO (electronic cash register). Check with your accountant, since the acquirer may need to connect to your PRRO or you may need to issue receipts for each sale.\n\nRates and conditions change often, so get current offers directly from two or three providers before you commit.",
+        "usage": {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "inference_geo": "global",
+          "input_tokens": 69,
+          "output_tokens": 1868,
+          "output_tokens_details": {
+            "thinking_tokens": 1143
+          },
+          "service_tier": "standard",
+          "speed": "standard"
+        }
+      },
+      "UA/claude-opus-5-5/1": {
+        "cost_usd": 0.035936,
+        "model": "claude-opus-5-5",
+        "named": [
+          "fondy",
+          "hutko",
+          "liqpay",
+          "paypal",
+          "plata-by-mono",
+          "portmone",
+          "stripe",
+          "wayforpay"
+        ],
+        "status": "ok",
+        "text": "# Online Card Payment Providers for a Ukrainian FOP\n\nUkraine has a mature e-commerce payment market, and most providers work well with FOPs. **Stripe does not support Ukrainian merchants**, so you'll use local providers.\n\n## Top Recommendations\n\n**1. WayForPay**\n- Very popular with small online shops and FOPs\n- Easy onboarding, payment links, invoices, and website widgets\n- Plugins for WooCommerce, OpenCart, Shopify-like platforms, Horoshop, and others\n- Supports Apple Pay, Google Pay, and installments\n- Has built-in fiscalization (PRRO) options\n- **Best for:** an all-round, easy start\n\n**2. LiqPay (PrivatBank)**\n- One of the most widely used gateways in Ukraine\n- Simple integration and many CMS plugins\n- Supports Apple Pay, Google Pay, Privat24, and \"Оплата частинами\"\n- Convenient if you already bank with PrivatBank\n- **Best for:** PrivatBank clients and maximum customer familiarity\n\n**3. Plata by mono (Monobank acquiring)**\n- Fast, fully digital onboarding through the monobank app for FOPs\n- Competitive commissions\n- Supports Apple Pay, Google Pay, and \"Покупка частинами\"\n- Good API and payment links\n- **Best for:** FOPs already using monobank, and for low fees\n\n## Other Solid Options\n- **hutko (formerly Fondy in Ukraine):** developer-friendly, good for multi-currency\n- **Portmone, iPay.ua, Platon:** established gateways, worth comparing on rates\n- **Bank internet acquiring:** Oschadbank, PUMB, Raiffeisen, A-Bank, Sense Bank, and others. Often slower setup but sometimes negotiable rates.\n- **PayPal:** available to Ukrainians for receiving payments, useful mainly for foreign customers\n\n## Things to Check Before Choosing\n1. **Commission:** typically about 1.3–2.75% per transaction. Compare current rates on the providers' websites, since they change often.\n2. **Fiscalization (ПРРО/РРО):** card payments in online trade generally require issuing fiscal receipts, depending on your FOP group and how payment is made. Many gateways integrate with Checkbox or have their own PRRO. Confirm your obligations with an accountant.\n3. **Your FOP group and KVED codes:** make sure your KVED covers retail via the internet (e.g., 47.91). Note that group 1 FOPs have restrictions on activities.\n4. **Payout speed:** next-day vs. same-day settlement to your account.\n5. **CMS compatibility:** check that the provider has a ready plugin for your shop platform.\n\n## Quick Suggestion\nIf you want the simplest start, open a **monobank FOP account + Plata by mono**, or use **WayForPay** if you want richer shop features. Many shops also connect two providers (e.g., LiqPay + WayForPay) to give customers a choice and keep a backup.\n\nWould you like help comparing them for a specific platform (WooCommerce, Horoshop, Prom, etc.)?",
+        "usage": {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "inference_geo": "global",
+          "input_tokens": 69,
+          "output_tokens": 1783,
+          "output_tokens_details": {
+            "thinking_tokens": 712
+          },
+          "service_tier": "standard",
+          "speed": "standard"
+        }
+      },
+      "UA/claude-opus-5-5/2": {
+        "cost_usd": 0.036176,
+        "model": "claude-opus-5-5",
+        "named": [
+          "fondy",
+          "liqpay",
+          "paypal",
+          "plata-by-mono",
+          "portmone",
+          "rozetkapay",
+          "stripe",
+          "wayforpay"
+        ],
+        "status": "ok",
+        "text": "# Online Card Payment Providers for a Ukrainian FOP\n\nSeveral Ukrainian internet-acquiring services work well for sole traders. Tariffs change often, so check each provider's current rates.\n\n## My top recommendations\n\n**1. Plata by mono (Monobank)**\n- Easy if you already have a FOP account at Monobank, with fast onboarding through the app.\n- Competitive commission, often among the lowest on the market.\n- Supports Apple Pay and Google Pay, payment links, and plugins for popular CMS platforms.\n- Integrates with Checkbox for fiscal receipts (PRRO).\n\n**2. WayForPay**\n- Very popular with small online shops.\n- Works with a FOP account at any Ukrainian bank.\n- Offers payment links, invoices, recurring payments, and many ready-made CMS integrations (WooCommerce, OpenCart, Horoshop, etc.).\n- Has built-in fiscalization options.\n\n**3. LiqPay (PrivatBank)**\n- One of the oldest and most widely integrated providers. Almost every Ukrainian CMS and constructor supports it.\n- Most convenient if your FOP account is at PrivatBank.\n- Supports Apple Pay, Google Pay, Privat24, and installment payments.\n\n## Other options worth considering\n\n- **Portmone** and **iPay.ua**: established providers with a good range of features.\n- **Platon**: flexible, often used by growing shops.\n- **RozetkaPay**: useful if you also sell via Rozetka.\n- **Fondy**: historically strong in Ukraine, but it has shifted focus toward the EU/UK, so confirm whether it currently onboards Ukrainian FOPs.\n- **Bank acquiring** from PUMB, Raiffeisen, Oschadbank, and others, usually suited to larger volumes.\n\n## What to know before choosing\n\n1. **Fiscalization (PRRO)**: Card payments for goods sold online generally require a fiscal receipt. Choose a provider that integrates with a software cash register such as **Checkbox** or **Vchasno.Kasa**. Confirm the exact requirements for your FOP group with an accountant.\n2. **KVED codes**: Make sure your registered activity codes cover online retail (e.g., 47.91).\n3. **Website requirements**: Providers usually ask for a public offer, a return policy, contact details, and delivery terms on your site before approval.\n4. **Stripe** does not support Ukrainian businesses, and **PayPal** isn't practical for a domestic shop.\n5. **Cash on delivery**: Many Ukrainian buyers still prefer it, so consider adding Nova Poshta's \"controlled payment\" alongside card payments.\n\n## Quick suggestion\n\n- **Just starting out with low volume?** Plata by mono or WayForPay give the fastest setup and simplest fiscalization.\n- **Using a specific CMS?** Check which providers have a native plugin. LiqPay and WayForPay are the most universally supported.\n\nWould you like help comparing current fees, or advice on integration with a particular platform (e.g., Horoshop, WooCommerce, Prom)?",
+        "usage": {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "inference_geo": "global",
+          "input_tokens": 69,
+          "output_tokens": 1795,
+          "output_tokens_details": {
+            "thinking_tokens": 746
+          },
+          "service_tier": "standard",
+          "speed": "standard"
+        }
+      },
+      "UA/claude-opus-5-5/3": {
+        "cost_usd": 0.035236,
+        "model": "claude-opus-5-5",
+        "named": [
+          "fondy",
+          "liqpay",
+          "paypal",
+          "plata-by-mono",
+          "portmone",
+          "rozetkapay",
+          "stripe",
+          "wayforpay"
+        ],
+        "status": "ok",
+        "text": "# Online Card Payment Providers for a Ukrainian FOP\n\n## My top recommendations\n\n**1. Plata by mono (monobank internet acquiring)**\n- Very quick to connect if you already have a monobank FOP account\n- Competitive commission (around 1.3% for Ukrainian cards, check current rates)\n- Supports Apple Pay and Google Pay\n- Built-in PRRO (software cash register), which helps with fiscalization\n- Plugins for common CMS platforms and an easy API\n\n**2. LiqPay (PrivatBank)**\n- One of the most widely used gateways in Ukraine\n- Ready-made modules for WooCommerce, OpenCart, PrestaShop, Shopify alternatives, Horoshop, etc.\n- Supports cards, Apple Pay, Google Pay, Privat24, and installments (\"Оплата частинами\")\n- Works best with a PrivatBank FOP account\n\n**3. WayForPay**\n- Bank-independent, so you can keep your account at any bank\n- Good for small shops: payment links, invoices, recurring payments, a simple checkout page\n- Supports many CMS platforms and integrates with PRRO services like Checkbox\n\n## Other solid options\n- **RozetkaPay**: good if you also sell on Rozetka\n- **Portmone, iPay.ua, Platon, EasyPay, Tranzzo**: established aggregators, worth comparing on fees\n- **Bank acquiring** from PUMB, Oschadbank, Raiffeisen, A-Bank, Concord, and others is often cheaper at higher volumes but involves more paperwork.\n- **Fondy** was popular but restructured its business toward Europe, so check whether it currently onboards Ukrainian FOPs.\n\n## Not suitable\n- **Stripe** does not support merchants registered in Ukraine.\n- **PayPal** allows Ukrainian accounts to receive payments, but it is not a typical card-acquiring solution for a domestic shop. It is more useful for selling abroad.\n\n## Things to check before launching\n1. **PRRO/RRO (fiscal receipts).** Card payments in an online shop generally require issuing fiscal receipts. Choose a provider with built-in PRRO or integration with Checkbox, Vchasno.Kasa, etc.\n2. **Single tax group.** Group 1 cannot sell online. Groups 2 and 3 can, within their limits and rules.\n3. **KVED.** Add 47.91 (retail trade via mail order or the Internet) if it isn't already in your registration.\n4. **Website requirements.** Most providers require a public offer, return policy, delivery terms, contact details, and FOP details on the site before approval.\n5. **Compare total costs.** Look at commission for Ukrainian vs. foreign cards, refund fees, payout speed, and any monthly fees.\n\n**Simple advice:** connect the acquiring service offered by the bank where your FOP account already is (mono or Privat). Choose WayForPay if you want to stay bank-independent.\n\nCommission rates and conditions change often, so confirm current terms on each provider's site.",
+        "usage": {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "inference_geo": "global",
+          "input_tokens": 69,
+          "output_tokens": 1748,
+          "output_tokens_details": {
+            "thinking_tokens": 716
+          },
+          "service_tier": "standard",
+          "speed": "standard"
+        }
+      },
+      "UA/claude-sonnet-5-5/1": {
+        "cost_usd": 0.012418,
+        "model": "claude-sonnet-5-5",
+        "named": [
+          "fondy",
+          "liqpay",
+          "paddle",
+          "paypal",
+          "plata-by-mono",
+          "portmone",
+          "stripe",
+          "wayforpay"
+        ],
+        "status": "ok",
+        "text": "Here are the main options for a Ukrainian FOP, grouped by type. Check current terms directly with each provider, since fees and onboarding rules change often.\n\n## Local Ukrainian payment providers (the usual choice)\n\n1. **LiqPay (PrivatBank)**: One of the most widely used. It is easy to integrate, has plugins for most CMSs (WooCommerce, OpenCart, Horoshop, etc.), and supports Visa/Mastercard, Apple Pay, Google Pay, and Privat24 payments.\n2. **WayForPay**: Popular with small and medium shops. Onboarding is quick, it has a good plugin selection, and it offers payment links and invoices, which helps if you also sell through Instagram or Telegram.\n3. **Fondy**: Works with Ukrainian FOPs and can also support international payments. It has a clean API and good checkout tools, so it suits shops that may sell abroad later.\n4. **Monobank Acquiring (mono pay / monobank plata)**: Often has attractive rates, especially if you already have a monobank FOP account. Integration is straightforward and the checkout is familiar to many Ukrainian customers.\n5. **Portmone**: Established and widely used, particularly for services and utilities, but also available for e-commerce.\n6. **Platon / Ipay.ua / other PSPs**: Reasonable alternatives if you need specific features or better rates.\n\n## Bank acquiring\n\n- **PrivatBank, Oschadbank, Raiffeisen (now Raiffeisen Bank Ukraine), PUMB, Ukrsibbank** and others offer internet acquiring directly. This can be cheaper at higher volumes, but onboarding is usually slower and the paperwork heavier.\n\n## International options (more limited for Ukrainian FOPs)\n\n- **Stripe**: Not generally available for businesses registered in Ukraine. Some people use workarounds through foreign entities, but that adds complexity and legal/tax risk.\n- **PayPal**: Limited functionality in Ukraine, so it's not recommended as your main method.\n- **Paddle / Lemon Squeezy**: Merchant-of-record services that can work for digital products, depending on their current policies for Ukrainian sellers.\n\n## My recommendations\n\n- **Selling mainly in Ukraine:** Start with **monobank acquiring**, **WayForPay**, or **LiqPay**. They're quick to set up and well supported.\n- **Planning to sell abroad:** Consider **Fondy** (or similar PSPs with multi-currency support), and check currency control rules for receiving foreign payments.\n- **Very low volume at the start:** Choose the provider with no monthly fee and the simplest onboarding.\n\n## What to compare before choosing\n\n- Commission per transaction (typically around 1.5-3%)\n- Settlement time and payout method to your FOP account\n- Monthly or setup fees\n- Whether your CMS or platform has a ready plugin\n- Support for Apple Pay / Google Pay\n- Refund and chargeback handling\n- Documents required (website with terms, return policy, contact info, and so on)\n\n## Practical tips\n\n- Your site will need a public offer (публічна оферта), return policy, delivery and payment information, and your FOP details before approval.\n- Make sure your FOP's KVED codes cover online retail.\n- Keep in mind tax and reporting rules for your FOP group, and for the single tax limits, since card payments are fully traceable.\n\nIf you tell me what you're selling (physical or digital goods), your platform (Shopify, WooCommerce, Horoshop, custom, etc.), and whether you plan to sell outside Ukraine, I can narrow this down to the best one or two.",
+        "usage": {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "inference_geo": "global",
+          "input_tokens": 69,
+          "output_tokens": 1228,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "service_tier": "standard",
+          "speed": "standard"
+        }
+      },
+      "UA/claude-sonnet-5-5/2": {
+        "cost_usd": 0.011748,
+        "model": "claude-sonnet-5-5",
+        "named": [
+          "fondy",
+          "liqpay",
+          "paddle",
+          "paypal",
+          "plata-by-mono",
+          "portmone",
+          "stripe",
+          "wayforpay"
+        ],
+        "status": "ok",
+        "text": "For a Ukrainian FOP selling online, these are the main options. Check current terms directly with each provider, since fees and requirements change.\n\n## Ukrainian payment providers (most practical for a UAH-based shop)\n\n**1. LiqPay (PrivatBank)**\n- Very widely used and has plugins for most CMSs (WooCommerce, OpenCart, Shopify via workarounds, etc.)\n- Accepts Visa/Mastercard, Apple Pay, Google Pay, and Privat24 payments\n- Easy onboarding if you already bank with PrivatBank\n\n**2. WayForPay**\n- Popular with small and mid-sized shops\n- Quick onboarding, good plugin support, and payment pages/invoices without a full website\n- Supports cards, Apple/Google Pay, and split payments\n\n**3. Fondy**\n- Good for sellers who also want to accept payments from abroad (multi-currency)\n- Solid API and plugins, and a decent checkout experience\n\n**4. Monobank Plata (mono pay / \"Plata by mono\")**\n- Competitive fees and a trusted brand with customers\n- Convenient if you already have a monobank FOP account\n- Integrates with common platforms and has a simple API\n\n**5. Portmone**\n- Established provider, also useful for invoices and utilities-style payments\n- Reasonable option, though less common for small online shops\n\n**6. Platon, Ipay.ua, EasyPay**\n- Alternatives that are worth considering. Compare fees and onboarding speed.\n\n## International options (if you sell abroad)\n\n- **Stripe**: Not available for Ukrainian-registered businesses directly. Some people use it via foreign entities (e.g., Estonia e-Residency, US LLC, UK Ltd), which adds legal and tax complexity.\n- **PayPal**: Limited functionality in Ukraine (you can send, but receiving business payments is restricted). Not recommended as your primary option.\n- **Paddle / Lemon Squeezy**: Merchant-of-record services mainly for digital products. Eligibility for Ukrainian sellers varies.\n- **Payoneer / Wise**: Useful for receiving payouts from marketplaces or B2B clients, but not true card checkout.\n\n## My recommendations\n\n- **Selling mainly in Ukraine:** Start with **WayForPay** or **Monobank Plata**, and add **LiqPay** as a familiar option for customers. Compare their commissions (usually around 1.5-3% per transaction).\n- **Selling to both Ukraine and abroad:** **Fondy** or **WayForPay** for multi-currency, and consider a foreign entity only if the volume justifies it.\n\n## What to check before choosing\n\n- Transaction fee and any monthly fee\n- Payout timing (T+1, T+2, etc.) and withdrawal fees\n- Whether they need a bank account in a specific bank\n- Required documents (FOP extract, website with terms, return policy, contact details)\n- Your tax group: FOP group 2 or 3 limits and permitted activities (KVED codes), since online retail should be covered by your registered KVED\n- Fiscalization: Depending on your income and group, you may need a РРО/ПРРО (e.g., Checkbox, Vchasno.Kasa). Some payment providers integrate with these.\n\nIf you tell me your platform (WooCommerce, Shopify, Horoshop, custom, etc.) and whether you're targeting domestic or foreign customers, I can narrow this to one or two best fits.",
+        "usage": {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "inference_geo": "global",
+          "input_tokens": 69,
+          "output_tokens": 1161,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "service_tier": "standard",
+          "speed": "standard"
+        }
+      },
+      "UA/claude-sonnet-5-5/3": {
+        "cost_usd": 0.009788,
+        "model": "claude-sonnet-5-5",
+        "named": [
+          "fondy",
+          "liqpay",
+          "paypal",
+          "plata-by-mono",
+          "portmone",
+          "stripe",
+          "wayforpay"
+        ],
+        "status": "ok",
+        "text": "For a Ukrainian FOP selling online, these are the main options, roughly in order of how often they're used.\n\n## Local Ukrainian providers (the most practical choice)\n\n**1. WayForPay**\n- Quick onboarding for FOPs, often a few days\n- Plugins for most CMS platforms (WooCommerce, OpenCart, Horoshop, etc.)\n- Supports Visa/Mastercard, Apple Pay, Google Pay\n- Good for small shops starting out\n\n**2. LiqPay (PrivatBank)**\n- Very well known and trusted by customers\n- Easy integration and good documentation\n- Works for both UAH and some foreign currency payments\n- Quick to start if you already have a PrivatBank account\n\n**3. Fondy**\n- Strong for businesses that may sell abroad as well\n- Multi-currency support and international acquiring options\n- Good API and a clean checkout\n\n**4. Monobank Acquiring (Plata by Mono)**\n- Competitive fees\n- Simple setup if you have a mono FOP account\n- Fast settlement to your account\n\n**5. Portmone**\n- Established provider, widely used for services and utilities\n- Fine for online shops too\n\n**6. Bank acquiring directly (PrivatBank, Oschadbank, PUMB, etc.)**\n- Can offer lower rates at higher volumes\n- Onboarding is usually slower and more bureaucratic, so it's better once you have steady turnover\n\n## If you sell to customers abroad\n\n- **Stripe** does not currently onboard Ukrainian businesses directly. Workarounds exist (e.g., via a foreign entity), but they add complexity and legal/tax considerations.\n- **PayPal** has limited functionality for Ukrainian residents. Receiving payments is possible but with restrictions, so check current conditions.\n- **Fondy** and **WayForPay** are generally the easier route for international card payments from a Ukrainian FOP.\n\n## My recommendation\n\n- **Just starting, selling in Ukraine:** WayForPay or Monobank Acquiring. Both are quick to set up with low barriers.\n- **Want maximum customer trust and easy setup:** LiqPay.\n- **Plan to sell internationally:** Fondy.\n\n## What to check before choosing\n\n- **Fees:** typically about 1.5-3% per transaction, depending on provider and volume\n- **Settlement time:** how fast the money reaches your FOP account\n- **Required documents:** usually your FOP registration extract, a website with clear terms, a returns policy, and contact details\n- **Your CMS or platform:** confirm a ready-made plugin exists\n- **Tax group:** make sure your FOP group and KVED codes allow online retail\n\nFees, terms, and availability change often, especially given the current situation, so confirm details on each provider's website before committing.\n\nIf you tell me what platform you're building the shop on and whether you'll sell abroad, I can narrow this down.",
+        "usage": {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "inference_geo": "global",
+          "input_tokens": 69,
+          "output_tokens": 965,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "service_tier": "standard",
+          "speed": "standard"
+        }
+      }
+    },
+    "id": "r4-ask-1",
+    "prompts": {
+      "ME": "I'm a sole trader registered in Montenegro and I'm opening a small online shop. Which payment providers can I use to accept card payments online? Name the ones you would recommend.",
+      "UA": "I'm a sole trader (FOP) registered in Ukraine and I'm opening a small online shop. Which payment providers can I use to accept card payments online? Name the ones you would recommend."
+    },
+    "unmeasured": "OpenAI, Google, xAI, Meta, Mistral and every other vendor: not measured, because only the Anthropic API was available to this run."
+  },
+  "spent_usd": 1.31884
+}
