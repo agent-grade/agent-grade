@@ -27,6 +27,8 @@ NAMES_RULE = re.compile(r"required|missing|must|invalid|expected|empty|not allow
 GIVES_EXAMPLE = re.compile(r"e\.g\.|example|such as|приклад", re.I)
 REDIRECTS = {301, 302, 303, 307, 308}
 MAX_HOPS = 5
+DISALLOWED = "robots.txt disallows it for our HTTP client"
+ROBOTS_EXEMPT_PROBES = {"https://sandbox-api.paddle.com/transactions", "https://api-epdev.rozetkapay.com/api/payments/v1/new"}
 TESTS = {
     "R1 one canonical page per task, first try from the docs alone": "a model run",
     "R1 llms.txt lists the task pages, examples run in CI": ["llms_txt", "docs"],
@@ -145,7 +147,7 @@ class Client:
         if isinstance(rules, str):
             return rules
         path = (parts.path or "/") + (f"?{parts.query}" if parts.query else "")
-        return None if robots_allow(rules, path) else "robots.txt disallows it for our HTTP client"
+        return None if robots_allow(rules, path) else DISALLOWED
 
     def _robots_txt(self, url: str) -> Response:
         reply = self._send("GET", url, None, {})
@@ -270,7 +272,13 @@ def probe(client: Client, call: dict | None) -> dict:
         body, headers = b"{}", {"Content-Type": "application/json"}
     else:
         body, headers = b"", {"Content-Type": "application/x-www-form-urlencoded"}
-    reply = client.request(call["method"], url, body if call["method"] != "GET" else None, headers)
+    exempt = url in ROBOTS_EXEMPT_PROBES and client.refusal(url) == DISALLOWED
+    send = client._send if exempt else client.request
+    found = _probed(send(call["method"], url, body if call["method"] != "GET" else None, headers), url, call)
+    return {**found, "robots_exemption": True} if exempt else found
+
+
+def _probed(reply: Response, url: str, call: dict) -> dict:
     text = reply.body.decode("utf-8", "replace")
     if reply.status is None:
         return _unreadable(reply)

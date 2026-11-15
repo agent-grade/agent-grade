@@ -1,9 +1,10 @@
 import copy
 import json
+from urllib.parse import urljoin
 
 import pytest
 
-from agent_grade import check
+from agent_grade import check, manifest
 
 from test_manifest import TAKER
 
@@ -239,6 +240,40 @@ def test_a_probe_answered_with_a_redirect_is_not_judged_as_an_error():
     web = Web({"https://api.example/pay": (307, "", "https://elsewhere.example/pay")})
     call = {"method": "POST", "url": "https://api.example/pay", "format": "json", "fields": ["amount"]}
     assert check.probe(web.client(), call)["status"] == "unreadable"
+
+
+DISALLOW_ALL = (200, "text/plain", b"User-agent: *\nDisallow: /\n")
+
+
+def disallowing_web(url: str, robots=DISALLOW_ALL) -> Web:
+    return Web({urljoin(url, "/robots.txt"): robots, url: (400, "application/json", b'{"error": "amount is required"}')})
+
+
+@pytest.mark.parametrize("provider_id", ["paddle", "rozetkapay"])
+def test_the_two_exempt_probes_go_out_once_past_a_disallowing_robots_txt_and_say_so(provider_id):
+    call = next(p["probe"] for p in manifest.load() if p["id"] == provider_id)
+    web = disallowing_web(call["url"])
+    found = check.probe(web.client(), call)
+    assert found["robots_exemption"] is True and found["http"] == 400
+    assert [method for method, _, _ in web.sent] == ["GET", "POST"]
+
+
+@pytest.mark.parametrize("url", ["https://sandbox-api.paddle.com/customers", "https://api.paddle.com/transactions"])
+def test_any_other_probe_still_obeys_a_disallowing_robots_txt(url):
+    web = disallowing_web(url)
+    found = check.probe(web.client(), {"method": "POST", "url": url, "format": "json", "fields": ["amount"]})
+    assert found == {"status": "unreadable", "note": check.DISALLOWED} and len(web.sent) == 1
+
+
+@pytest.mark.parametrize("robots, sent", [
+    ((None, "", "SSLError: handshake failed"), 1),
+    ((404, "text/plain", b""), 2),
+])
+def test_the_exemption_neither_overrides_an_unreachable_robots_txt_nor_marks_an_allowed_call(robots, sent):
+    url = "https://sandbox-api.paddle.com/transactions"
+    web = disallowing_web(url, robots)
+    found = check.probe(web.client(), {"method": "POST", "url": url, "format": "json", "fields": ["items"]})
+    assert "robots_exemption" not in found and len(web.sent) == sent
 
 
 def offline(monkeypatch):

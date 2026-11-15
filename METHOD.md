@@ -95,8 +95,9 @@ refuses this client, the note says how its quotes were checked.
 ## The client's rules
 
 - It identifies itself as `Agent-Grade/<version> (+https://agent-grade.com)`.
-- It obeys robots.txt on every host, redirects included; an unreachable robots.txt counts as disallowing
-  the whole site.
+- It obeys robots.txt, redirects included; an unreachable robots.txt counts as disallowing the whole site.
+  The one exception is the error call to Paddle's and RozetkaPay's API hosts: an API host's robots.txt
+  addresses crawlers, and this call only expects an error back. Its result is marked `robots_exemption`.
 - It sends one request at a time, with at least a second between requests to the same host, and never
   retries.
 - It never signs up, never logs in and never submits a form.
