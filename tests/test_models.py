@@ -11,6 +11,8 @@ from test_check import Web
 from test_manifest import TAKER
 
 USAGE = {"input_tokens": 1000, "output_tokens": 200}
+LABELS = {"stripe": {"label": "recommended", "quote": "Stripe"}, "paddle": {"label": "recommended", "quote": "Paddle"},
+          "paypal": {"label": "rejected", "quote": "not PayPal"}}
 PAGE = "<p>" + "POST https://api.example.com/payments/{merchant} with amount and currency. " * 20 + "</p>"
 REQUEST = {"method": "post", "url": "https://api.example.com/payments/m-1", "headers": [{"name": "X-Key", "value": "KEY"}],
            "body": '{"amount": 10000, "currency": "EUR"}', "gaps": []}
@@ -18,8 +20,9 @@ VERDICT = {"correct": True, "errors": [], "excerpts": ["with amount and currency
 
 
 class Api:
-    def __init__(self, replies=(), tokens=1000, stop_reason="end_turn", error=None):
+    def __init__(self, replies=(), tokens=1000, stop_reason="end_turn", error=None, leave_out=()):
         self.replies, self.tokens, self.stop_reason, self.error = list(replies), tokens, stop_reason, error
+        self.leave_out = set(leave_out)
         self.calls, self.counted = [], []
         self.messages = self
 
@@ -31,7 +34,11 @@ class Api:
         self.calls.append(request)
         if self.error:
             raise self.error
-        text = self.replies.pop(0) if self.replies else "Stripe and Paddle; not PayPal."
+        if request["model"] == models.R4_LABEL_MODEL and "format" in request["output_config"]:
+            asked = request["output_config"]["format"]["schema"]["required"]
+            text = json.dumps({i: LABELS[i] for i in asked if i not in self.leave_out})
+        else:
+            text = self.replies.pop(0) if self.replies else "Stripe and Paddle; not PayPal."
         reply = {"model": request["model"], "stop_reason": self.stop_reason, "usage": USAGE,
                  "content": [{"type": "thinking", "thinking": ""}, {"type": "text", "text": text}]}
         return SimpleNamespace(to_dict=lambda: reply)
@@ -121,6 +128,8 @@ def test_a_provider_is_named_by_its_search_term_alias_or_id_as_a_whole_word():
     assert models.named("Use Stripe, or OTP Banka; plata by mono too. Not stripey.", providers) == [
         "ckb-otp-banka", "plata-by-mono", "stripe"]
     assert models.named("monobanking, an OTP code, OTP Bank Ukraine", providers) == []
+    assert models.named("They are all secure, a way for pay-outs.", manifest.load()) == []
+    assert models.named("Concord Pay", manifest.load()) == ["concordpay"]
 
 
 def test_a_run_over_every_manifest_measures_each_taker_and_asks_every_model_in_every_market(tmp_path):
@@ -131,8 +140,41 @@ def test_a_run_over_every_manifest_measures_each_taker_and_asks_every_model_in_e
     answers = results["r4"]["answers"]
     assert len(answers) == len(models.R4_PROMPTS) * len(models.R4_MODELS) * models.R4_SAMPLES
     assert all(answer["named"] == ["paddle", "paypal", "stripe"] for answer in answers.values())
-    assert all("system" not in call for call in api.calls)
+    assert sum("system" not in call for call in api.calls) == len(answers)
+    assert results["r4"]["mentioned"]["ME"] == {"paddle": 12, "paypal": 12, "stripe": 12}
+    assert results["r4"]["recommended"] == {"ME": {"paddle": 12, "stripe": 12}, "UA": {"paddle": 12, "stripe": 12}}
+    assert results["r4"]["labelled"] == {"ME": 12, "UA": 12}
     assert json.loads(out.read_text()) == results
+
+
+def test_a_label_names_its_quote_and_whether_the_answer_holds_it():
+    api = Api()
+    found = models.labelled(api, models.Budget(), manifest.load(), "UA", "Stripe and Paddle; not PayPal.", dry_run=False)
+    assert found["labels"]["paypal"] == {"label": "rejected", "quote": "not PayPal", "quote_found": True}
+    assert api.calls[0]["output_config"]["format"]["schema"]["required"] == ["paddle", "paypal", "stripe"]
+
+
+def test_labels_that_leave_out_a_mentioned_provider_are_not_kept_and_are_asked_again(tmp_path):
+    out = tmp_path / "2026-11-15.json"
+    partial = models.run(Web({}).client(), Api(leave_out={"stripe"}), manifest.load(), "2026-11-15", out)
+    assert partial["r4"]["labelled"] == {"ME": 0, "UA": 0} and partial["r4"]["recommended"] == {"ME": {}, "UA": {}}
+    assert partial["r4"]["mentioned"]["ME"] == {"paddle": 12, "paypal": 12, "stripe": 12}
+    api = Api()
+    again = models.run(Web({}).client(), api, manifest.load(), "2026-11-15", out)
+    assert len(api.calls) == 24 and again["r4"]["labelled"] == {"ME": 12, "UA": 12}
+
+
+def test_an_answer_that_names_no_provider_needs_no_labelling_call():
+    api = Api()
+    assert models.labelled(api, models.Budget(), manifest.load(), "ME", "Ask your bank.", dry_run=False) == {
+        "named": [], "labels": {}}
+    assert api.calls == []
+
+
+def test_a_stop_before_the_end_keeps_the_paid_text():
+    found = models.ask(Api(stop_reason="max_tokens"), models.Budget(), models.params("claude-opus-5-5", "", "u", 10),
+                       dry_run=False)
+    assert (found["status"], found["text"]) == ("not measured", "Stripe and Paddle; not PayPal.")
 
 
 def test_a_rerun_on_the_same_date_keeps_what_was_measured_and_the_spend(tmp_path):
@@ -141,6 +183,25 @@ def test_a_rerun_on_the_same_date_keeps_what_was_measured_and_the_spend(tmp_path
     api = Api()
     again = models.run(Web({}).client(), api, manifest.load(), "2026-11-15", out)
     assert api.calls == [] and again == first and first["spent_usd"] > 0
+
+
+def test_a_dry_run_leaves_a_stored_run_file_as_it_was(tmp_path):
+    out = tmp_path / "2026-11-15.json"
+    models.run(Web({}).client(), Api(), manifest.load(), "2026-11-15", out)
+    stored = out.read_bytes()
+    api = Api()
+    models.run(Web({}).client(), api, manifest.load(), "2026-11-15", out, dry_run=True)
+    assert out.read_bytes() == stored and api.calls == []
+
+
+def test_a_named_date_must_already_have_a_run_file(monkeypatch, tmp_path):
+    key = tmp_path / "key"
+    key.write_text("k")
+    monkeypatch.setattr(models, "RUNS", tmp_path)
+    monkeypatch.setattr("sys.argv", ["agent-grade-models", "--key-file", str(key), "--date", "2026-11-14"])
+    with pytest.raises(SystemExit):
+        models.main()
+    assert sorted(p.name for p in tmp_path.iterdir()) == ["key"]
 
 
 def test_no_r4_prompt_names_a_provider():

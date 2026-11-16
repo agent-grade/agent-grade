@@ -79,8 +79,9 @@ catalogs are separate measurements, not part of a night.
 
 ## The model runs
 
-`agent-grade-models` writes `data/payments/models/<date>.json` with every prompt, raw answer and verdict,
-saving after each answer; a second run on the same date keeps what is there and asks only what is missing.
+`agent-grade-models` writes `data/payments/models/<date>.json` with every prompt, answer and verdict (an R1
+page by its URL and hash), saving after each record. A second run on the same date, or one given `--date`,
+keeps what the file holds and asks only what is missing.
 Each model call is a fresh session with no tools, at effort `medium`; a refused or failed call is recorded
 as not measured. A spend cap stops any call that could pass it.
 
@@ -94,10 +95,16 @@ cannot erase what the model already remembers, so a correct first try shows the 
 that memory.
 
 R4, named unprompted: Claude Haiku, Sonnet, Opus and Fable are each asked three times per country, without a
-provider's name in the question, which providers a sole trader there can use to accept card payments. The
-answer records each manifest provider it names, matched as a whole word by the manifest's search term or a
-spelling listed in the code (`OTP banka`, `Rozetka Pay`). Other vendors' models are not measured: only the
-Anthropic API was available.
+provider's name in the question, which providers a sole trader there can use to accept card payments. Each
+answer records the manifest providers it mentions, matched as a whole word by the manifest's search term (its
+id where it has none) or a spelling listed in the code (`OTP banka`, `Rozetka Pay`, `Concord Pay`). A
+mention is not a recommendation: an answer may name Stripe only to say it doesn't serve the country. So
+Claude Haiku reads each answer under a fixed rubric and labels every provider it mentions recommended,
+rejected or neutral, quoting the words the label rests on, and each quote is checked against the answer. An
+answer is labelled only when every provider it mentions gets a label; otherwise it is asked again on the next
+run. The file counts, per country, the answers that mention each provider, the answers labelled, and among
+those, the answers that recommend it. Other vendors' models are not measured: only the Anthropic API was
+available.
 
 ## Manifests
 
