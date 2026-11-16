@@ -705,6 +705,94 @@
     "answers": {
       "ME/claude-fable-5-2/1": {
         "cost_usd": 0.067032,
+        "labelling": {
+          "cost_usd": 0.000754,
+          "json": {
+            "allsecure": {
+              "label": "recommended",
+              "quote": "Hipotekarna banka, as far as I know, works with the AllSecure gateway, which has ready-made plugins for WooCommerce and similar platforms."
+            },
+            "ckb-otp-banka": {
+              "label": "recommended",
+              "quote": "is the largest bank and has an established e-commerce service."
+            },
+            "hipotekarna-banka": {
+              "label": "recommended",
+              "quote": "start with CKB and Hipotekarna and compare offers"
+            },
+            "nlb-banka-podgorica": {
+              "label": "recommended",
+              "quote": "NLB Banka and Erste Bank both offer e-commerce acquiring too."
+            },
+            "paddle": {
+              "label": "recommended",
+              "quote": "Paddle or Lemon Squeezy only apply if you sell digital products or software."
+            },
+            "paypal": {
+              "label": "recommended",
+              "quote": "PayPal works in Montenegro, and accounts could receive payments last I knew."
+            },
+            "stripe": {
+              "label": "rejected",
+              "quote": "Stripe doesn't support businesses registered in Montenegro"
+            }
+          },
+          "model": "claude-haiku-5-5",
+          "status": "ok",
+          "usage": {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "inference_geo": "global",
+            "input_tokens": 2296,
+            "output_tokens": 1049,
+            "output_tokens_details": {
+              "thinking_tokens": 703
+            },
+            "service_tier": "standard",
+            "speed": "standard"
+          }
+        },
+        "labels": {
+          "allsecure": {
+            "label": "recommended",
+            "quote": "Hipotekarna banka, as far as I know, works with the AllSecure gateway, which has ready-made plugins for WooCommerce and similar platforms.",
+            "quote_found": false
+          },
+          "ckb-otp-banka": {
+            "label": "recommended",
+            "quote": "is the largest bank and has an established e-commerce service.",
+            "quote_found": true
+          },
+          "hipotekarna-banka": {
+            "label": "recommended",
+            "quote": "start with CKB and Hipotekarna and compare offers",
+            "quote_found": true
+          },
+          "nlb-banka-podgorica": {
+            "label": "recommended",
+            "quote": "NLB Banka and Erste Bank both offer e-commerce acquiring too.",
+            "quote_found": false
+          },
+          "paddle": {
+            "label": "recommended",
+            "quote": "Paddle or Lemon Squeezy only apply if you sell digital products or software.",
+            "quote_found": false
+          },
+          "paypal": {
+            "label": "recommended",
+            "quote": "PayPal works in Montenegro, and accounts could receive payments last I knew.",
+            "quote_found": false
+          },
+          "stripe": {
+            "label": "rejected",
+            "quote": "Stripe doesn't support businesses registered in Montenegro",
+            "quote_found": true
+          }
+        },
         "model": "claude-fable-5-2",
         "named": [
           "allsecure",
@@ -736,6 +824,94 @@
       },
       "ME/claude-fable-5-2/2": {
         "cost_usd": 0.067272,
+        "labelling": {
+          "cost_usd": 0.000683,
+          "json": {
+            "allsecure": {
+              "label": "recommended",
+              "quote": "payments go through a gateway they work with, typically **AllSecure**, **Monri** or **Payten/NestPay**"
+            },
+            "ckb-otp-banka": {
+              "label": "recommended",
+              "quote": "- **CKB** (OTP group)"
+            },
+            "hipotekarna-banka": {
+              "label": "recommended",
+              "quote": "- **Hipotekarna banka**"
+            },
+            "nlb-banka-podgorica": {
+              "label": "recommended",
+              "quote": "- **NLB Banka**"
+            },
+            "paddle": {
+              "label": "rejected",
+              "quote": "these only work if you sell digital products or software, not physical goods."
+            },
+            "paypal": {
+              "label": "recommended",
+              "quote": "I'd treat it as an extra checkout option, not your main one."
+            },
+            "stripe": {
+              "label": "rejected",
+              "quote": "these don't onboard Montenegrin sole traders. Stripe would require a company registered in a supported country."
+            }
+          },
+          "model": "claude-haiku-5-5",
+          "status": "ok",
+          "usage": {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "inference_geo": "global",
+            "input_tokens": 2349,
+            "output_tokens": 897,
+            "output_tokens_details": {
+              "thinking_tokens": 592
+            },
+            "service_tier": "standard",
+            "speed": "standard"
+          }
+        },
+        "labels": {
+          "allsecure": {
+            "label": "recommended",
+            "quote": "payments go through a gateway they work with, typically **AllSecure**, **Monri** or **Payten/NestPay**",
+            "quote_found": true
+          },
+          "ckb-otp-banka": {
+            "label": "recommended",
+            "quote": "- **CKB** (OTP group)",
+            "quote_found": true
+          },
+          "hipotekarna-banka": {
+            "label": "recommended",
+            "quote": "- **Hipotekarna banka**",
+            "quote_found": true
+          },
+          "nlb-banka-podgorica": {
+            "label": "recommended",
+            "quote": "- **NLB Banka**",
+            "quote_found": true
+          },
+          "paddle": {
+            "label": "rejected",
+            "quote": "these only work if you sell digital products or software, not physical goods.",
+            "quote_found": true
+          },
+          "paypal": {
+            "label": "recommended",
+            "quote": "I'd treat it as an extra checkout option, not your main one.",
+            "quote_found": true
+          },
+          "stripe": {
+            "label": "rejected",
+            "quote": "these don't onboard Montenegrin sole traders. Stripe would require a company registered in a supported country.",
+            "quote_found": true
+          }
+        },
         "model": "claude-fable-5-2",
         "named": [
           "allsecure",
@@ -767,6 +943,85 @@
       },
       "ME/claude-fable-5-2/3": {
         "cost_usd": 0.073112,
+        "labelling": {
+          "cost_usd": 0.000501,
+          "json": {
+            "allsecure": {
+              "label": "recommended",
+              "quote": "**AllSecure**: active in Montenegro and works with local banks."
+            },
+            "ckb-otp-banka": {
+              "label": "recommended",
+              "quote": "CKB (OTP group)"
+            },
+            "hipotekarna-banka": {
+              "label": "recommended",
+              "quote": "Hipotekarna banka"
+            },
+            "nlb-banka-podgorica": {
+              "label": "recommended",
+              "quote": "NLB Banka"
+            },
+            "paypal": {
+              "label": "recommended",
+              "quote": "Montenegrin accounts can receive payments as far as I know, but withdrawal options are limited"
+            },
+            "stripe": {
+              "label": "rejected",
+              "quote": "Stripe does not support businesses registered in Montenegro"
+            }
+          },
+          "model": "claude-haiku-5-5",
+          "status": "ok",
+          "usage": {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "inference_geo": "global",
+            "input_tokens": 2216,
+            "output_tokens": 559,
+            "output_tokens_details": {
+              "thinking_tokens": 321
+            },
+            "service_tier": "standard",
+            "speed": "standard"
+          }
+        },
+        "labels": {
+          "allsecure": {
+            "label": "recommended",
+            "quote": "**AllSecure**: active in Montenegro and works with local banks.",
+            "quote_found": true
+          },
+          "ckb-otp-banka": {
+            "label": "recommended",
+            "quote": "CKB (OTP group)",
+            "quote_found": true
+          },
+          "hipotekarna-banka": {
+            "label": "recommended",
+            "quote": "Hipotekarna banka",
+            "quote_found": true
+          },
+          "nlb-banka-podgorica": {
+            "label": "recommended",
+            "quote": "NLB Banka",
+            "quote_found": true
+          },
+          "paypal": {
+            "label": "recommended",
+            "quote": "Montenegrin accounts can receive payments as far as I know, but withdrawal options are limited",
+            "quote_found": true
+          },
+          "stripe": {
+            "label": "rejected",
+            "quote": "Stripe does not support businesses registered in Montenegro",
+            "quote_found": true
+          }
+        },
         "model": "claude-fable-5-2",
         "named": [
           "allsecure",
@@ -797,6 +1052,76 @@
       },
       "ME/claude-haiku-5-5/1": {
         "cost_usd": 0.000902,
+        "labelling": {
+          "cost_usd": 0.000699,
+          "json": {
+            "ckb-otp-banka": {
+              "label": "recommended",
+              "quote": "Several Montenegrin banks offer card acceptance for online shops, including Crnogorska komercijalna banka (CKB)"
+            },
+            "hipotekarna-banka": {
+              "label": "recommended",
+              "quote": "Lovćen banka, and Hipotekarna."
+            },
+            "nlb-banka-podgorica": {
+              "label": "recommended",
+              "quote": "NLB Banka Montenegro"
+            },
+            "paypal": {
+              "label": "recommended",
+              "quote": "Useful as a complement, since many customers, especially abroad, expect it."
+            },
+            "stripe": {
+              "label": "recommended",
+              "quote": "The best developer experience, but its support for Montenegro as a business location is limited or changes over time."
+            }
+          },
+          "model": "claude-haiku-5-5",
+          "status": "ok",
+          "usage": {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "inference_geo": "global",
+            "input_tokens": 2045,
+            "output_tokens": 989,
+            "output_tokens_details": {
+              "thinking_tokens": 747
+            },
+            "service_tier": "standard",
+            "speed": "standard"
+          }
+        },
+        "labels": {
+          "ckb-otp-banka": {
+            "label": "recommended",
+            "quote": "Several Montenegrin banks offer card acceptance for online shops, including Crnogorska komercijalna banka (CKB)",
+            "quote_found": true
+          },
+          "hipotekarna-banka": {
+            "label": "recommended",
+            "quote": "Lovćen banka, and Hipotekarna.",
+            "quote_found": true
+          },
+          "nlb-banka-podgorica": {
+            "label": "recommended",
+            "quote": "NLB Banka Montenegro",
+            "quote_found": true
+          },
+          "paypal": {
+            "label": "recommended",
+            "quote": "Useful as a complement, since many customers, especially abroad, expect it.",
+            "quote_found": true
+          },
+          "stripe": {
+            "label": "recommended",
+            "quote": "The best developer experience, but its support for Montenegro as a business location is limited or changes over time.",
+            "quote_found": true
+          }
+        },
         "model": "claude-haiku-5-5",
         "named": [
           "ckb-otp-banka",
@@ -826,6 +1151,76 @@
       },
       "ME/claude-haiku-5-5/2": {
         "cost_usd": 0.000863,
+        "labelling": {
+          "cost_usd": 0.000631,
+          "json": {
+            "ckb-otp-banka": {
+              "label": "recommended",
+              "quote": "Crnogorska komercijalna banka (CKB), NLB Montenegro, Lovćen banka, Erste Bank, and Addiko offer e-commerce acceptance"
+            },
+            "nlb-banka-podgorica": {
+              "label": "recommended",
+              "quote": "NLB Montenegro, Lovćen banka, Erste Bank, and Addiko offer e-commerce acceptance"
+            },
+            "paddle": {
+              "label": "rejected",
+              "quote": "Adyen, Checkout.com, Paddle: These are generally aimed at larger or higher-volume merchants, or at software businesses. They're usually overkill for a small shop."
+            },
+            "paypal": {
+              "label": "recommended",
+              "quote": "Check that it's available for your account type in Montenegro, and expect higher fees."
+            },
+            "stripe": {
+              "label": "rejected",
+              "quote": "Montenegro's availability for sole traders has been limited"
+            }
+          },
+          "model": "claude-haiku-5-5",
+          "status": "ok",
+          "usage": {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "inference_geo": "global",
+            "input_tokens": 1986,
+            "output_tokens": 864,
+            "output_tokens_details": {
+              "thinking_tokens": 551
+            },
+            "service_tier": "standard",
+            "speed": "standard"
+          }
+        },
+        "labels": {
+          "ckb-otp-banka": {
+            "label": "recommended",
+            "quote": "Crnogorska komercijalna banka (CKB), NLB Montenegro, Lovćen banka, Erste Bank, and Addiko offer e-commerce acceptance",
+            "quote_found": true
+          },
+          "nlb-banka-podgorica": {
+            "label": "recommended",
+            "quote": "NLB Montenegro, Lovćen banka, Erste Bank, and Addiko offer e-commerce acceptance",
+            "quote_found": true
+          },
+          "paddle": {
+            "label": "rejected",
+            "quote": "Adyen, Checkout.com, Paddle: These are generally aimed at larger or higher-volume merchants, or at software businesses. They're usually overkill for a small shop.",
+            "quote_found": false
+          },
+          "paypal": {
+            "label": "recommended",
+            "quote": "Check that it's available for your account type in Montenegro, and expect higher fees.",
+            "quote_found": true
+          },
+          "stripe": {
+            "label": "rejected",
+            "quote": "Montenegro's availability for sole traders has been limited",
+            "quote_found": true
+          }
+        },
         "model": "claude-haiku-5-5",
         "named": [
           "ckb-otp-banka",
@@ -855,6 +1250,76 @@
       },
       "ME/claude-haiku-5-5/3": {
         "cost_usd": 0.000864,
+        "labelling": {
+          "cost_usd": 0.000593,
+          "json": {
+            "ckb-otp-banka": {
+              "label": "recommended",
+              "quote": "Examples include Crnogorska komercijalna banka (CKB), NLB Montenegro, Erste Bank Montenegro, Addiko Bank, and Hipotekarna banka."
+            },
+            "hipotekarna-banka": {
+              "label": "recommended",
+              "quote": "Addiko Bank, and Hipotekarna banka."
+            },
+            "nlb-banka-podgorica": {
+              "label": "recommended",
+              "quote": "Examples include Crnogorska komercijalna banka (CKB), NLB Montenegro"
+            },
+            "paypal": {
+              "label": "recommended",
+              "quote": "Useful for customers who prefer it, but check whether a Montenegrin business account is available to you"
+            },
+            "stripe": {
+              "label": "recommended",
+              "quote": "If they do, they can be a good option, but local banks may be simpler for payouts."
+            }
+          },
+          "model": "claude-haiku-5-5",
+          "status": "ok",
+          "usage": {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "inference_geo": "global",
+            "input_tokens": 2073,
+            "output_tokens": 771,
+            "output_tokens_details": {
+              "thinking_tokens": 485
+            },
+            "service_tier": "standard",
+            "speed": "standard"
+          }
+        },
+        "labels": {
+          "ckb-otp-banka": {
+            "label": "recommended",
+            "quote": "Examples include Crnogorska komercijalna banka (CKB), NLB Montenegro, Erste Bank Montenegro, Addiko Bank, and Hipotekarna banka.",
+            "quote_found": true
+          },
+          "hipotekarna-banka": {
+            "label": "recommended",
+            "quote": "Addiko Bank, and Hipotekarna banka.",
+            "quote_found": true
+          },
+          "nlb-banka-podgorica": {
+            "label": "recommended",
+            "quote": "Examples include Crnogorska komercijalna banka (CKB), NLB Montenegro",
+            "quote_found": true
+          },
+          "paypal": {
+            "label": "recommended",
+            "quote": "Useful for customers who prefer it, but check whether a Montenegrin business account is available to you",
+            "quote_found": true
+          },
+          "stripe": {
+            "label": "recommended",
+            "quote": "If they do, they can be a good option, but local banks may be simpler for payouts.",
+            "quote_found": true
+          }
+        },
         "model": "claude-haiku-5-5",
         "named": [
           "ckb-otp-banka",
@@ -884,6 +1349,94 @@
       },
       "ME/claude-opus-5-5/1": {
         "cost_usd": 0.034636,
+        "labelling": {
+          "cost_usd": 0.000654,
+          "json": {
+            "allsecure": {
+              "label": "recommended",
+              "quote": "AllSecure: regional gateway with a presence in Montenegro and Serbia."
+            },
+            "ckb-otp-banka": {
+              "label": "recommended",
+              "quote": "CKB (Crnogorska komercijalna banka)"
+            },
+            "hipotekarna-banka": {
+              "label": "recommended",
+              "quote": "Hipotekarna banka"
+            },
+            "nlb-banka-podgorica": {
+              "label": "recommended",
+              "quote": "NLB Banka"
+            },
+            "paddle": {
+              "label": "recommended",
+              "quote": "They generally accept sellers from many countries, but they're mainly for software, e-books, courses, and other digital goods"
+            },
+            "paypal": {
+              "label": "recommended",
+              "quote": "It's best used alongside a card gateway rather than as your only option."
+            },
+            "stripe": {
+              "label": "rejected",
+              "quote": "Stripe and Shopify Payments aren't available for Montenegrin businesses."
+            }
+          },
+          "model": "claude-haiku-5-5",
+          "status": "ok",
+          "usage": {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "inference_geo": "global",
+            "input_tokens": 2656,
+            "output_tokens": 776,
+            "output_tokens_details": {
+              "thinking_tokens": 472
+            },
+            "service_tier": "standard",
+            "speed": "standard"
+          }
+        },
+        "labels": {
+          "allsecure": {
+            "label": "recommended",
+            "quote": "AllSecure: regional gateway with a presence in Montenegro and Serbia.",
+            "quote_found": false
+          },
+          "ckb-otp-banka": {
+            "label": "recommended",
+            "quote": "CKB (Crnogorska komercijalna banka)",
+            "quote_found": true
+          },
+          "hipotekarna-banka": {
+            "label": "recommended",
+            "quote": "Hipotekarna banka",
+            "quote_found": true
+          },
+          "nlb-banka-podgorica": {
+            "label": "recommended",
+            "quote": "NLB Banka",
+            "quote_found": true
+          },
+          "paddle": {
+            "label": "recommended",
+            "quote": "They generally accept sellers from many countries, but they're mainly for software, e-books, courses, and other digital goods",
+            "quote_found": true
+          },
+          "paypal": {
+            "label": "recommended",
+            "quote": "It's best used alongside a card gateway rather than as your only option.",
+            "quote_found": true
+          },
+          "stripe": {
+            "label": "rejected",
+            "quote": "Stripe and Shopify Payments aren't available for Montenegrin businesses.",
+            "quote_found": false
+          }
+        },
         "model": "claude-opus-5-5",
         "named": [
           "allsecure",
@@ -915,6 +1468,94 @@
       },
       "ME/claude-opus-5-5/2": {
         "cost_usd": 0.033416,
+        "labelling": {
+          "cost_usd": 0.000727,
+          "json": {
+            "allsecure": {
+              "label": "recommended",
+              "quote": "These connect your shop to a bank's acquiring"
+            },
+            "ckb-otp-banka": {
+              "label": "recommended",
+              "quote": "Most Montenegrin banks offer internet card acquiring (Visa/Mastercard)"
+            },
+            "hipotekarna-banka": {
+              "label": "recommended",
+              "quote": "Most Montenegrin banks offer internet card acquiring (Visa/Mastercard)"
+            },
+            "nlb-banka-podgorica": {
+              "label": "recommended",
+              "quote": "Most Montenegrin banks offer internet card acquiring (Visa/Mastercard)"
+            },
+            "paddle": {
+              "label": "recommended",
+              "quote": "for digital products or software only"
+            },
+            "paypal": {
+              "label": "rejected",
+              "quote": "support for Montenegrin accounts has historically been limited"
+            },
+            "stripe": {
+              "label": "rejected",
+              "quote": "Montenegro isn't a supported country."
+            }
+          },
+          "model": "claude-haiku-5-5",
+          "status": "ok",
+          "usage": {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "inference_geo": "global",
+            "input_tokens": 2518,
+            "output_tokens": 951,
+            "output_tokens_details": {
+              "thinking_tokens": 645
+            },
+            "service_tier": "standard",
+            "speed": "standard"
+          }
+        },
+        "labels": {
+          "allsecure": {
+            "label": "recommended",
+            "quote": "These connect your shop to a bank's acquiring",
+            "quote_found": true
+          },
+          "ckb-otp-banka": {
+            "label": "recommended",
+            "quote": "Most Montenegrin banks offer internet card acquiring (Visa/Mastercard)",
+            "quote_found": true
+          },
+          "hipotekarna-banka": {
+            "label": "recommended",
+            "quote": "Most Montenegrin banks offer internet card acquiring (Visa/Mastercard)",
+            "quote_found": true
+          },
+          "nlb-banka-podgorica": {
+            "label": "recommended",
+            "quote": "Most Montenegrin banks offer internet card acquiring (Visa/Mastercard)",
+            "quote_found": true
+          },
+          "paddle": {
+            "label": "recommended",
+            "quote": "for digital products or software only",
+            "quote_found": true
+          },
+          "paypal": {
+            "label": "rejected",
+            "quote": "support for Montenegrin accounts has historically been limited",
+            "quote_found": true
+          },
+          "stripe": {
+            "label": "rejected",
+            "quote": "Montenegro isn't a supported country.",
+            "quote_found": true
+          }
+        },
         "model": "claude-opus-5-5",
         "named": [
           "allsecure",
@@ -946,6 +1587,94 @@
       },
       "ME/claude-opus-5-5/3": {
         "cost_usd": 0.036016,
+        "labelling": {
+          "cost_usd": 0.00091,
+          "json": {
+            "allsecure": {
+              "label": "recommended",
+              "quote": "AllSecure: active in Montenegro and Serbia, works with several local banks, and handles the bank paperwork for you."
+            },
+            "ckb-otp-banka": {
+              "label": "recommended",
+              "quote": "Open your business account with a bank that offers e-commerce, such as CKB or Hipotekarna."
+            },
+            "hipotekarna-banka": {
+              "label": "recommended",
+              "quote": "Open your business account with a bank that offers e-commerce, such as CKB or Hipotekarna."
+            },
+            "nlb-banka-podgorica": {
+              "label": "recommended",
+              "quote": "Banks offering e-commerce acquiring include:"
+            },
+            "paddle": {
+              "label": "recommended",
+              "quote": "Paddle or Lemon Squeezy: worth considering only if you sell digital products."
+            },
+            "paypal": {
+              "label": "recommended",
+              "quote": "PayPal: Montenegro is a supported country, but receiving payments and withdrawals have historically been limited there."
+            },
+            "stripe": {
+              "label": "rejected",
+              "quote": "Stripe is not available to businesses registered in Montenegro"
+            }
+          },
+          "model": "claude-haiku-5-5",
+          "status": "ok",
+          "usage": {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "inference_geo": "global",
+            "input_tokens": 2622,
+            "output_tokens": 1296,
+            "output_tokens_details": {
+              "thinking_tokens": 934
+            },
+            "service_tier": "standard",
+            "speed": "standard"
+          }
+        },
+        "labels": {
+          "allsecure": {
+            "label": "recommended",
+            "quote": "AllSecure: active in Montenegro and Serbia, works with several local banks, and handles the bank paperwork for you.",
+            "quote_found": false
+          },
+          "ckb-otp-banka": {
+            "label": "recommended",
+            "quote": "Open your business account with a bank that offers e-commerce, such as CKB or Hipotekarna.",
+            "quote_found": false
+          },
+          "hipotekarna-banka": {
+            "label": "recommended",
+            "quote": "Open your business account with a bank that offers e-commerce, such as CKB or Hipotekarna.",
+            "quote_found": false
+          },
+          "nlb-banka-podgorica": {
+            "label": "recommended",
+            "quote": "Banks offering e-commerce acquiring include:",
+            "quote_found": true
+          },
+          "paddle": {
+            "label": "recommended",
+            "quote": "Paddle or Lemon Squeezy: worth considering only if you sell digital products.",
+            "quote_found": false
+          },
+          "paypal": {
+            "label": "recommended",
+            "quote": "PayPal: Montenegro is a supported country, but receiving payments and withdrawals have historically been limited there.",
+            "quote_found": false
+          },
+          "stripe": {
+            "label": "rejected",
+            "quote": "Stripe is not available to businesses registered in Montenegro",
+            "quote_found": false
+          }
+        },
         "model": "claude-opus-5-5",
         "named": [
           "allsecure",
@@ -977,6 +1706,85 @@
       },
       "ME/claude-sonnet-5-5/1": {
         "cost_usd": 0.011248,
+        "labelling": {
+          "cost_usd": 0.000813,
+          "json": {
+            "ckb-otp-banka": {
+              "label": "recommended",
+              "quote": "Banks such as CKB (Crnogorska komercijalna banka), Erste Bank Montenegro, NLB Banka, Lovćen Banka, Hipotekarna Banka, and Addiko typically offer e-commerce card acceptance"
+            },
+            "hipotekarna-banka": {
+              "label": "recommended",
+              "quote": "Banks such as CKB (Crnogorska komercijalna banka), Erste Bank Montenegro, NLB Banka, Lovćen Banka, Hipotekarna Banka, and Addiko typically offer e-commerce card acceptance"
+            },
+            "nlb-banka-podgorica": {
+              "label": "recommended",
+              "quote": "Banks such as CKB (Crnogorska komercijalna banka), Erste Bank Montenegro, NLB Banka, Lovćen Banka, Hipotekarna Banka, and Addiko typically offer e-commerce card acceptance"
+            },
+            "paddle": {
+              "label": "recommended",
+              "quote": "Useful for digital products, since they handle sales tax/VAT and pay you out."
+            },
+            "paypal": {
+              "label": "recommended",
+              "quote": "You can open a business account in Montenegro, but functionality has historically been limited"
+            },
+            "stripe": {
+              "label": "rejected",
+              "quote": "Montenegro is not on Stripe's list of directly supported countries as far as I know."
+            }
+          },
+          "model": "claude-haiku-5-5",
+          "status": "ok",
+          "usage": {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "inference_geo": "global",
+            "input_tokens": 2486,
+            "output_tokens": 1129,
+            "output_tokens_details": {
+              "thinking_tokens": 668
+            },
+            "service_tier": "standard",
+            "speed": "standard"
+          }
+        },
+        "labels": {
+          "ckb-otp-banka": {
+            "label": "recommended",
+            "quote": "Banks such as CKB (Crnogorska komercijalna banka), Erste Bank Montenegro, NLB Banka, Lovćen Banka, Hipotekarna Banka, and Addiko typically offer e-commerce card acceptance",
+            "quote_found": true
+          },
+          "hipotekarna-banka": {
+            "label": "recommended",
+            "quote": "Banks such as CKB (Crnogorska komercijalna banka), Erste Bank Montenegro, NLB Banka, Lovćen Banka, Hipotekarna Banka, and Addiko typically offer e-commerce card acceptance",
+            "quote_found": true
+          },
+          "nlb-banka-podgorica": {
+            "label": "recommended",
+            "quote": "Banks such as CKB (Crnogorska komercijalna banka), Erste Bank Montenegro, NLB Banka, Lovćen Banka, Hipotekarna Banka, and Addiko typically offer e-commerce card acceptance",
+            "quote_found": true
+          },
+          "paddle": {
+            "label": "recommended",
+            "quote": "Useful for digital products, since they handle sales tax/VAT and pay you out.",
+            "quote_found": true
+          },
+          "paypal": {
+            "label": "recommended",
+            "quote": "You can open a business account in Montenegro, but functionality has historically been limited",
+            "quote_found": true
+          },
+          "stripe": {
+            "label": "rejected",
+            "quote": "Montenegro is not on Stripe's list of directly supported countries as far as I know.",
+            "quote_found": true
+          }
+        },
         "model": "claude-sonnet-5-5",
         "named": [
           "ckb-otp-banka",
@@ -1007,6 +1815,85 @@
       },
       "ME/claude-sonnet-5-5/2": {
         "cost_usd": 0.010018,
+        "labelling": {
+          "cost_usd": 0.000664,
+          "json": {
+            "ckb-otp-banka": {
+              "label": "recommended",
+              "quote": "Crnogorska komercijalna banka (CKB)"
+            },
+            "hipotekarna-banka": {
+              "label": "recommended",
+              "quote": "Hipotekarna banka"
+            },
+            "nlb-banka-podgorica": {
+              "label": "recommended",
+              "quote": "NLB Banka Podgorica"
+            },
+            "paddle": {
+              "label": "recommended",
+              "quote": "Paddle or Lemon Squeezy (merchant-of-record services)"
+            },
+            "paypal": {
+              "label": "rejected",
+              "quote": "Stripe and PayPal merchant accounts are not generally available to Montenegrin-registered businesses."
+            },
+            "stripe": {
+              "label": "rejected",
+              "quote": "Stripe and PayPal merchant accounts are not generally available to Montenegrin-registered businesses."
+            }
+          },
+          "model": "claude-haiku-5-5",
+          "status": "ok",
+          "usage": {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "inference_geo": "global",
+            "input_tokens": 2363,
+            "output_tokens": 856,
+            "output_tokens_details": {
+              "thinking_tokens": 584
+            },
+            "service_tier": "standard",
+            "speed": "standard"
+          }
+        },
+        "labels": {
+          "ckb-otp-banka": {
+            "label": "recommended",
+            "quote": "Crnogorska komercijalna banka (CKB)",
+            "quote_found": true
+          },
+          "hipotekarna-banka": {
+            "label": "recommended",
+            "quote": "Hipotekarna banka",
+            "quote_found": true
+          },
+          "nlb-banka-podgorica": {
+            "label": "recommended",
+            "quote": "NLB Banka Podgorica",
+            "quote_found": true
+          },
+          "paddle": {
+            "label": "recommended",
+            "quote": "Paddle or Lemon Squeezy (merchant-of-record services)",
+            "quote_found": false
+          },
+          "paypal": {
+            "label": "rejected",
+            "quote": "Stripe and PayPal merchant accounts are not generally available to Montenegrin-registered businesses.",
+            "quote_found": true
+          },
+          "stripe": {
+            "label": "rejected",
+            "quote": "Stripe and PayPal merchant accounts are not generally available to Montenegrin-registered businesses.",
+            "quote_found": true
+          }
+        },
         "model": "claude-sonnet-5-5",
         "named": [
           "ckb-otp-banka",
@@ -1037,6 +1924,85 @@
       },
       "ME/claude-sonnet-5-5/3": {
         "cost_usd": 0.010118,
+        "labelling": {
+          "cost_usd": 0.00064,
+          "json": {
+            "ckb-otp-banka": {
+              "label": "recommended",
+              "quote": "including CKB (Crnogorska komercijalna banka)"
+            },
+            "hipotekarna-banka": {
+              "label": "recommended",
+              "quote": "Hipotekarna banka, and Lovćen banka"
+            },
+            "nlb-banka-podgorica": {
+              "label": "recommended",
+              "quote": "NLB Banka, Hipotekarna banka"
+            },
+            "paddle": {
+              "label": "recommended",
+              "quote": "Paddle, Lemon Squeezy, or similar merchant-of-record services."
+            },
+            "paypal": {
+              "label": "recommended",
+              "quote": "Available in Montenegro for accounts, but with limitations."
+            },
+            "stripe": {
+              "label": "rejected",
+              "quote": "Montenegro is not on Stripe's list of directly supported countries, so you generally cannot open a standard account as a Montenegrin business."
+            }
+          },
+          "model": "claude-haiku-5-5",
+          "status": "ok",
+          "usage": {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "inference_geo": "global",
+            "input_tokens": 2373,
+            "output_tokens": 806,
+            "output_tokens_details": {
+              "thinking_tokens": 522
+            },
+            "service_tier": "standard",
+            "speed": "standard"
+          }
+        },
+        "labels": {
+          "ckb-otp-banka": {
+            "label": "recommended",
+            "quote": "including CKB (Crnogorska komercijalna banka)",
+            "quote_found": true
+          },
+          "hipotekarna-banka": {
+            "label": "recommended",
+            "quote": "Hipotekarna banka, and Lovćen banka",
+            "quote_found": true
+          },
+          "nlb-banka-podgorica": {
+            "label": "recommended",
+            "quote": "NLB Banka, Hipotekarna banka",
+            "quote_found": true
+          },
+          "paddle": {
+            "label": "recommended",
+            "quote": "Paddle, Lemon Squeezy, or similar merchant-of-record services.",
+            "quote_found": true
+          },
+          "paypal": {
+            "label": "recommended",
+            "quote": "Available in Montenegro for accounts, but with limitations.",
+            "quote_found": true
+          },
+          "stripe": {
+            "label": "rejected",
+            "quote": "Montenegro is not on Stripe's list of directly supported countries, so you generally cannot open a standard account as a Montenegrin business.",
+            "quote_found": true
+          }
+        },
         "model": "claude-sonnet-5-5",
         "named": [
           "ckb-otp-banka",
@@ -1067,6 +2033,94 @@
       },
       "UA/claude-fable-5-2/1": {
         "cost_usd": 0.067552,
+        "labelling": {
+          "cost_usd": 0.000811,
+          "json": {
+            "fondy": {
+              "label": "rejected",
+              "quote": "Its UK entity went into special administration in 2024, so check its current status before considering it."
+            },
+            "liqpay": {
+              "label": "recommended",
+              "quote": "**LiqPay (PrivatBank)** is the most widely used and recognised by buyers."
+            },
+            "paypal": {
+              "label": "rejected",
+              "quote": "**PayPal** doesn't offer merchant accounts for receiving commercial payments in Ukraine."
+            },
+            "plata-by-mono": {
+              "label": "recommended",
+              "quote": "**Plata by mono (monobank)** is a good choice if you have, or are happy to open, a FOP account with monobank."
+            },
+            "portmone": {
+              "label": "recommended",
+              "quote": "**Portmone, iPay.ua, UAPAY and Platon** are established alternatives, but for a small shop they rarely beat the three above."
+            },
+            "stripe": {
+              "label": "rejected",
+              "quote": "**Stripe** doesn't onboard businesses registered in Ukraine."
+            },
+            "wayforpay": {
+              "label": "recommended",
+              "quote": "**WayForPay** is not tied to a bank, so you can receive payouts to a FOP account anywhere."
+            }
+          },
+          "model": "claude-haiku-5-5",
+          "status": "ok",
+          "usage": {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "inference_geo": "global",
+            "input_tokens": 2201,
+            "output_tokens": 1181,
+            "output_tokens_details": {
+              "thinking_tokens": 802
+            },
+            "service_tier": "standard",
+            "speed": "standard"
+          }
+        },
+        "labels": {
+          "fondy": {
+            "label": "rejected",
+            "quote": "Its UK entity went into special administration in 2024, so check its current status before considering it.",
+            "quote_found": true
+          },
+          "liqpay": {
+            "label": "recommended",
+            "quote": "**LiqPay (PrivatBank)** is the most widely used and recognised by buyers.",
+            "quote_found": true
+          },
+          "paypal": {
+            "label": "rejected",
+            "quote": "**PayPal** doesn't offer merchant accounts for receiving commercial payments in Ukraine.",
+            "quote_found": true
+          },
+          "plata-by-mono": {
+            "label": "recommended",
+            "quote": "**Plata by mono (monobank)** is a good choice if you have, or are happy to open, a FOP account with monobank.",
+            "quote_found": true
+          },
+          "portmone": {
+            "label": "recommended",
+            "quote": "**Portmone, iPay.ua, UAPAY and Platon** are established alternatives, but for a small shop they rarely beat the three above.",
+            "quote_found": true
+          },
+          "stripe": {
+            "label": "rejected",
+            "quote": "**Stripe** doesn't onboard businesses registered in Ukraine.",
+            "quote_found": true
+          },
+          "wayforpay": {
+            "label": "recommended",
+            "quote": "**WayForPay** is not tied to a bank, so you can receive payouts to a FOP account anywhere.",
+            "quote_found": true
+          }
+        },
         "model": "claude-fable-5-2",
         "named": [
           "fondy",
@@ -1098,6 +2152,85 @@
       },
       "UA/claude-fable-5-2/2": {
         "cost_usd": 0.067392,
+        "labelling": {
+          "cost_usd": 0.000536,
+          "json": {
+            "fondy": {
+              "label": "rejected",
+              "quote": "I'd avoid it unless you verify its current status."
+            },
+            "liqpay": {
+              "label": "recommended",
+              "quote": "the natural choice if your FOP account is with PrivatBank"
+            },
+            "paypal": {
+              "label": "rejected",
+              "quote": "PayPal in Ukraine doesn't offer proper merchant accounts"
+            },
+            "plata-by-mono": {
+              "label": "recommended",
+              "quote": "This is the simplest option if you have, or are willing to open, a Monobank FOP account."
+            },
+            "stripe": {
+              "label": "rejected",
+              "quote": "Stripe doesn't onboard Ukrainian-registered businesses"
+            },
+            "wayforpay": {
+              "label": "recommended",
+              "quote": "This is a good option if you don't want to be tied to one bank"
+            }
+          },
+          "model": "claude-haiku-5-5",
+          "status": "ok",
+          "usage": {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "inference_geo": "global",
+            "input_tokens": 2168,
+            "output_tokens": 638,
+            "output_tokens_details": {
+              "thinking_tokens": 381
+            },
+            "service_tier": "standard",
+            "speed": "standard"
+          }
+        },
+        "labels": {
+          "fondy": {
+            "label": "rejected",
+            "quote": "I'd avoid it unless you verify its current status.",
+            "quote_found": true
+          },
+          "liqpay": {
+            "label": "recommended",
+            "quote": "the natural choice if your FOP account is with PrivatBank",
+            "quote_found": true
+          },
+          "paypal": {
+            "label": "rejected",
+            "quote": "PayPal in Ukraine doesn't offer proper merchant accounts",
+            "quote_found": true
+          },
+          "plata-by-mono": {
+            "label": "recommended",
+            "quote": "This is the simplest option if you have, or are willing to open, a Monobank FOP account.",
+            "quote_found": true
+          },
+          "stripe": {
+            "label": "rejected",
+            "quote": "Stripe doesn't onboard Ukrainian-registered businesses",
+            "quote_found": true
+          },
+          "wayforpay": {
+            "label": "recommended",
+            "quote": "This is a good option if you don't want to be tied to one bank",
+            "quote_found": true
+          }
+        },
         "model": "claude-fable-5-2",
         "named": [
           "fondy",
@@ -1128,6 +2261,76 @@
       },
       "UA/claude-fable-5-2/3": {
         "cost_usd": 0.064392,
+        "labelling": {
+          "cost_usd": 0.00032,
+          "json": {
+            "liqpay": {
+              "label": "recommended",
+              "quote": "**LiqPay (PrivatBank)**: This is the most widely used option, and most Ukrainian buyers know and trust it."
+            },
+            "paypal": {
+              "label": "rejected",
+              "quote": "PayPal in Ukraine does not support receiving commercial payments."
+            },
+            "plata-by-mono": {
+              "label": "recommended",
+              "quote": "**Plata by mono (monobank)**: This is my first choice if you already have, or are happy to open, a FOP account at monobank."
+            },
+            "stripe": {
+              "label": "rejected",
+              "quote": "Stripe does not onboard Ukrainian-registered businesses"
+            },
+            "wayforpay": {
+              "label": "recommended",
+              "quote": "**WayForPay**: This is the best choice if you don't want to be tied to a particular bank."
+            }
+          },
+          "model": "claude-haiku-5-5",
+          "status": "ok",
+          "usage": {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "inference_geo": "global",
+            "input_tokens": 1881,
+            "output_tokens": 264,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "service_tier": "standard",
+            "speed": "standard"
+          }
+        },
+        "labels": {
+          "liqpay": {
+            "label": "recommended",
+            "quote": "**LiqPay (PrivatBank)**: This is the most widely used option, and most Ukrainian buyers know and trust it.",
+            "quote_found": true
+          },
+          "paypal": {
+            "label": "rejected",
+            "quote": "PayPal in Ukraine does not support receiving commercial payments.",
+            "quote_found": true
+          },
+          "plata-by-mono": {
+            "label": "recommended",
+            "quote": "**Plata by mono (monobank)**: This is my first choice if you already have, or are happy to open, a FOP account at monobank.",
+            "quote_found": true
+          },
+          "stripe": {
+            "label": "rejected",
+            "quote": "Stripe does not onboard Ukrainian-registered businesses",
+            "quote_found": true
+          },
+          "wayforpay": {
+            "label": "recommended",
+            "quote": "**WayForPay**: This is the best choice if you don't want to be tied to a particular bank.",
+            "quote_found": true
+          }
+        },
         "model": "claude-fable-5-2",
         "named": [
           "liqpay",
@@ -1157,6 +2360,94 @@
       },
       "UA/claude-haiku-5-5/1": {
         "cost_usd": 0.000883,
+        "labelling": {
+          "cost_usd": 0.000562,
+          "json": {
+            "fondy": {
+              "label": "recommended",
+              "quote": "Fondy: A Ukrainian PSP with solid API documentation and integrations."
+            },
+            "liqpay": {
+              "label": "recommended",
+              "quote": "It's a good default choice if you want something established and low-friction."
+            },
+            "paypal": {
+              "label": "rejected",
+              "quote": "Stripe and PayPal generally don't onboard Ukraine-based businesses for merchant accounts"
+            },
+            "plata-by-mono": {
+              "label": "recommended",
+              "quote": "A good option if your business account is with Monobank."
+            },
+            "portmone": {
+              "label": "recommended",
+              "quote": "Other options include Portmone and Interkassa"
+            },
+            "stripe": {
+              "label": "rejected",
+              "quote": "Stripe and PayPal generally don't onboard Ukraine-based businesses for merchant accounts"
+            },
+            "wayforpay": {
+              "label": "recommended",
+              "quote": "Popular with small online shops. It works with FOPs"
+            }
+          },
+          "model": "claude-haiku-5-5",
+          "status": "ok",
+          "usage": {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "inference_geo": "global",
+            "input_tokens": 2212,
+            "output_tokens": 681,
+            "output_tokens_details": {
+              "thinking_tokens": 378
+            },
+            "service_tier": "standard",
+            "speed": "standard"
+          }
+        },
+        "labels": {
+          "fondy": {
+            "label": "recommended",
+            "quote": "Fondy: A Ukrainian PSP with solid API documentation and integrations.",
+            "quote_found": false
+          },
+          "liqpay": {
+            "label": "recommended",
+            "quote": "It's a good default choice if you want something established and low-friction.",
+            "quote_found": true
+          },
+          "paypal": {
+            "label": "rejected",
+            "quote": "Stripe and PayPal generally don't onboard Ukraine-based businesses for merchant accounts",
+            "quote_found": true
+          },
+          "plata-by-mono": {
+            "label": "recommended",
+            "quote": "A good option if your business account is with Monobank.",
+            "quote_found": true
+          },
+          "portmone": {
+            "label": "recommended",
+            "quote": "Other options include Portmone and Interkassa",
+            "quote_found": true
+          },
+          "stripe": {
+            "label": "rejected",
+            "quote": "Stripe and PayPal generally don't onboard Ukraine-based businesses for merchant accounts",
+            "quote_found": true
+          },
+          "wayforpay": {
+            "label": "recommended",
+            "quote": "Popular with small online shops. It works with FOPs",
+            "quote_found": true
+          }
+        },
         "model": "claude-haiku-5-5",
         "named": [
           "fondy",
@@ -1188,6 +2479,94 @@
       },
       "UA/claude-haiku-5-5/2": {
         "cost_usd": 0.000864,
+        "labelling": {
+          "cost_usd": 0.000567,
+          "json": {
+            "fondy": {
+              "label": "recommended",
+              "quote": "A good option if you expect customers outside Ukraine or want multi-currency support."
+            },
+            "liqpay": {
+              "label": "recommended",
+              "quote": "Widely used, especially by businesses already banking with PrivatBank, but it works with other banks too."
+            },
+            "paypal": {
+              "label": "rejected",
+              "quote": "Stripe and PayPal merchant accounts typically aren't open to Ukrainian-registered sole proprietors"
+            },
+            "plata-by-mono": {
+              "label": "recommended",
+              "quote": "Worth checking if you already use a monobank business account."
+            },
+            "portmone": {
+              "label": "recommended",
+              "quote": "Another established Ukrainian provider that works with FOPs."
+            },
+            "stripe": {
+              "label": "rejected",
+              "quote": "Stripe and PayPal merchant accounts typically aren't open to Ukrainian-registered sole proprietors"
+            },
+            "wayforpay": {
+              "label": "recommended",
+              "quote": "One of the most popular choices for small Ukrainian online shops."
+            }
+          },
+          "model": "claude-haiku-5-5",
+          "status": "ok",
+          "usage": {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "inference_geo": "global",
+            "input_tokens": 2142,
+            "output_tokens": 705,
+            "output_tokens_details": {
+              "thinking_tokens": 374
+            },
+            "service_tier": "standard",
+            "speed": "standard"
+          }
+        },
+        "labels": {
+          "fondy": {
+            "label": "recommended",
+            "quote": "A good option if you expect customers outside Ukraine or want multi-currency support.",
+            "quote_found": true
+          },
+          "liqpay": {
+            "label": "recommended",
+            "quote": "Widely used, especially by businesses already banking with PrivatBank, but it works with other banks too.",
+            "quote_found": true
+          },
+          "paypal": {
+            "label": "rejected",
+            "quote": "Stripe and PayPal merchant accounts typically aren't open to Ukrainian-registered sole proprietors",
+            "quote_found": true
+          },
+          "plata-by-mono": {
+            "label": "recommended",
+            "quote": "Worth checking if you already use a monobank business account.",
+            "quote_found": true
+          },
+          "portmone": {
+            "label": "recommended",
+            "quote": "Another established Ukrainian provider that works with FOPs.",
+            "quote_found": true
+          },
+          "stripe": {
+            "label": "rejected",
+            "quote": "Stripe and PayPal merchant accounts typically aren't open to Ukrainian-registered sole proprietors",
+            "quote_found": true
+          },
+          "wayforpay": {
+            "label": "recommended",
+            "quote": "One of the most popular choices for small Ukrainian online shops.",
+            "quote_found": true
+          }
+        },
         "model": "claude-haiku-5-5",
         "named": [
           "fondy",
@@ -1219,6 +2598,103 @@
       },
       "UA/claude-haiku-5-5/3": {
         "cost_usd": 0.000941,
+        "labelling": {
+          "cost_usd": 0.000442,
+          "json": {
+            "fondy": {
+              "label": "recommended",
+              "quote": "**Fondy**. Feature-rich, with good developer tools, and a common choice for custom-built stores."
+            },
+            "liqpay": {
+              "label": "recommended",
+              "quote": "**LiqPay** (PrivatBank group). Widely used by small online shops, easy onboarding for FOPs"
+            },
+            "paddle": {
+              "label": "rejected",
+              "quote": "Merchant-of-record services like Paddle or Lemon Squeezy are mainly suited to digital products."
+            },
+            "paypal": {
+              "label": "rejected",
+              "quote": "Stripe and PayPal generally don't onboard Ukrainian sole traders for receiving payments"
+            },
+            "plata-by-mono": {
+              "label": "neutral",
+              "quote": "you can ask about their online acquiring. Some offer lower commissions for higher volumes"
+            },
+            "portmone": {
+              "label": "recommended",
+              "quote": "**Portmone**. Long-established, FOP-friendly, with a simple setup and many integrations."
+            },
+            "stripe": {
+              "label": "rejected",
+              "quote": "Stripe and PayPal generally don't onboard Ukrainian sole traders for receiving payments"
+            },
+            "wayforpay": {
+              "label": "recommended",
+              "quote": "**WayForPay**. Popular with small merchants, good API and documentation"
+            }
+          },
+          "model": "claude-haiku-5-5",
+          "status": "ok",
+          "usage": {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "inference_geo": "global",
+            "input_tokens": 2318,
+            "output_tokens": 420,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "service_tier": "standard",
+            "speed": "standard"
+          }
+        },
+        "labels": {
+          "fondy": {
+            "label": "recommended",
+            "quote": "**Fondy**. Feature-rich, with good developer tools, and a common choice for custom-built stores.",
+            "quote_found": true
+          },
+          "liqpay": {
+            "label": "recommended",
+            "quote": "**LiqPay** (PrivatBank group). Widely used by small online shops, easy onboarding for FOPs",
+            "quote_found": true
+          },
+          "paddle": {
+            "label": "rejected",
+            "quote": "Merchant-of-record services like Paddle or Lemon Squeezy are mainly suited to digital products.",
+            "quote_found": true
+          },
+          "paypal": {
+            "label": "rejected",
+            "quote": "Stripe and PayPal generally don't onboard Ukrainian sole traders for receiving payments",
+            "quote_found": true
+          },
+          "plata-by-mono": {
+            "label": "neutral",
+            "quote": "you can ask about their online acquiring. Some offer lower commissions for higher volumes",
+            "quote_found": true
+          },
+          "portmone": {
+            "label": "recommended",
+            "quote": "**Portmone**. Long-established, FOP-friendly, with a simple setup and many integrations.",
+            "quote_found": true
+          },
+          "stripe": {
+            "label": "rejected",
+            "quote": "Stripe and PayPal generally don't onboard Ukrainian sole traders for receiving payments",
+            "quote_found": true
+          },
+          "wayforpay": {
+            "label": "recommended",
+            "quote": "**WayForPay**. Popular with small merchants, good API and documentation",
+            "quote_found": true
+          }
+        },
         "model": "claude-haiku-5-5",
         "named": [
           "fondy",
@@ -1251,6 +2727,103 @@
       },
       "UA/claude-opus-5-5/1": {
         "cost_usd": 0.035936,
+        "labelling": {
+          "cost_usd": 0.000822,
+          "json": {
+            "fondy": {
+              "label": "recommended",
+              "quote": "hutko (formerly Fondy in Ukraine)"
+            },
+            "hutko": {
+              "label": "recommended",
+              "quote": "hutko (formerly Fondy in Ukraine): developer-friendly, good for multi-currency"
+            },
+            "liqpay": {
+              "label": "recommended",
+              "quote": "One of the most widely used gateways in Ukraine"
+            },
+            "paypal": {
+              "label": "recommended",
+              "quote": "available to Ukrainians for receiving payments"
+            },
+            "plata-by-mono": {
+              "label": "recommended",
+              "quote": "Fast, fully digital onboarding through the monobank app for FOPs"
+            },
+            "portmone": {
+              "label": "recommended",
+              "quote": "established gateways, worth comparing on rates"
+            },
+            "stripe": {
+              "label": "rejected",
+              "quote": "Stripe does not support Ukrainian merchants"
+            },
+            "wayforpay": {
+              "label": "recommended",
+              "quote": "Very popular with small online shops and FOPs"
+            }
+          },
+          "model": "claude-haiku-5-5",
+          "status": "ok",
+          "usage": {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "inference_geo": "global",
+            "input_tokens": 2669,
+            "output_tokens": 1111,
+            "output_tokens_details": {
+              "thinking_tokens": 794
+            },
+            "service_tier": "standard",
+            "speed": "standard"
+          }
+        },
+        "labels": {
+          "fondy": {
+            "label": "recommended",
+            "quote": "hutko (formerly Fondy in Ukraine)",
+            "quote_found": true
+          },
+          "hutko": {
+            "label": "recommended",
+            "quote": "hutko (formerly Fondy in Ukraine): developer-friendly, good for multi-currency",
+            "quote_found": false
+          },
+          "liqpay": {
+            "label": "recommended",
+            "quote": "One of the most widely used gateways in Ukraine",
+            "quote_found": true
+          },
+          "paypal": {
+            "label": "recommended",
+            "quote": "available to Ukrainians for receiving payments",
+            "quote_found": true
+          },
+          "plata-by-mono": {
+            "label": "recommended",
+            "quote": "Fast, fully digital onboarding through the monobank app for FOPs",
+            "quote_found": true
+          },
+          "portmone": {
+            "label": "recommended",
+            "quote": "established gateways, worth comparing on rates",
+            "quote_found": true
+          },
+          "stripe": {
+            "label": "rejected",
+            "quote": "Stripe does not support Ukrainian merchants",
+            "quote_found": true
+          },
+          "wayforpay": {
+            "label": "recommended",
+            "quote": "Very popular with small online shops and FOPs",
+            "quote_found": true
+          }
+        },
         "model": "claude-opus-5-5",
         "named": [
           "fondy",
@@ -1283,6 +2856,103 @@
       },
       "UA/claude-opus-5-5/2": {
         "cost_usd": 0.036176,
+        "labelling": {
+          "cost_usd": 0.000485,
+          "json": {
+            "fondy": {
+              "label": "neutral",
+              "quote": "**Fondy**: historically strong in Ukraine, but it has shifted focus toward the EU/UK, so confirm whether it currently onboards Ukrainian FOPs."
+            },
+            "liqpay": {
+              "label": "recommended",
+              "quote": "**3. LiqPay (PrivatBank)**\n- One of the oldest and most widely integrated providers."
+            },
+            "paypal": {
+              "label": "rejected",
+              "quote": "**PayPal** isn't practical for a domestic shop."
+            },
+            "plata-by-mono": {
+              "label": "recommended",
+              "quote": "**1. Plata by mono (Monobank)**\n- Easy if you already have a FOP account at Monobank, with fast onboarding through the app."
+            },
+            "portmone": {
+              "label": "recommended",
+              "quote": "**Portmone** and **iPay.ua**: established providers with a good range of features."
+            },
+            "rozetkapay": {
+              "label": "recommended",
+              "quote": "**RozetkaPay**: useful if you also sell via Rozetka."
+            },
+            "stripe": {
+              "label": "rejected",
+              "quote": "**Stripe** does not support Ukrainian businesses"
+            },
+            "wayforpay": {
+              "label": "recommended",
+              "quote": "**2. WayForPay**\n- Very popular with small online shops.\n- Works with a FOP account at any Ukrainian bank."
+            }
+          },
+          "model": "claude-haiku-5-5",
+          "status": "ok",
+          "usage": {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "inference_geo": "global",
+            "input_tokens": 2654,
+            "output_tokens": 440,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "service_tier": "standard",
+            "speed": "standard"
+          }
+        },
+        "labels": {
+          "fondy": {
+            "label": "neutral",
+            "quote": "**Fondy**: historically strong in Ukraine, but it has shifted focus toward the EU/UK, so confirm whether it currently onboards Ukrainian FOPs.",
+            "quote_found": true
+          },
+          "liqpay": {
+            "label": "recommended",
+            "quote": "**3. LiqPay (PrivatBank)**\n- One of the oldest and most widely integrated providers.",
+            "quote_found": true
+          },
+          "paypal": {
+            "label": "rejected",
+            "quote": "**PayPal** isn't practical for a domestic shop.",
+            "quote_found": true
+          },
+          "plata-by-mono": {
+            "label": "recommended",
+            "quote": "**1. Plata by mono (Monobank)**\n- Easy if you already have a FOP account at Monobank, with fast onboarding through the app.",
+            "quote_found": true
+          },
+          "portmone": {
+            "label": "recommended",
+            "quote": "**Portmone** and **iPay.ua**: established providers with a good range of features.",
+            "quote_found": true
+          },
+          "rozetkapay": {
+            "label": "recommended",
+            "quote": "**RozetkaPay**: useful if you also sell via Rozetka.",
+            "quote_found": true
+          },
+          "stripe": {
+            "label": "rejected",
+            "quote": "**Stripe** does not support Ukrainian businesses",
+            "quote_found": true
+          },
+          "wayforpay": {
+            "label": "recommended",
+            "quote": "**2. WayForPay**\n- Very popular with small online shops.\n- Works with a FOP account at any Ukrainian bank.",
+            "quote_found": true
+          }
+        },
         "model": "claude-opus-5-5",
         "named": [
           "fondy",
@@ -1315,6 +2985,103 @@
       },
       "UA/claude-opus-5-5/3": {
         "cost_usd": 0.035236,
+        "labelling": {
+          "cost_usd": 0.000751,
+          "json": {
+            "fondy": {
+              "label": "rejected",
+              "quote": "check whether it currently onboards Ukrainian FOPs"
+            },
+            "liqpay": {
+              "label": "recommended",
+              "quote": "One of the most widely used gateways in Ukraine"
+            },
+            "paypal": {
+              "label": "rejected",
+              "quote": "It is more useful for selling abroad."
+            },
+            "plata-by-mono": {
+              "label": "recommended",
+              "quote": "Very quick to connect if you already have a monobank FOP account"
+            },
+            "portmone": {
+              "label": "recommended",
+              "quote": "established aggregators, worth comparing on fees"
+            },
+            "rozetkapay": {
+              "label": "recommended",
+              "quote": "good if you also sell on Rozetka"
+            },
+            "stripe": {
+              "label": "rejected",
+              "quote": "does not support merchants registered in Ukraine"
+            },
+            "wayforpay": {
+              "label": "recommended",
+              "quote": "Bank-independent, so you can keep your account at any bank"
+            }
+          },
+          "model": "claude-haiku-5-5",
+          "status": "ok",
+          "usage": {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "inference_geo": "global",
+            "input_tokens": 2637,
+            "output_tokens": 975,
+            "output_tokens_details": {
+              "thinking_tokens": 678
+            },
+            "service_tier": "standard",
+            "speed": "standard"
+          }
+        },
+        "labels": {
+          "fondy": {
+            "label": "rejected",
+            "quote": "check whether it currently onboards Ukrainian FOPs",
+            "quote_found": true
+          },
+          "liqpay": {
+            "label": "recommended",
+            "quote": "One of the most widely used gateways in Ukraine",
+            "quote_found": true
+          },
+          "paypal": {
+            "label": "rejected",
+            "quote": "It is more useful for selling abroad.",
+            "quote_found": true
+          },
+          "plata-by-mono": {
+            "label": "recommended",
+            "quote": "Very quick to connect if you already have a monobank FOP account",
+            "quote_found": true
+          },
+          "portmone": {
+            "label": "recommended",
+            "quote": "established aggregators, worth comparing on fees",
+            "quote_found": true
+          },
+          "rozetkapay": {
+            "label": "recommended",
+            "quote": "good if you also sell on Rozetka",
+            "quote_found": true
+          },
+          "stripe": {
+            "label": "rejected",
+            "quote": "does not support merchants registered in Ukraine",
+            "quote_found": true
+          },
+          "wayforpay": {
+            "label": "recommended",
+            "quote": "Bank-independent, so you can keep your account at any bank",
+            "quote_found": true
+          }
+        },
         "model": "claude-opus-5-5",
         "named": [
           "fondy",
@@ -1347,6 +3114,103 @@
       },
       "UA/claude-sonnet-5-5/1": {
         "cost_usd": 0.012418,
+        "labelling": {
+          "cost_usd": 0.000495,
+          "json": {
+            "fondy": {
+              "label": "recommended",
+              "quote": "**Fondy**: Works with Ukrainian FOPs and can also support international payments."
+            },
+            "liqpay": {
+              "label": "recommended",
+              "quote": "**LiqPay (PrivatBank)**: One of the most widely used."
+            },
+            "paddle": {
+              "label": "recommended",
+              "quote": "**Paddle / Lemon Squeezy**: Merchant-of-record services that can work for digital products, depending on their current policies for Ukrainian sellers."
+            },
+            "paypal": {
+              "label": "rejected",
+              "quote": "**PayPal**: Limited functionality in Ukraine, so it's not recommended as your main method."
+            },
+            "plata-by-mono": {
+              "label": "recommended",
+              "quote": "**Monobank Acquiring (mono pay / monobank plata)**: Often has attractive rates, especially if you already have a monobank FOP account."
+            },
+            "portmone": {
+              "label": "recommended",
+              "quote": "**Portmone**: Established and widely used, particularly for services and utilities, but also available for e-commerce."
+            },
+            "stripe": {
+              "label": "rejected",
+              "quote": "**Stripe**: Not generally available for businesses registered in Ukraine."
+            },
+            "wayforpay": {
+              "label": "recommended",
+              "quote": "**WayForPay**: Popular with small and medium shops."
+            }
+          },
+          "model": "claude-haiku-5-5",
+          "status": "ok",
+          "usage": {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "inference_geo": "global",
+            "input_tokens": 2821,
+            "output_tokens": 425,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "service_tier": "standard",
+            "speed": "standard"
+          }
+        },
+        "labels": {
+          "fondy": {
+            "label": "recommended",
+            "quote": "**Fondy**: Works with Ukrainian FOPs and can also support international payments.",
+            "quote_found": true
+          },
+          "liqpay": {
+            "label": "recommended",
+            "quote": "**LiqPay (PrivatBank)**: One of the most widely used.",
+            "quote_found": true
+          },
+          "paddle": {
+            "label": "recommended",
+            "quote": "**Paddle / Lemon Squeezy**: Merchant-of-record services that can work for digital products, depending on their current policies for Ukrainian sellers.",
+            "quote_found": true
+          },
+          "paypal": {
+            "label": "rejected",
+            "quote": "**PayPal**: Limited functionality in Ukraine, so it's not recommended as your main method.",
+            "quote_found": true
+          },
+          "plata-by-mono": {
+            "label": "recommended",
+            "quote": "**Monobank Acquiring (mono pay / monobank plata)**: Often has attractive rates, especially if you already have a monobank FOP account.",
+            "quote_found": true
+          },
+          "portmone": {
+            "label": "recommended",
+            "quote": "**Portmone**: Established and widely used, particularly for services and utilities, but also available for e-commerce.",
+            "quote_found": true
+          },
+          "stripe": {
+            "label": "rejected",
+            "quote": "**Stripe**: Not generally available for businesses registered in Ukraine.",
+            "quote_found": true
+          },
+          "wayforpay": {
+            "label": "recommended",
+            "quote": "**WayForPay**: Popular with small and medium shops.",
+            "quote_found": true
+          }
+        },
         "model": "claude-sonnet-5-5",
         "named": [
           "fondy",
@@ -1379,6 +3243,103 @@
       },
       "UA/claude-sonnet-5-5/2": {
         "cost_usd": 0.011748,
+        "labelling": {
+          "cost_usd": 0.000509,
+          "json": {
+            "fondy": {
+              "label": "recommended",
+              "quote": "**3. Fondy**\n- Good for sellers who also want to accept payments from abroad (multi-currency)"
+            },
+            "liqpay": {
+              "label": "recommended",
+              "quote": "**1. LiqPay (PrivatBank)**\n- Very widely used and has plugins for most CMSs"
+            },
+            "paddle": {
+              "label": "neutral",
+              "quote": "**Paddle / Lemon Squeezy**: Merchant-of-record services mainly for digital products. Eligibility for Ukrainian sellers varies."
+            },
+            "paypal": {
+              "label": "rejected",
+              "quote": "**PayPal**: Limited functionality in Ukraine (you can send, but receiving business payments is restricted). Not recommended as your primary option."
+            },
+            "plata-by-mono": {
+              "label": "recommended",
+              "quote": "**4. Monobank Plata (mono pay / \"Plata by mono\")**\n- Competitive fees and a trusted brand with customers"
+            },
+            "portmone": {
+              "label": "recommended",
+              "quote": "**5. Portmone**\n- Established provider, also useful for invoices and utilities-style payments"
+            },
+            "stripe": {
+              "label": "rejected",
+              "quote": "**Stripe**: Not available for Ukrainian-registered businesses directly."
+            },
+            "wayforpay": {
+              "label": "recommended",
+              "quote": "**2. WayForPay**\n- Popular with small and mid-sized shops"
+            }
+          },
+          "model": "claude-haiku-5-5",
+          "status": "ok",
+          "usage": {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "inference_geo": "global",
+            "input_tokens": 2754,
+            "output_tokens": 467,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "service_tier": "standard",
+            "speed": "standard"
+          }
+        },
+        "labels": {
+          "fondy": {
+            "label": "recommended",
+            "quote": "**3. Fondy**\n- Good for sellers who also want to accept payments from abroad (multi-currency)",
+            "quote_found": true
+          },
+          "liqpay": {
+            "label": "recommended",
+            "quote": "**1. LiqPay (PrivatBank)**\n- Very widely used and has plugins for most CMSs",
+            "quote_found": true
+          },
+          "paddle": {
+            "label": "neutral",
+            "quote": "**Paddle / Lemon Squeezy**: Merchant-of-record services mainly for digital products. Eligibility for Ukrainian sellers varies.",
+            "quote_found": true
+          },
+          "paypal": {
+            "label": "rejected",
+            "quote": "**PayPal**: Limited functionality in Ukraine (you can send, but receiving business payments is restricted). Not recommended as your primary option.",
+            "quote_found": true
+          },
+          "plata-by-mono": {
+            "label": "recommended",
+            "quote": "**4. Monobank Plata (mono pay / \"Plata by mono\")**\n- Competitive fees and a trusted brand with customers",
+            "quote_found": true
+          },
+          "portmone": {
+            "label": "recommended",
+            "quote": "**5. Portmone**\n- Established provider, also useful for invoices and utilities-style payments",
+            "quote_found": true
+          },
+          "stripe": {
+            "label": "rejected",
+            "quote": "**Stripe**: Not available for Ukrainian-registered businesses directly.",
+            "quote_found": true
+          },
+          "wayforpay": {
+            "label": "recommended",
+            "quote": "**2. WayForPay**\n- Popular with small and mid-sized shops",
+            "quote_found": true
+          }
+        },
         "model": "claude-sonnet-5-5",
         "named": [
           "fondy",
@@ -1411,6 +3372,94 @@
       },
       "UA/claude-sonnet-5-5/3": {
         "cost_usd": 0.009788,
+        "labelling": {
+          "cost_usd": 0.000701,
+          "json": {
+            "fondy": {
+              "label": "recommended",
+              "quote": "Strong for businesses that may sell abroad as well"
+            },
+            "liqpay": {
+              "label": "recommended",
+              "quote": "Very well known and trusted by customers"
+            },
+            "paypal": {
+              "label": "recommended",
+              "quote": "Receiving payments is possible but with restrictions, so check current conditions."
+            },
+            "plata-by-mono": {
+              "label": "recommended",
+              "quote": "Simple setup if you have a mono FOP account"
+            },
+            "portmone": {
+              "label": "recommended",
+              "quote": "Fine for online shops too"
+            },
+            "stripe": {
+              "label": "rejected",
+              "quote": "does not currently onboard Ukrainian businesses directly"
+            },
+            "wayforpay": {
+              "label": "recommended",
+              "quote": "Quick onboarding for FOPs, often a few days"
+            }
+          },
+          "model": "claude-haiku-5-5",
+          "status": "ok",
+          "usage": {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "inference_geo": "global",
+            "input_tokens": 2413,
+            "output_tokens": 920,
+            "output_tokens_details": {
+              "thinking_tokens": 662
+            },
+            "service_tier": "standard",
+            "speed": "standard"
+          }
+        },
+        "labels": {
+          "fondy": {
+            "label": "recommended",
+            "quote": "Strong for businesses that may sell abroad as well",
+            "quote_found": true
+          },
+          "liqpay": {
+            "label": "recommended",
+            "quote": "Very well known and trusted by customers",
+            "quote_found": true
+          },
+          "paypal": {
+            "label": "recommended",
+            "quote": "Receiving payments is possible but with restrictions, so check current conditions.",
+            "quote_found": true
+          },
+          "plata-by-mono": {
+            "label": "recommended",
+            "quote": "Simple setup if you have a mono FOP account",
+            "quote_found": true
+          },
+          "portmone": {
+            "label": "recommended",
+            "quote": "Fine for online shops too",
+            "quote_found": true
+          },
+          "stripe": {
+            "label": "rejected",
+            "quote": "does not currently onboard Ukrainian businesses directly",
+            "quote_found": true
+          },
+          "wayforpay": {
+            "label": "recommended",
+            "quote": "Quick onboarding for FOPs, often a few days",
+            "quote_found": true
+          }
+        },
         "model": "claude-sonnet-5-5",
         "named": [
           "fondy",
@@ -1442,11 +3491,65 @@
       }
     },
     "id": "r4-ask-1",
+    "labelled": {
+      "ME": 12,
+      "UA": 12
+    },
+    "labels": {
+      "id": "r4-labels-1",
+      "model": "claude-haiku-5-5",
+      "rubric": "You read one answer a model gave to a sole trader in {country} who asked which payment providers they can use to accept card payments online. For each provider listed after the answer, say how the answer presents it to this sole trader:\n\n- recommended: offered as a provider they can use, with or without caveats;\n- rejected: said not to serve a seller registered there, not to be available, or not worth using;\n- neutral: mentioned without either, for example only as a comparison.\n\nUse only the answer, not what you know about the provider. Quote the words of the answer your label rests on, copied character for character, under 200 characters.\n\nReturn JSON only, matching the schema."
+    },
+    "mentioned": {
+      "ME": {
+        "allsecure": 6,
+        "ckb-otp-banka": 12,
+        "hipotekarna-banka": 11,
+        "nlb-banka-podgorica": 12,
+        "paddle": 9,
+        "paypal": 12,
+        "stripe": 12
+      },
+      "UA": {
+        "fondy": 11,
+        "hutko": 1,
+        "liqpay": 12,
+        "paddle": 3,
+        "paypal": 12,
+        "plata-by-mono": 12,
+        "portmone": 10,
+        "rozetkapay": 2,
+        "stripe": 12,
+        "wayforpay": 12
+      }
+    },
     "prompts": {
       "ME": "I'm a sole trader registered in Montenegro and I'm opening a small online shop. Which payment providers can I use to accept card payments online? Name the ones you would recommend.",
       "UA": "I'm a sole trader (FOP) registered in Ukraine and I'm opening a small online shop. Which payment providers can I use to accept card payments online? Name the ones you would recommend."
     },
+    "recommended": {
+      "ME": {
+        "allsecure": 6,
+        "ckb-otp-banka": 12,
+        "hipotekarna-banka": 11,
+        "nlb-banka-podgorica": 12,
+        "paddle": 7,
+        "paypal": 10,
+        "stripe": 2
+      },
+      "UA": {
+        "fondy": 7,
+        "hutko": 1,
+        "liqpay": 12,
+        "paddle": 1,
+        "paypal": 2,
+        "plata-by-mono": 11,
+        "portmone": 10,
+        "rozetkapay": 2,
+        "wayforpay": 12
+      }
+    },
     "unmeasured": "OpenAI, Google, xAI, Meta, Mistral and every other vendor: not measured, because only the Anthropic API was available to this run."
   },
-  "spent_usd": 1.31884
+  "spent_usd": 1.33411
 }
