@@ -97,13 +97,14 @@ that memory.
 R4, named unprompted: Claude Haiku, Sonnet, Opus and Fable are each asked three times per country, without a
 provider's name in the question, which providers a sole trader there can use to accept card payments. Each
 answer records the manifest providers it mentions, matched as a whole word by the manifest's search term (its
-id where it has none) or a spelling listed in the code (`OTP banka`, `Rozetka Pay`, `Concord Pay`). A
-mention is not a recommendation: an answer may name Stripe only to say it doesn't serve the country. So
-Claude Haiku reads each answer under a fixed rubric and labels every provider it mentions recommended,
-rejected or neutral, quoting the words the label rests on, and each quote is checked against the answer. An
-answer is labelled only when every provider it mentions gets a label; otherwise it is asked again on the next
-run. The file counts, per country, the answers that mention each provider, the answers labelled, and among
-those, the answers that recommend it. Other vendors' models are not measured: only the Anthropic API was
+id where it has none) or a spelling listed in the code (`OTP banka`, `Rozetka Pay`, `Concord Pay`). A mention
+is not a recommendation: an answer may name Stripe only to say it doesn't serve the country. So Claude Haiku
+reads each answer under a fixed rubric and labels every provider it mentions recommended, rejected or neutral,
+quoting the words the label rests on. Whether the quote appears in the answer is recorded beside the label,
+not used as a filter. An answer is labelled only when every provider it mentions gets a label; otherwise its
+labels are asked again on the next run. Each labelled answer records the date its labels were made. The file
+counts, per country, the answers that mention each provider, the answers labelled, and among those, the
+answers that recommend it, 0 included. Other vendors' models are not measured: only the Anthropic API was
 available.
 
 ## Manifests

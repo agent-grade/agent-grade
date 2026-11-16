@@ -1,5 +1,6 @@
 import copy
 import json
+from datetime import date
 from types import SimpleNamespace
 
 import anthropic
@@ -142,7 +143,7 @@ def test_a_run_over_every_manifest_measures_each_taker_and_asks_every_model_in_e
     assert all(answer["named"] == ["paddle", "paypal", "stripe"] for answer in answers.values())
     assert sum("system" not in call for call in api.calls) == len(answers)
     assert results["r4"]["mentioned"]["ME"] == {"paddle": 12, "paypal": 12, "stripe": 12}
-    assert results["r4"]["recommended"] == {"ME": {"paddle": 12, "stripe": 12}, "UA": {"paddle": 12, "stripe": 12}}
+    assert results["r4"]["recommended"]["ME"] == {"paddle": 12, "paypal": 0, "stripe": 12}
     assert results["r4"]["labelled"] == {"ME": 12, "UA": 12}
     assert json.loads(out.read_text()) == results
 
@@ -151,13 +152,14 @@ def test_a_label_names_its_quote_and_whether_the_answer_holds_it():
     api = Api()
     found = models.labelled(api, models.Budget(), manifest.load(), "UA", "Stripe and Paddle; not PayPal.", dry_run=False)
     assert found["labels"]["paypal"] == {"label": "rejected", "quote": "not PayPal", "quote_found": True}
+    assert found["labelled_on"] == date.today().isoformat()
     assert api.calls[0]["output_config"]["format"]["schema"]["required"] == ["paddle", "paypal", "stripe"]
 
 
 def test_labels_that_leave_out_a_mentioned_provider_are_not_kept_and_are_asked_again(tmp_path):
     out = tmp_path / "2026-11-15.json"
     partial = models.run(Web({}).client(), Api(leave_out={"stripe"}), manifest.load(), "2026-11-15", out)
-    assert partial["r4"]["labelled"] == {"ME": 0, "UA": 0} and partial["r4"]["recommended"] == {"ME": {}, "UA": {}}
+    assert partial["r4"]["labelled"] == {"ME": 0, "UA": 0} and partial["r4"]["recommended"]["UA"] == {"paddle": 0, "paypal": 0, "stripe": 0}
     assert partial["r4"]["mentioned"]["ME"] == {"paddle": 12, "paypal": 12, "stripe": 12}
     api = Api()
     again = models.run(Web({}).client(), api, manifest.load(), "2026-11-15", out)
@@ -187,7 +189,7 @@ def test_a_rerun_on_the_same_date_keeps_what_was_measured_and_the_spend(tmp_path
 
 def test_a_dry_run_leaves_a_stored_run_file_as_it_was(tmp_path):
     out = tmp_path / "2026-11-15.json"
-    models.run(Web({}).client(), Api(), manifest.load(), "2026-11-15", out)
+    out.write_text(json.dumps(models.start("2026-11-15")))
     stored = out.read_bytes()
     api = Api()
     models.run(Web({}).client(), api, manifest.load(), "2026-11-15", out, dry_run=True)

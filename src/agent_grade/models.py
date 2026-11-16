@@ -220,7 +220,7 @@ def labelled(api, budget: Budget, providers: list[dict], market: str, text: str,
     if set(labelling["json"]) != set(ids):
         return {"named": ids, "labelling": {**labelling, "status": "not measured",
                                             "note": "the labels did not cover each provider mentioned"}}
-    return {"named": ids, "labelling": labelling,
+    return {"named": ids, "labelling": labelling, "labelled_on": date.today().isoformat(),
             "labels": {i: {**labelling["json"][i], "quote_found": price.verified([labelling["json"][i]["quote"]], text)}
                        for i in ids}}
 
@@ -254,8 +254,9 @@ def run(client: check.Client, api, providers: list[dict], day: str, out: Path, d
     results["r4"]["labelled"] = {m: sum("labels" in a for a in rows) for m, rows in by_market.items()}
     results["r4"]["mentioned"] = {m: dict(Counter(p for a in rows for p in a.get("named", [])))
                                   for m, rows in by_market.items()}
-    results["r4"]["recommended"] = {m: dict(Counter(p for a in rows for p, label in a.get("labels", {}).items()
-                                                    if label["label"] == "recommended"))
+    results["r4"]["recommended"] = {m: {p: sum(a.get("labels", {}).get(p, {}).get("label") == "recommended"
+                                               for a in rows)
+                                        for p in results["r4"]["mentioned"][m]}
                                     for m, rows in by_market.items()}
     save(results, budget, out, dry_run)
     return results
