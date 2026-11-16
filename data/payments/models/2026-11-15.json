@@ -705,6 +705,7 @@
     "answers": {
       "ME/claude-fable-5-2/1": {
         "cost_usd": 0.067032,
+        "labelled_on": "2026-11-16",
         "labelling": {
           "cost_usd": 0.000754,
           "json": {
@@ -824,6 +825,7 @@
       },
       "ME/claude-fable-5-2/2": {
         "cost_usd": 0.067272,
+        "labelled_on": "2026-11-16",
         "labelling": {
           "cost_usd": 0.000683,
           "json": {
@@ -943,6 +945,7 @@
       },
       "ME/claude-fable-5-2/3": {
         "cost_usd": 0.073112,
+        "labelled_on": "2026-11-16",
         "labelling": {
           "cost_usd": 0.000501,
           "json": {
@@ -1052,6 +1055,7 @@
       },
       "ME/claude-haiku-5-5/1": {
         "cost_usd": 0.000902,
+        "labelled_on": "2026-11-16",
         "labelling": {
           "cost_usd": 0.000699,
           "json": {
@@ -1151,6 +1155,7 @@
       },
       "ME/claude-haiku-5-5/2": {
         "cost_usd": 0.000863,
+        "labelled_on": "2026-11-16",
         "labelling": {
           "cost_usd": 0.000631,
           "json": {
@@ -1250,6 +1255,7 @@
       },
       "ME/claude-haiku-5-5/3": {
         "cost_usd": 0.000864,
+        "labelled_on": "2026-11-16",
         "labelling": {
           "cost_usd": 0.000593,
           "json": {
@@ -1349,6 +1355,7 @@
       },
       "ME/claude-opus-5-5/1": {
         "cost_usd": 0.034636,
+        "labelled_on": "2026-11-16",
         "labelling": {
           "cost_usd": 0.000654,
           "json": {
@@ -1468,6 +1475,7 @@
       },
       "ME/claude-opus-5-5/2": {
         "cost_usd": 0.033416,
+        "labelled_on": "2026-11-16",
         "labelling": {
           "cost_usd": 0.000727,
           "json": {
@@ -1587,6 +1595,7 @@
       },
       "ME/claude-opus-5-5/3": {
         "cost_usd": 0.036016,
+        "labelled_on": "2026-11-16",
         "labelling": {
           "cost_usd": 0.00091,
           "json": {
@@ -1706,6 +1715,7 @@
       },
       "ME/claude-sonnet-5-5/1": {
         "cost_usd": 0.011248,
+        "labelled_on": "2026-11-16",
         "labelling": {
           "cost_usd": 0.000813,
           "json": {
@@ -1815,6 +1825,7 @@
       },
       "ME/claude-sonnet-5-5/2": {
         "cost_usd": 0.010018,
+        "labelled_on": "2026-11-16",
         "labelling": {
           "cost_usd": 0.000664,
           "json": {
@@ -1924,6 +1935,7 @@
       },
       "ME/claude-sonnet-5-5/3": {
         "cost_usd": 0.010118,
+        "labelled_on": "2026-11-16",
         "labelling": {
           "cost_usd": 0.00064,
           "json": {
@@ -2033,6 +2045,7 @@
       },
       "UA/claude-fable-5-2/1": {
         "cost_usd": 0.067552,
+        "labelled_on": "2026-11-16",
         "labelling": {
           "cost_usd": 0.000811,
           "json": {
@@ -2152,6 +2165,7 @@
       },
       "UA/claude-fable-5-2/2": {
         "cost_usd": 0.067392,
+        "labelled_on": "2026-11-16",
         "labelling": {
           "cost_usd": 0.000536,
           "json": {
@@ -2261,6 +2275,7 @@
       },
       "UA/claude-fable-5-2/3": {
         "cost_usd": 0.064392,
+        "labelled_on": "2026-11-16",
         "labelling": {
           "cost_usd": 0.00032,
           "json": {
@@ -2360,6 +2375,7 @@
       },
       "UA/claude-haiku-5-5/1": {
         "cost_usd": 0.000883,
+        "labelled_on": "2026-11-16",
         "labelling": {
           "cost_usd": 0.000562,
           "json": {
@@ -2479,6 +2495,7 @@
       },
       "UA/claude-haiku-5-5/2": {
         "cost_usd": 0.000864,
+        "labelled_on": "2026-11-16",
         "labelling": {
           "cost_usd": 0.000567,
           "json": {
@@ -2598,6 +2615,7 @@
       },
       "UA/claude-haiku-5-5/3": {
         "cost_usd": 0.000941,
+        "labelled_on": "2026-11-16",
         "labelling": {
           "cost_usd": 0.000442,
           "json": {
@@ -2727,6 +2745,7 @@
       },
       "UA/claude-opus-5-5/1": {
         "cost_usd": 0.035936,
+        "labelled_on": "2026-11-16",
         "labelling": {
           "cost_usd": 0.000822,
           "json": {
@@ -2856,6 +2875,7 @@
       },
       "UA/claude-opus-5-5/2": {
         "cost_usd": 0.036176,
+        "labelled_on": "2026-11-16",
         "labelling": {
           "cost_usd": 0.000485,
           "json": {
@@ -2985,6 +3005,7 @@
       },
       "UA/claude-opus-5-5/3": {
         "cost_usd": 0.035236,
+        "labelled_on": "2026-11-16",
         "labelling": {
           "cost_usd": 0.000751,
           "json": {
@@ -3114,6 +3135,7 @@
       },
       "UA/claude-sonnet-5-5/1": {
         "cost_usd": 0.012418,
+        "labelled_on": "2026-11-16",
         "labelling": {
           "cost_usd": 0.000495,
           "json": {
@@ -3243,6 +3265,7 @@
       },
       "UA/claude-sonnet-5-5/2": {
         "cost_usd": 0.011748,
+        "labelled_on": "2026-11-16",
         "labelling": {
           "cost_usd": 0.000509,
           "json": {
@@ -3372,6 +3395,7 @@
       },
       "UA/claude-sonnet-5-5/3": {
         "cost_usd": 0.009788,
+        "labelled_on": "2026-11-16",
         "labelling": {
           "cost_usd": 0.000701,
           "json": {
@@ -3546,6 +3570,7 @@
         "plata-by-mono": 11,
         "portmone": 10,
         "rozetkapay": 2,
+        "stripe": 0,
         "wayforpay": 12
       }
     },
