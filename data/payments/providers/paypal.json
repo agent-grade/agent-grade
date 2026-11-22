@@ -3,6 +3,27 @@
   "name": "PayPal",
   "kind": "wallet",
   "markets": {
+    "ME": {
+      "takes": true,
+      "why": "PayPal publishes seller rates for accounts of Montenegro residents; whether a balance can be withdrawn to a Montenegrin bank account or card is not shown.",
+      "evidence": {
+        "source": "https://www.paypal.com/me/business/paypal-business-fees",
+        "quote": "Rates published below apply to PayPal accounts of residents of the following market/region: … Montenegro (ME)",
+        "english": "PayPal's seller rates apply to accounts of Montenegro residents."
+      },
+      "sole_trader": {
+        "answer": "yes",
+        "source": "https://www.paypal.com/me/legalhub/paypal/useragreement-full",
+        "quote": "We recommend business accounts for people and organizations that primarily use PayPal to sell goods or services, even if your business is not incorporated.",
+        "english": "Business accounts are for people and organizations that sell, incorporated or not."
+      },
+      "company": {
+        "answer": "yes",
+        "source": "https://www.paypal.com/me/legalhub/paypal/useragreement-full",
+        "quote": "We recommend business accounts for people and organizations that primarily use PayPal to sell goods or services, even if your business is not incorporated.",
+        "english": "Business accounts are for people and organizations that sell, incorporated or not."
+      }
+    },
     "UA": {
       "takes": false,
       "why": "PayPal's Ukrainian fees and services apply to personal accounts, until 2026-12-31.",
@@ -11,6 +32,41 @@
         "quote": "All fees and services described on this page apply to Ukrainian personal accounts up to and including December 31, 2026",
         "english": "The fees and services on PayPal's Ukraine page apply to personal accounts, until 2026-12-31."
       }
+    }
+  },
+  "search": "paypal",
+  "urls": {
+    "docs": {
+      "url": "https://developer.paypal.com/",
+      "status": "ok",
+      "checked": "2026-11-22"
+    },
+    "api_reference": {
+      "url": "https://developer.paypal.com/api/rest/",
+      "status": "ok",
+      "checked": "2026-11-22"
+    },
+    "status": {
+      "url": "https://www.paypal-status.com/",
+      "status": "ok",
+      "checked": "2026-11-22"
+    },
+    "pricing": {
+      "url": "https://www.paypal.com/me/business/paypal-business-fees",
+      "status": "unreadable",
+      "checked": "2026-11-22",
+      "note": "www.paypal.com answers 403 to our HTTP client."
+    },
+    "signup": {
+      "url": "https://www.paypal.com/me/webapps/mpp/account-selection",
+      "status": "unreadable",
+      "checked": "2026-11-22",
+      "note": "Linked from the Montenegro home page; www.paypal.com answers 403 to our HTTP client."
+    },
+    "llms_txt": {
+      "url": "https://developer.paypal.com/llms.txt",
+      "status": "ok",
+      "checked": "2026-11-22"
     }
   }
 }
