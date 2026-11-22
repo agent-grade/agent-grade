@@ -42,3 +42,14 @@ uv run pytest
 `agent-grade-check` writes `data/payments/results/<date>.json` and `agent-grade-price` writes
 `data/payments/prices/<date>.json`; [METHOD.md](METHOD.md#rerunning-a-night) says what a rerun does.
 `uv run pytest` also validates every manifest and receipts note.
+
+## Licence
+
+The code (`src/`, `tests/`, `pyproject.toml`) is under the [MIT licence](LICENSE). The data under `data/`
+and [METHOD.md](METHOD.md) are under [CC BY 4.0](data/LICENSE); the preferred attribution is
+`Agent-Grade (agent-grade.com), measured <date>`.
+
+The text quoted from providers' and publishers' pages stays theirs: the `quote` fields in the manifests
+and receipts notes, and the `excerpts` and `excerpts_found_on_page` fields in the price and model files.
+It is kept only as evidence for the verdicts. The licence covers Agent-Grade's own measurements, verdicts
+and method, not that text.

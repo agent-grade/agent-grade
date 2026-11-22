@@ -3,6 +3,7 @@ name = "agent-grade"
 version = "0.1.0"
 description = "Dated measurements of service providers against what an AI agent needs from them"
 readme = "README.md"
+license = "MIT"
 requires-python = ">=3.12"
 dependencies = [
     "anthropic==2.3.0",
