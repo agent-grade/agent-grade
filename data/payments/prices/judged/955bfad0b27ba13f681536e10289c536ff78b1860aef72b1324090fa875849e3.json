@@ -1,0 +1,33 @@
+{
+  "cost_usd": 0.00030539,
+  "effort": "low",
+  "excerpts": [
+    "Інтернет-магазини 2% Оплата картою 1% BankPay Комісія за платіж, стягується з компанії",
+    "Самозайняті особи Індивідуальний тариф",
+    "Підключення без договору (інвойсинг) 2,5% Оплата картою Комісія за платіж, стягується з покупця"
+  ],
+  "excerpts_found_on_page": true,
+  "fits_one_sentence": false,
+  "method_sha256": "a4485e5e5984047beb83213366fd52392bb3c60fe3122792c96c827e4bc97313",
+  "model": "claude-haiku-5-5",
+  "rubric": "r6-price-1",
+  "sentence": null,
+  "status": "ok",
+  "usage": {
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 0,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 929,
+    "inference_geo": "global",
+    "input_tokens": 1546,
+    "output_tokens": 283,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "service_tier": "standard",
+    "speed": "standard"
+  },
+  "why_not": "The page lists online shops at 2% per card payment plus a 1% BankPay commission charged to the company, but the actual fee for a small shop depends on the shop type, and the self-employed tier says only 'Індивідуальний тариф' (individual tariff), and the BankPay split and the 2.5% invoicing tier with a buyer-paid fee add cases the owner must sort through, so a single line would not be accurate for every shop."
+}
