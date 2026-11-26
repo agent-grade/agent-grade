@@ -35,6 +35,32 @@
     }
   },
   "search": "paypal",
+  "probe": {
+    "method": "POST",
+    "url": "https://api-m.sandbox.paypal.com/v2/checkout/orders",
+    "format": "json",
+    "fields": [
+      "intent",
+      "purchase_units",
+      "Authorization"
+    ],
+    "source": "https://developer.paypal.com/docs/api/orders/v2/",
+    "quote": "POST Create order /v2/checkout/orders Creates an order.",
+    "base": {
+      "source": "https://developer.paypal.com/api/rest/requests/",
+      "quote": "The URL to the API service is either: Sandbox. https://api-m.sandbox.paypal.com Live. https://api-m.paypal.com"
+    }
+  },
+  "github": {
+    "account": "paypal",
+    "source": "https://developer.paypal.com/api/rest/"
+  },
+  "npm": [
+    {
+      "name": "@paypal/react-paypal-js",
+      "source": "https://developer.paypal.com/sdk/react/reference.md"
+    }
+  ],
   "urls": {
     "docs": {
       "url": "https://developer.paypal.com/",
