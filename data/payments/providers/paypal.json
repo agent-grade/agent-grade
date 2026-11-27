@@ -79,15 +79,13 @@
     },
     "pricing": {
       "url": "https://www.paypal.com/me/business/paypal-business-fees",
-      "status": "unreadable",
-      "checked": "2026-11-22",
-      "note": "www.paypal.com answers 403 to our HTTP client."
+      "status": "ok",
+      "checked": "2026-11-27"
     },
     "signup": {
       "url": "https://www.paypal.com/me/webapps/mpp/account-selection",
-      "status": "unreadable",
-      "checked": "2026-11-22",
-      "note": "Linked from the Montenegro home page; www.paypal.com answers 403 to our HTTP client."
+      "status": "ok",
+      "checked": "2026-11-27"
     },
     "llms_txt": {
       "url": "https://developer.paypal.com/llms.txt",
