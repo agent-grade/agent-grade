@@ -1,0 +1,33 @@
+{
+  "cost_usd": 0.002859025,
+  "effort": "low",
+  "excerpts": [
+    "Subject to eligibility, application approval by PayPal and the terms of the user agreement , this rate will apply to all commercial transactions.",
+    "Merchant rate for receiving transactions",
+    "Standard rate for receiving domestic transactions"
+  ],
+  "excerpts_found_on_page": true,
+  "fits_one_sentence": false,
+  "method_sha256": "a4485e5e5984047beb83213366fd52392bb3c60fe3122792c96c827e4bc97313",
+  "model": "claude-haiku-5-5",
+  "rubric": "r6-price-1",
+  "sentence": null,
+  "status": "ok",
+  "usage": {
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 0,
+      "ephemeral_5m_input_tokens": 929
+    },
+    "cache_creation_input_tokens": 929,
+    "cache_read_input_tokens": 0,
+    "inference_geo": "global",
+    "input_tokens": 26174,
+    "output_tokens": 251,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "service_tier": "standard",
+    "speed": "standard"
+  },
+  "why_not": "The page lists many rates that depend on the seller's market, the buyer's market, the aggregate monthly sales volume tiers, and whether the seller has been approved for the Merchant rate; the owner would need to look up a table, and the standard domestic rate only applies with a fee table by market. The page does not give a single flat or per-unit price for a small shop in one line, and merchant rates are subject to eligibility and PayPal approval."
+}
